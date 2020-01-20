@@ -139,7 +139,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">25</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">3</span></a>
 
   </li>
         
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lsj210001.github.io/2019/12/01/next-7-6-0-released/">
+    <link itemprop="mainEntityOfPage" href="https://lsj210001.github.io/2019/05/14/CNN-in-Tensorflow/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -219,7 +219,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/12/01/next-7-6-0-released/" class="post-title-link" itemprop="url">NexT 7.6.0 Released</a>
+            <a href="/2019/05/14/CNN-in-Tensorflow/" class="post-title-link" itemprop="url">CNN in Tensorflow</a>
         </h2>
 
         <div class="post-meta">
@@ -228,16 +228,21 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-12-01 09:30:19" itemprop="dateCreated datePublished" datetime="2019-12-01T09:30:19Z">2019-12-01</time>
+              <time title="创建时间：2019-05-14 13:45:09 / 修改时间：08:16:42" itemprop="dateCreated datePublished" datetime="2019-05-14T13:45:09Z">2019-05-14</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-20 03:37:58" itemprop="dateModified" datetime="2020-01-20T03:37:58Z">2020-01-20</time>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
               </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+            </span>
 
           
   
@@ -248,8 +253,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/12/01/next-7-6-0-released/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/12/01/next-7-6-0-released/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/05/14/CNN-in-Tensorflow/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/14/CNN-in-Tensorflow/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -264,31 +269,48 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="💥-Breaking-Changes"><a href="#💥-Breaking-Changes" class="headerlink" title="💥 Breaking Changes"></a>💥 Breaking Changes</h2><h3 id="Remove-rss-button-1291"><a href="#Remove-rss-button-1291" class="headerlink" title="Remove rss button (#1291)"></a>Remove rss button (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI5MQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1291">#1291<i class="fa fa-external-link"></i></span>)</h3><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">-# hexo-generator-feed required for rss support. Leave rss as blank to use site's feed link.</span></span><br><span class="line"><span class="deletion">-# Set rss to false to disable feed link. Set rss to specific value if you have burned your feed already.</span></span><br><span class="line"><span class="deletion">-rss:</span></span><br><span class="line">...</span><br><span class="line"># Social Links</span><br><span class="line"># Usage: `Key: permalink || icon`</span><br><span class="line"># Key is the link label showing to end users.</span><br><span class="line"># Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.</span><br><span class="line">social:</span><br><span class="line">...</span><br><span class="line"><span class="deletion">-  #VK Group: https://vk.com/yourname || vk</span></span><br><span class="line">...</span><br><span class="line"><span class="addition">+  #RSS: /atom.xml || rss</span></span><br></pre></td></tr></table></figure>
-<h3 id="Remove-cheers-and-auto-excerpt-1284"><a href="#Remove-cheers-and-auto-excerpt-1284" class="headerlink" title="Remove cheers and auto_excerpt (#1284)"></a>Remove cheers and auto_excerpt (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI4NA==" title="https://github.com/theme-next/hexo-theme-next/pull/1284">#1284<i class="fa fa-external-link"></i></span>)</h3><figure class="highlight diff"><table><tr><td class="code"><pre><span class="line"><span class="deletion">- # Automatically excerpt (Not recommend).</span></span><br><span class="line"><span class="deletion">- # Use &lt;!-- more --&gt; in the post to control excerpt accurately.</span></span><br><span class="line"><span class="deletion">- auto_excerpt:</span></span><br><span class="line"><span class="deletion">-   enable: false</span></span><br><span class="line"><span class="deletion">-   length: 150</span></span><br><span class="line">...</span><br><span class="line"><span class="deletion">- # Enable \"cheers\" for archive page.</span></span><br><span class="line"><span class="deletion">- cheers: true</span></span><br></pre></td></tr></table></figure>
-<h3 id="Drop-NodeJs-8-support-amp-Require-NodeJs-gt-10-1269"><a href="#Drop-NodeJs-8-support-amp-Require-NodeJs-gt-10-1269" class="headerlink" title="Drop NodeJs 8 support &amp; Require NodeJs &gt;= 10 (#1269)"></a>Drop NodeJs 8 support &amp; Require NodeJs &gt;= 10 (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI2OQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1269">#1269<i class="fa fa-external-link"></i></span>)</h3><h3 id="Refactor-front-matter-make-it-has-the-same-key-as-the-configuration-file-1211"><a href="#Refactor-front-matter-make-it-has-the-same-key-as-the-configuration-file-1211" class="headerlink" title="Refactor front-matter: make it has the same key as the configuration file (#1211)"></a>Refactor front-matter: make it has the same key as the configuration file (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIxMQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1211">#1211<i class="fa fa-external-link"></i></span>)</h3><p>In <strong>post front-matter</strong>:</p>
-<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">toc:</span><br><span class="line">  enable: true</span><br><span class="line">  number: false</span><br><span class="line">  max_depth: 3</span><br><span class="line">reward_settings:</span><br><span class="line">  enable: true</span><br><span class="line">  comment: Donate comment here.</span><br><span class="line">quicklink:</span><br><span class="line">  enable: true</span><br><span class="line">  delay: true</span><br><span class="line">  timeout: 3000</span><br><span class="line">  priority: true</span><br><span class="line">  ignores:</span><br><span class="line"></span><br><span class="line"># Some deprecated</span><br><span class="line"><span class="deletion">- toc_max_depth: 4</span></span><br><span class="line"><span class="deletion">- toc_number: true</span></span><br><span class="line"><span class="deletion">- reward: true</span></span><br><span class="line"><span class="deletion">- quicklink: true</span></span><br></pre></td></tr></table></figure>
-<p>In theme&#39;s <strong>_config.yml</strong>:</p>
-<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">quicklink:</span><br><span class="line">  # Home page and archive page can be controlled through home and archive options below.</span><br><span class="line"><span class="deletion">-  home: true</span></span><br><span class="line"><span class="deletion">-  archive: true</span></span><br><span class="line"><span class="addition">+  # This configuration item is independent of `enable`.</span></span><br><span class="line"><span class="addition">+  home: false</span></span><br><span class="line"><span class="addition">+  archive: false</span></span><br></pre></td></tr></table></figure>
-<h2 id="⭐-Features"><a href="#⭐-Features" class="headerlink" title="⭐ Features"></a>⭐ Features</h2><ul>
-<li>Set inject default extname from file&#39;s extname (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI4MQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1281">#1281<i class="fa fa-external-link"></i></span>)</li>
-<li>Adjust copy-button style (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI3Nw==" title="https://github.com/theme-next/hexo-theme-next/pull/1277">#1277<i class="fa fa-external-link"></i></span>)</li>
-<li>Remove include-raw tag (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI2OA==" title="https://github.com/theme-next/hexo-theme-next/pull/1268">#1268<i class="fa fa-external-link"></i></span>)</li>
+          <h1 id="TensorFlow-卷积层"><a href="#TensorFlow-卷积层" class="headerlink" title="TensorFlow 卷积层"></a>TensorFlow 卷积层</h1><p>让我们看下如何在 TensorFlow 里面实现 CNN。</p>
+<p>TensorFlow 提供了 <a href="https://tensorflow.google.cn/api_docs/python/tf/nn/conv2d" target="_blank" rel="noopener"><code>tf.nn.conv2d()</code></a> 和 <a href="https://tensorflow.google.cn/api_docs/python/tf/nn/bias_add" target="_blank" rel="noopener"><code>tf.nn.bias_add()</code></a> 函数来创建你自己的卷积层。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Output depth</span></span><br><span class="line">k_output = <span class="number">64</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Image Properties</span></span><br><span class="line">image_width = <span class="number">10</span></span><br><span class="line">image_height = <span class="number">10</span></span><br><span class="line">color_channels = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Convolution filter</span></span><br><span class="line">filter_size_width = <span class="number">5</span></span><br><span class="line">filter_size_height = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Input/Image</span></span><br><span class="line">input = tf.placeholder(</span><br><span class="line">    tf.float32,</span><br><span class="line">    shape=[<span class="literal">None</span>, image_height, image_width, color_channels])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Weight and bias</span></span><br><span class="line"><span class="comment"># 由于卷积层的参数个数只和过滤器的尺寸、深度以及当前层节点矩阵的深度有关，所以这里声明的参数变量是一个四维矩阵</span></span><br><span class="line"><span class="comment"># 前面两个维度代表了过滤器的尺寸，第三个维度表示当前层的深度，第四个维度表示过滤器的深度</span></span><br><span class="line">weight = tf.Variable(tf.truncated_normal(</span><br><span class="line">    [filter_size_height, filter_size_width, color_channels, k_output]))</span><br><span class="line">bias = tf.Variable(tf.zeros(k_output))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply Convolution</span></span><br><span class="line"><span class="comment"># 最后一个参数是填充（padding）的方法，TensorFlow 中提供 SAME 或是 VALID 两种选择</span></span><br><span class="line"><span class="comment"># 其中 SAME 表示添加全0填充，VALID 表示不填充</span></span><br><span class="line">conv_layer = tf.nn.conv2d(input, weight, strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line"><span class="comment"># Add bias</span></span><br><span class="line">conv_layer = tf.nn.bias_add(conv_layer, bias)</span><br><span class="line"><span class="comment"># Apply activation function</span></span><br><span class="line">conv_layer = tf.nn.relu(conv_layer)</span><br></pre></td></tr></table></figure>
+<p>上述代码用了  <a href="https://tensorflow.google.cn/api_docs/python/tf/nn/conv2d" target="_blank" rel="noopener"><code>tf.nn.conv2d()</code></a> 函数来计算卷积，<code>weights</code> 作为滤波器，<code>[1, 2, 2, 1]</code> 作为 strides（不同维度的步长）。TensorFlow 对每一个 <code>input</code> 维度使用一个单独的 stride 参数，<code>[batch, input_height, input_width, input_channels]</code>。我们通常把 <code>batch</code> 和 <code>input_channels</code> （<code>strides</code> 序列中的第一个第四个）的 stride 设为 <code>1</code>。</p>
+<p><a href="https://tensorflow.google.cn/api_docs/python/tf/nn/bias_add" target="_blank" rel="noopener"><code>tf.nn.bias_add()</code></a> 函数对矩阵的最后一维加了偏置项。</p>
+<h2 id="卷积机制"><a href="#卷积机制" class="headerlink" title="卷积机制"></a>卷积机制</h2><p>根据输入大小、滤波器大小，来决定输出维度（如下所示）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new_height &#x3D; (input_height - filter_height + 2 * P)&#x2F;S + 1</span><br><span class="line">new_width &#x3D; (input_width - filter_width + 2 * P)&#x2F;S + 1</span><br></pre></td></tr></table></figure>
+<h1 id="TensorFlow-最大池化"><a href="#TensorFlow-最大池化" class="headerlink" title="TensorFlow 最大池化"></a>TensorFlow 最大池化</h1><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514143813.png" alt=""></p>
+<p>这是一个最大池化的例子，<span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQ29udm9sdXRpb25hbF9uZXVyYWxfbmV0d29yayNQb29saW5nX2xheWVy" title="https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer">max pooling<i class="fa fa-external-link"></i></span> 用了 2x2 的滤波器，stride 为 2。</p>
+<p>例如 <code>[[1, 0], [4, 6]]</code> 生成 <code>6</code>，因为 <code>6</code> 是这4个数字中最大的。同理 <code>[[2, 3], [6, 8]]</code> 生成 <code>8</code>。<br> 理论上，最大池化操作的好处是减小输入大小，使得神经网络能够专注于最重要的元素。最大池化只取覆盖区域中的最大值，其它的值都丢弃。</p>
+<p>TensorFlow 提供了 <a href="https://www.tensorflow.org/api_docs/python/tf/nn/max_pool" target="_blank" rel="noopener"><code>tf.nn.max_pool()</code></a> 函数，用于对卷积层实现 <span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQ29udm9sdXRpb25hbF9uZXVyYWxfbmV0d29yayNQb29saW5nX2xheWVy" title="https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer">最大池化<i class="fa fa-external-link"></i></span> 。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">conv_layer = tf.nn.conv2d(input, weight, strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">conv_layer = tf.nn.bias_add(conv_layer, bias)</span><br><span class="line">conv_layer = tf.nn.relu(conv_layer)</span><br><span class="line"><span class="comment"># Apply Max Pooling</span></span><br><span class="line">conv_layer = tf.nn.max_pool(</span><br><span class="line">    conv_layer,</span><br><span class="line">    ksize=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">    strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">    padding=<span class="string">'SAME'</span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.tensorflow.org/api_docs/python/tf/nn/max_pool" target="_blank" rel="noopener"><code>tf.nn.max_pool()</code></a> 函数实现最大池化时， <code>ksize</code> 参数是滤波器大小，<code>strides</code> 参数是步长。2x2 的滤波器配合 2x2 的步长是常用设定。</p>
+<p><code>ksize</code> 和 <code>strides</code> 参数也被构建为四个元素的列表，每个元素对应 input tensor 的一个维度 (<code>[batch, height, width, channels]</code>)，对 <code>ksize</code> 和 <code>strides</code> 来说，batch 和 channel 通常都设置成 <code>1</code>。</p>
+<h2 id="直观理解池化"><a href="#直观理解池化" class="headerlink" title="直观理解池化"></a>直观理解池化</h2><p>池化层总的来说是用来：</p>
+<ul>
+<li>[ ] 增大输入大小</li>
+<li>[x] 减小输出大小</li>
+<li>[x] 避免过拟合</li>
+<li>[ ] 获取更多信息</li>
 </ul>
-<h2 id="🐞-Bug-Fixes"><a href="#🐞-Bug-Fixes" class="headerlink" title="🐞 Bug Fixes"></a>🐞 Bug Fixes</h2><ul>
-<li>Allow decoding post link (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI0Nw==" title="https://github.com/theme-next/hexo-theme-next/pull/1247">#1247<i class="fa fa-external-link"></i></span>)</li>
+<p>降低过拟合是减小输出大小的结果，它同样也减少了后续层中的参数的数量。</p>
+<p>近期，池化层并不是很受青睐。部分原因是：</p>
+<ul>
+<li>现在的数据集又大又复杂，我们更关心欠拟合问题。</li>
+<li>Dropout 是一个更好的正则化方法。</li>
+<li>池化导致信息损失。想想最大池化的例子，<em>n</em> 个数字中我们只保留最大的，把余下的 <em>n-1</em> 完全舍弃了。</li>
 </ul>
-<h2 id="🛠-Improvements"><a href="#🛠-Improvements" class="headerlink" title="🛠 Improvements"></a>🛠 Improvements</h2><ul>
-<li>Make author image optional (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI2Mw==" title="https://github.com/theme-next/hexo-theme-next/pull/1263">#1263<i class="fa fa-external-link"></i></span>)</li>
-<li>Update CDN URLs (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTI1Mg==" title="https://github.com/theme-next/hexo-theme-next/pull/1252">#1252<i class="fa fa-external-link"></i></span>)</li>
+<h2 id="池化机制"><a href="#池化机制" class="headerlink" title="池化机制"></a>池化机制</h2><p><strong>设置</strong> H = height, W = width, D = depth</p>
+<ul>
+<li>输入维度是 4x4x5 (HxWxD)</li>
+<li>滤波器大小 2x2 (HxW)</li>
+<li>stride 的高和宽都是 2 (S)</li>
 </ul>
-<h2 id="🌍-Localization"><a href="#🌍-Localization" class="headerlink" title="🌍 Localization"></a>🌍 Localization</h2><ul>
-<li>New Crowdin translations (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTA3Mw==" title="https://github.com/theme-next/hexo-theme-next/pull/1073">#1073<i class="fa fa-external-link"></i></span>)</li>
-<li>New Crowdin translations (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE1MQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1151">#1151<i class="fa fa-external-link"></i></span>)</li>
-</ul>
-<hr>
-<p>For full changes, see the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L2NvbXBhcmUvdjcuNS4wLi4udjcuNi4w" title="https://github.com/theme-next/hexo-theme-next/compare/v7.5.0...v7.6.0">comparison between v7.5.0 and v7.6.0<i class="fa fa-external-link"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3JlbGVhc2VzL3RhZy92Ny42LjA=" title="https://github.com/theme-next/hexo-theme-next/releases/tag/v7.6.0">Detailed changes for NexT v7.6.0<i class="fa fa-external-link"></i></span></p>
+<p>新的高和宽的公式是：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new_height &#x3D; (input_height - filter_height)&#x2F;S + 1</span><br><span class="line">new_width &#x3D; (input_width - filter_width)&#x2F;S + 1</span><br></pre></td></tr></table></figure>
+<p>注意：池化层的输出深度与输入的深度相同。另外池化操作是分别应用到每一个深度切片层。</p>
+<h1 id="1x1-卷积"><a href="#1x1-卷积" class="headerlink" title="1x1 卷积"></a>1x1 卷积</h1><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514151303.png" alt=""></p>
+<p>1x1 卷积关注的不是一块图像，而仅仅是一个像素。传统的卷积基本上是运行在一小块图像上的小分类器，但仅仅是个线性分类器，但如果你在中间加一个 1x1 卷积，你就用运行在一块图像上的神经网络代替了线性分类器。在卷积操作中散布一些 1x1 卷积是一种使模型变得更深的低耗高效的方法，并且会有更多的参数，但未完全改变神经网络结构。</p>
+<h1 id="Inception-模块"><a href="#Inception-模块" class="headerlink" title="Inception 模块"></a>Inception 模块</h1><p>我们在卷积网络的每一层都可以选择进行池化运算、卷积运算，同时需要决定使用 1x1、3x3 还是 5x5 大小的卷积。其实这些对网络的建模能力都是有益的，所以我们可以将它们全部用上。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514152954.png" alt=""></p>
+<p>Inception 模块不局限于单个卷积运算，而是将多个模块组合，例如平均池化后接 1x1 卷积、单独的 1x1 卷积、1x1 卷积接 3x3 卷积、1x1 卷积接 5x5 卷积，最后把这些运算的输出连成一串。根据选择参数的方式，模型中的参数总数可能非常少，但模型的性能比你使用简单卷积时要好。</p>
 
       
     </div>
@@ -308,7 +330,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lsj210001.github.io/2019/11/01/next-7-5-0-released/">
+    <link itemprop="mainEntityOfPage" href="https://lsj210001.github.io/2019/05/05/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E4%BB%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -322,7 +344,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/01/next-7-5-0-released/" class="post-title-link" itemprop="url">NexT 7.5.0 Released</a>
+            <a href="/2019/05/05/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E4%BB%8B/" class="post-title-link" itemprop="url">神经网络简介</a>
         </h2>
 
         <div class="post-meta">
@@ -332,15 +354,26 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-11-01 11:23:23" itemprop="dateCreated datePublished" datetime="2019-11-01T11:23:23Z">2019-11-01</time>
+              <time title="创建时间：2019-05-05 11:31:19" itemprop="dateCreated datePublished" datetime="2019-05-05T11:31:19Z">2019-05-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-20 03:37:58" itemprop="dateModified" datetime="2020-01-20T03:37:58Z">2020-01-20</time>
+                <time title="修改时间：2019-05-07 17:57:19" itemprop="dateModified" datetime="2019-05-07T17:57:19Z">2019-05-07</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Deep-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Deep Learning</span>
+                  </a>
+                </span>
+            </span>
 
           
   
@@ -351,8 +384,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/11/01/next-7-5-0-released/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/11/01/next-7-5-0-released/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/05/05/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E4%BB%8B/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/05/神经网络简介/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -367,26 +400,137 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="⭐-Features"><a href="#⭐-Features" class="headerlink" title="⭐ Features"></a>⭐ Features</h2><ul>
-<li>Extract some features to plugins (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIzMg==" title="https://github.com/theme-next/hexo-theme-next/pull/1232">#1232<i class="fa fa-external-link"></i></span>)</li>
-<li>Migrate to Nunjucks (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIxNQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1215">#1215<i class="fa fa-external-link"></i></span>, <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIxOA==" title="https://github.com/theme-next/hexo-theme-next/pull/1218">#1218<i class="fa fa-external-link"></i></span>, <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIyMA==" title="https://github.com/theme-next/hexo-theme-next/pull/1220">#1220<i class="fa fa-external-link"></i></span>, <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIyNg==" title="https://github.com/theme-next/hexo-theme-next/pull/1226">#1226<i class="fa fa-external-link"></i></span>)</li>
-<li>Delete query strings (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvOTYz" title="https://github.com/theme-next/hexo-theme-next/pull/963">#963<i class="fa fa-external-link"></i></span>)</li>
+          <h1 id="神经网络"><a href="#神经网络" class="headerlink" title="神经网络"></a>神经网络</h1><p>神经网络是机器学习中的一个模型，可以用于两类问题的解答：</p>
+<ul>
+<li>分类：把数据划分成不同的类别</li>
+<li>回归：建立数据间的连续关系</li>
 </ul>
-<h2 id="🛠-Improvements"><a href="#🛠-Improvements" class="headerlink" title="🛠 Improvements"></a>🛠 Improvements</h2><ul>
-<li>Replace lodash with native API (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIzMA==" title="https://github.com/theme-next/hexo-theme-next/pull/1230">#1230<i class="fa fa-external-link"></i></span>)</li>
-<li>Refactor sub-menu (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIxOQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1219">#1219<i class="fa fa-external-link"></i></span>)</li>
-<li>New canonical tag helper (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE0Mw==" title="https://github.com/theme-next/hexo-theme-next/pull/1143">#1143<i class="fa fa-external-link"></i></span>)</li>
-<li>Code style update (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvNzMy" title="https://github.com/theme-next/hexo-theme-next/pull/732">#732<i class="fa fa-external-link"></i></span>)</li>
+<h2 id="神经网络的分类问题"><a href="#神经网络的分类问题" class="headerlink" title="神经网络的分类问题"></a>神经网络的分类问题</h2><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505113856.png" alt="">例如我们是一所高校的招生人员，工作就是接收或拒绝申请的学生，评估方式为考试成绩和在校期间的平时成绩，通过以往的录取情况来预测新学生是否应该被接收。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505114414.png" alt=""></p>
+<p>我们该如何找到这条用于分类的直线呢？</p>
+<h3 id="三维乃至更高维数据的情况"><a href="#三维乃至更高维数据的情况" class="headerlink" title="三维乃至更高维数据的情况"></a>三维乃至更高维数据的情况</h3><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505114931.png" alt=""></p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505115040.png" alt=""></p>
+<p>此时方程表示的是三维空间里的一个平面，或者是 n-1 维的超平面。</p>
+<h1 id="感知器"><a href="#感知器" class="headerlink" title="感知器"></a>感知器</h1><p><strong>感知器</strong>是神经网络的基础构成组件，表示方法通常如下：</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505125428.png" alt=""></p>
+<h2 id="用感知器实现逻辑运算-XOR（“异或”）"><a href="#用感知器实现逻辑运算-XOR（“异或”）" class="headerlink" title="用感知器实现逻辑运算 - XOR（“异或”）"></a>用感知器实现逻辑运算 - XOR（“异或”）</h2><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505142848.png" alt=""></p>
+<p>其中感知器 A 为 AND，C 为 NOT，B 为 OR，通过上面的多层感知器可以计算出 XOR。</p>
+<h2 id="感知器技巧-计算机如何“学习”分类？"><a href="#感知器技巧-计算机如何“学习”分类？" class="headerlink" title="感知器技巧 - 计算机如何“学习”分类？"></a>感知器技巧 - 计算机如何“学习”分类？</h2><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505143745.png" alt=""></p>
+<p>整个数据集中的每一个点都会把分类的结果提供给感知器（分类函数），并调整感知器，例如被误分类的点希望直线更加靠近它们。——这就是计算机在神经网络算法中，找寻最优感知器的原理。</p>
+<h2 id="感知器算法"><a href="#感知器算法" class="headerlink" title="感知器算法"></a>感知器算法</h2><p>感知器步骤如下所示。对于坐标轴为 $(p,q)$ 的点，标签 y，以及等式 $\hat{y} = step(w_1x_1 + w_2x_2 + b)$ 给出的预测（其中 $\alpha$ 为学习率）：</p>
+<ul>
+<li>如果点分类正确，则什么也不做。</li>
+<li>如果点分类为正，但是标签为负，则分别减去 $\alpha p$, $\alpha q$, 和 $\alpha$ 至 $w_1$, $w_2$, 和 $b$。</li>
+<li>如果点分类为负，但是标签为正，则分别将 $\alpha p$, $\alpha q$, 和 $\alpha$ 加到 $w_1$, $w_2$, 和 $b$ 上。</li>
 </ul>
-<h2 id="🐞-Bug-Fixes"><a href="#🐞-Bug-Fixes" class="headerlink" title="🐞 Bug Fixes"></a>🐞 Bug Fixes</h2><ul>
-<li>Fix known issues (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIxMw==" title="https://github.com/theme-next/hexo-theme-next/pull/1213">#1213<i class="fa fa-external-link"></i></span>)</li>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">perceptronStep</span><span class="params">(X, y, W, b, learn_rate = <span class="number">0.01</span>)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(X)):</span><br><span class="line">        y_hat = prediction(X[i], W, b)</span><br><span class="line">        <span class="keyword">if</span> y[i] - y_hat == <span class="number">1</span>:</span><br><span class="line">            W[<span class="number">0</span>] += learn_rate * X[i][<span class="number">0</span>]</span><br><span class="line">            W[<span class="number">1</span>] += learn_rate * X[i][<span class="number">1</span>]</span><br><span class="line">            b += learn_rate</span><br><span class="line">        <span class="keyword">elif</span> y[i] - y_hat == <span class="number">-1</span>:</span><br><span class="line">            W[<span class="number">0</span>] -= learn_rate * X[i][<span class="number">0</span>]</span><br><span class="line">            W[<span class="number">1</span>] -= learn_rate * X[i][<span class="number">1</span>]</span><br><span class="line">            b -= learn_rate</span><br><span class="line">    <span class="keyword">return</span> W, b</span><br></pre></td></tr></table></figure>
+<h1 id="误差函数"><a href="#误差函数" class="headerlink" title="误差函数"></a>误差函数</h1><p>刚刚的感知器算法实现告诉我们，获取正确分类的方式，就是通过每一个错误分类的点，评估错误点位置与我们期望位置之间的差异，来慢慢的修正我们分类函数。</p>
+<p>因为误差暗示了如何进行正确的分类，因此误差的定义就变得尤为重要，这也被称为<strong>误差函数</strong>，误差函数可以告诉我们当前与正确答案之间的差别有多大。</p>
+<h2 id="误差函数与梯度下降"><a href="#误差函数与梯度下降" class="headerlink" title="误差函数与梯度下降"></a>误差函数与梯度下降</h2><p>误差函数提供给我们的预测值与实际值之间的差异，但是这个差异如何指导我们权重的更新呢？我们的目标是找到<strong>最小</strong>的误差函数值来找到与实际值误差最小的预测值。</p>
+<p>假设一维问题是一条直线，那么二维问题就是一个平面，而三维问题就是一个曲面。曲面可以理解为有山峰也有低谷的地面，误差最小的地方就是低谷处，我们希望计算机找到的就是这个低谷的值。为了找到这个低谷，学者们发明了<strong>梯度下降</strong>。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505152716.png" alt=""></p>
+<p>为了进行梯度下降，我们的误差函数不能是离散的，而必须是连续的。误差之巅的高度是连续函数，因为位置上的轻微扰动会导致高度发生变化，实际上误差函数必须是<strong>可微分</strong>的。</p>
+<h2 id="Sigmoid-函数"><a href="#Sigmoid-函数" class="headerlink" title="Sigmoid 函数"></a>Sigmoid 函数</h2><p>对于优化而言，连续型误差函数比离散型函数更好。为此，我们需要从离散型预测变成连续型预测，方法就是使用 Sigmoid 函数取代阶跃函数作为激活函数。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505155839.png" alt=""></p>
+<p>Sigmoid 函数是一个在生物学中常见的 S 型函数，也称为 S 型生长曲线。在信息科学中，由于其单增以及反函数单增等性质，Sigmoid 函数常被用作神经网络的阈值函数，将变量映射到 0,1 之间。</p>
+<p>Sigmoid 函数由下列公式定义：</p>
+<script type="math/tex; mode=display">
+\sigma ( x ) = \frac { 1 } { 1 + e ^ { - x } }</script><p>其对 $x$ 的导数可以用自身表示：</p>
+<script type="math/tex; mode=display">
+\sigma ^ { \prime } ( x ) = \frac { e ^ { - x } } { \left( 1 + e ^ { - x } \right) ^ { 2 } } = \sigma ( x ) ( 1 - \sigma ( x ) )</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sigmoid</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> / (<span class="number">1</span> + np.exp(-x))</span><br></pre></td></tr></table></figure>
+<h2 id="Softmax-函数"><a href="#Softmax-函数" class="headerlink" title="Softmax 函数"></a>Softmax 函数</h2><p>Softmax 函数和 S 型函数是对等的，但是问题具有 3 个或更多个类别。</p>
+<p>Softmax 公式：</p>
+<script type="math/tex; mode=display">
+S _ { i } = \frac { e ^ { i } } { \sum _ { j } e ^ { j } }</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">softmax</span><span class="params">(L)</span>:</span></span><br><span class="line">    expL = np.exp(L)</span><br><span class="line">    <span class="keyword">return</span> np.divide (expL, expL.sum())</span><br></pre></td></tr></table></figure>
+<h2 id="One-hot-Encoding"><a href="#One-hot-Encoding" class="headerlink" title="One-hot Encoding"></a>One-hot Encoding</h2><p>计算机在表示多结果的分类时，使用 One-Hot 编码是比较常见的处理方式。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190505163535.png" alt=""></p>
+<h2 id="最大似然法"><a href="#最大似然法" class="headerlink" title="最大似然法"></a>最大似然法</h2><p>最佳模型更有可能是对于实际在我们身上发生情况所对应的<strong>概率更大的模型</strong>，无论实际情况是被录取还是被拒，该方法叫做<strong>最大似然法（Maximum Likelihood）</strong>。</p>
+<p>我们要做的是选出实际情况对应概率最大的模型，也就是说，通过<strong>最大化概率</strong>，我们可以选出最优的模型。</p>
+<p>最大化概率是否就等价于最小化误差函数？也许的确是这样的。</p>
+<h2 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h2><p>概率和误差函数之间肯定有一定的联系，这种联系叫做<strong>交叉熵</strong>。这个概念在很多领域都非常流行，包括机器学习领域。</p>
+<p>交叉熵具有以下特性：如果有一系列的事件及其对应的发生概率，如果事件发生的可能性大，则交叉熵较小；如果可能性小，那么交叉熵就会很大。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506093541.png" alt=""></p>
+<p>交叉熵公式：</p>
+<script type="math/tex; mode=display">
+CrossEntropy = - \sum _ { i = 1 } ^ { m } y_i \ln (p_i) + ( 1 - y_i ) \ln ( 1 - p_i )</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cross_entropy</span><span class="params">(Y, P)</span>:</span></span><br><span class="line">    Y = np.float_(Y)</span><br><span class="line">    P = np.float_(P)</span><br><span class="line">    <span class="keyword">return</span> -np.sum(Y * np.log(P) + (<span class="number">1</span> - Y) * np.log(<span class="number">1</span> - P))</span><br></pre></td></tr></table></figure>
+<p>多类别交叉熵公式：</p>
+<script type="math/tex; mode=display">
+CrossEntropy = - \sum _ { i = 1 } ^ { n } \sum _ { j = 1 } ^ { m } y _ { i j } \ln \left( p _ { i j } \right)</script><h1 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h1><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506104821.png" alt=""></p>
+<p>上图中的梯度 $\nabla E$ 实际告诉了我们误差函数增长最快的方向，因此，如果沿着该梯度的反方向，将得到误差函数降低最快的方向。</p>
+<script type="math/tex; mode=display">
+y = \sigma ( W x + b ) ← \text{Bad}</script><script type="math/tex; mode=display">
+y = \sigma \left( w _ { 1 } x _ { 1 } + \ldots + w _ { n } x _ { n } + b \right)</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">output_formula</span><span class="params">(features, weights, bias)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sigmoid(np.dot(features, weights) + bias)</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">
+\nabla E = \left( \partial E / \partial w _ { 1 } , \ldots , \partial E / \partial w _ { n } , \partial E / \partial b \right)</script><p>误差函数的梯度就是误差函数相对权重和偏差的偏导数所组成的矢量，我们按照以下方式更新权重和偏差（$\alpha$ 为学习率，可取为 0.1）：</p>
+<script type="math/tex; mode=display">
+w _ { i } ^ { \prime } ← w _ { i } - \alpha \frac {\partial E} {\partial w _ { i }}</script><script type="math/tex; mode=display">
+b ^ { \prime } ← b - \alpha \frac {\partial E} {\partial b}</script><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_weights</span><span class="params">(x, y, weights, bias, learnrate)</span>:</span></span><br><span class="line">    output = output_formula(x, weights, bias)</span><br><span class="line">    d_error = y - output</span><br><span class="line">    weights += learnrate * d_error * x</span><br><span class="line">    bias += learnrate * d_error</span><br><span class="line">    <span class="keyword">return</span> weights, bias</span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">
+y = \sigma \left( W ^ { \prime } x + b ^ { \prime } \right) ← \text{Better}</script><h2 id="梯度计算"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算</h2><p>Sigmoid 函数导数的计算：</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506115945.png" alt=""></p>
+<p>现在，如果有 $m$ 个样本点，标为 $x^{(1)}, x^{(2)}, \ldots, x^{(m)}$, 误差公式是：</p>
+<script type="math/tex; mode=display">
+E = - \frac { 1 } { m } \sum _ { i = 1 } ^ { m } \left( y ^ { ( i ) } \ln \left( \hat{y}^{(i)} \right) + \left( 1 - y ^ { ( i ) } \right) \ln \left( 1 - \hat{y}^{(i)} \right) \right)</script><p>预测是 $\hat{y}^{(i)} = \sigma(Wx^{(i)} + b)$，我们的目标是计算 $E$, 在单个样本点 $x$ 时的梯度（偏导数），其中 $x$ 包含 n 个特征，即$x = \left( x <em> { 1 } , \ldots , x </em> { n } \right)$.</p>
+<script type="math/tex; mode=display">
+\nabla E = \left( \frac { \partial } { \partial w _ { 1 } } E , \cdots , \frac { \partial } { \partial w _ { n } } E , \frac { \partial } { \partial b } E \right)</script><p>为此，首先我们要计算$\frac { \partial } { \partial w _ { j } } \hat { y }$. 而 $\hat { y } = \sigma ( W x + b )$，因此：</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506123529.png" alt=""></p>
+<p>最后一个等式是因为和中的唯一非常量项相对于 $w<em>j$ 正好是 $w_j x_j$, 明显具有导数 $x_j$. 现在可以计算 $\frac { \partial } { \partial w </em> { j } } E$：</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506124100.png" alt=""></p>
+<p>类似的计算将得出：</p>
+<script type="math/tex; mode=display">
+\frac { \partial } { \partial b } E = - \frac { 1 } { m } \sum _ { i = 1 } ^ { m } \left( y _ { i } - \hat { y } _ { i } \right)</script><p>这个实际上告诉了我们很重要的规则。对于具有坐标 $(x_1, \ldots, x_n)$, 的点，标签 $y$, 预测 $\hat{y}$, 该点的误差函数梯度是  $\left(-(y - \hat{y})x_1, \cdots, -(y - \hat{y})x_n, -(y - \hat{y}) \right)$.</p>
+<p>总之 $\nabla E ( W , b ) = - ( y - \hat { y } ) \left( x <em> { 1 } , \ldots , x </em> { n } , 1 \right)$.</p>
+<p>如果思考下，会发现很神奇。<strong>梯度实际上是标量乘以点的坐标！</strong>什么是标量？也就是标签和预测之间的差别。这意味着，如果标签与预测接近（表示点分类正确），该梯度将很小，如果标签与预测差别很大（表示点分类错误），那么此梯度将很大。</p>
+<p>请记下：<strong>小的梯度表示我们将稍微修改下坐标，大的梯度表示我们将大幅度修改坐标。</strong></p>
+<h2 id="感知器和梯度下降的区别"><a href="#感知器和梯度下降的区别" class="headerlink" title="感知器和梯度下降的区别"></a>感知器和梯度下降的区别</h2><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506160811.png" alt=""></p>
+<p>左右几乎是完全相同的，唯一的区别是，在左侧 $\hat{y}$ 可以是 0 到 1 之间的任何值，但是在右侧 $\hat{y}$ 只能是值 0 或 1。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506161953.png" alt=""></p>
+<p>对于分类正确的点感知器算法什么都不会做，但是梯度下降算法会修改权重使得点更加远离直线。</p>
+<h1 id="神经网络结构"><a href="#神经网络结构" class="headerlink" title="神经网络结构"></a>神经网络结构</h1><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506162439.png" alt=""></p>
+<p>为了处理非线性数据，需要创建非线性模型，我们可以把两个线性模型组合成一个非线性模型。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506162731.png" alt=""></p>
+<p>现在的模型是两个之前的模型乘以权重，再加上某个偏差的线性组合。这就是构建神经网络的核心：对现有的线性模型进行线性组合，得到更复杂的新模型。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506163008.png" alt=""></p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506163033.png" alt=""></p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506163051.png" alt=""></p>
+<p>我们可以通过感知器的组合来构建神经网络，其中左侧的权重告诉我们线性模型具有的方程，而右侧的权重告诉我们两个模型的线性组合是多少，以便获得右侧的曲线非线性模型。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506163649.png" alt=""></p>
+<p>每当你看到左侧的神经网络，思考下该神经网络定义的非线性界线是什么。</p>
+<h2 id="多层级"><a href="#多层级" class="headerlink" title="多层级"></a>多层级</h2><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506163918.png" alt=""></p>
+<p>神经网络通常可以划分为输入层、隐藏层和输出层。除此之外我们可以执行以下操作：</p>
+<ul>
+<li>向输入、隐藏和输出层添加更多节点。</li>
+<li>添加更多层级。</li>
 </ul>
-<h2 id="📖-Documentation"><a href="#📖-Documentation" class="headerlink" title="📖 Documentation"></a>📖 Documentation</h2><ul>
-<li>Update Contributors part in README (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIyMg==" title="https://github.com/theme-next/hexo-theme-next/pull/1222">#1222<i class="fa fa-external-link"></i></span>)</li>
+<p>更多隐藏层节点的例子：</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506164131.png" alt=""></p>
+<p>这让我们得到输出层中的三角形边界！</p>
+<p>更多输入层节点的例子：</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506164240.png" alt=""></p>
+<p>通常，如果输入层里有 n 个节点，那么处理的就是 n 维空间的数据。</p>
+<p>更多输出层节点的例子：</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190506165731.png" alt=""></p>
+<p>这只是表明我们有更多的输出，这就是具有多种类别的分类模型。</p>
+<p>更多隐藏层的例子：</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190507012253.png" alt=""></p>
+<p>此时就形成了深度神经网络，现在这些线性模型相结合，形成非线性模型，这些非线性模型进一步再结合，形成更多的非线性模型。通常，我们可以这么操作很多次，形成具有大量隐藏层的复杂模型，这就是神经网络的神奇所在。</p>
+<p>神经网络使用高度非线性化的边界拆分整个 n 维空间。</p>
+<h2 id="前向反馈"><a href="#前向反馈" class="headerlink" title="前向反馈"></a>前向反馈</h2><p>前向反馈是神经网络用来将输入变成输出的流程。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190507104424.png" alt=""></p>
+<p>对于含有两个隐藏层的神经网络来说公式如下：</p>
+<script type="math/tex; mode=display">
+\hat { y } = \sigma \circ W ^ { ( 3 ) } \circ \sigma \circ W ^ { ( 2 ) } \circ \sigma \circ W ^ { ( 1 ) } ( x )</script><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><p>反向传播的流程：</p>
+<ul>
+<li>进行前向反馈运算。</li>
+<li>将模型的输出与期望的输出进行比较。</li>
+<li>计算误差。</li>
+<li>向后运行前向反馈运算（反向传播），将误差分散到每个权重上。</li>
+<li>更新权重，并获得更好的模型。</li>
+<li>继续此流程，直到获得很好的模型。</li>
 </ul>
-<hr>
-<p>For full changes, see the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L2NvbXBhcmUvdjcuNC4yLi4udjcuNS4w" title="https://github.com/theme-next/hexo-theme-next/compare/v7.4.2...v7.5.0">comparison between v7.4.2 and v7.5.0<i class="fa fa-external-link"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3JlbGVhc2VzL3RhZy92Ny41LjA=" title="https://github.com/theme-next/hexo-theme-next/releases/tag/v7.5.0">Detailed changes for NexT v7.5.0<i class="fa fa-external-link"></i></span></p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190507105250.png" alt=""></p>
+<h3 id="链式法则"><a href="#链式法则" class="headerlink" title="链式法则"></a>链式法则</h3><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190507122314.png" alt=""></p>
+<p>简而言之，对复合函数求导，就是一系列导数的乘积。</p>
 
       
     </div>
@@ -406,7 +550,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lsj210001.github.io/2019/10/20/next-7-4-2-released/">
+    <link itemprop="mainEntityOfPage" href="https://lsj210001.github.io/2019/05/05/NoSQL-%E5%92%8C-SQL-%E7%9A%84%E5%8E%86%E5%8F%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/apple-touch-icon-next.png">
@@ -420,7 +564,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/10/20/next-7-4-2-released/" class="post-title-link" itemprop="url">NexT 7.4.2 Released</a>
+            <a href="/2019/05/05/NoSQL-%E5%92%8C-SQL-%E7%9A%84%E5%8E%86%E5%8F%B2/" class="post-title-link" itemprop="url">NoSQL 和 SQL 的历史</a>
         </h2>
 
         <div class="post-meta">
@@ -430,15 +574,26 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2019-10-20 10:15:25" itemprop="dateCreated datePublished" datetime="2019-10-20T10:15:25Z">2019-10-20</time>
+              <time title="创建时间：2019-05-05 10:16:02" itemprop="dateCreated datePublished" datetime="2019-05-05T10:16:02Z">2019-05-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-20 03:37:58" itemprop="dateModified" datetime="2020-01-20T03:37:58Z">2020-01-20</time>
+                <time title="修改时间：2019-05-07 17:57:19" itemprop="dateModified" datetime="2019-05-07T17:57:19Z">2019-05-07</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index">
+                    <span itemprop="name">Database</span>
+                  </a>
+                </span>
+            </span>
 
           
   
@@ -449,8 +604,8 @@
       </span>
       <span class="post-meta-item-text">Disqus：</span>
     
-    <a title="disqus" href="/2019/10/20/next-7-4-2-released/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/20/next-7-4-2-released/" itemprop="commentCount"></span>
+    <a title="disqus" href="/2019/05/05/NoSQL-%E5%92%8C-SQL-%E7%9A%84%E5%8E%86%E5%8F%B2/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/05/05/NoSQL-和-SQL-的历史/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -465,123 +620,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="🌟-New-Features"><a href="#🌟-New-Features" class="headerlink" title="🌟 New Features"></a>🌟 New Features</h2><ul>
-<li>Add Google Analytics Pageview (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE5OA==" title="https://github.com/theme-next/hexo-theme-next/pull/1198">#1198<i class="fa fa-external-link"></i></span>)</li>
-</ul>
-<h2 id="⭐-Features"><a href="#⭐-Features" class="headerlink" title="⭐ Features"></a>⭐ Features</h2><ul>
-<li>Make font-size customized only when <code>theme.font.enable</code> is true (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTA1OA==" title="https://github.com/theme-next/hexo-theme-next/pull/1058">#1058<i class="fa fa-external-link"></i></span>)</li>
-<li>Point to different website based on the scheme (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIwMg==" title="https://github.com/theme-next/hexo-theme-next/pull/1202">#1202<i class="fa fa-external-link"></i></span>)</li>
-<li>New Valine options (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE5Mw==" title="https://github.com/theme-next/hexo-theme-next/pull/1193">#1193<i class="fa fa-external-link"></i></span>)</li>
-<li>Improve the style of site-nav (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE4MA==" title="https://github.com/theme-next/hexo-theme-next/pull/1180">#1180<i class="fa fa-external-link"></i></span>)</li>
-</ul>
-<h2 id="🛠-Improvements"><a href="#🛠-Improvements" class="headerlink" title="🛠 Improvements"></a>🛠 Improvements</h2><ul>
-<li>Code style update (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE5Nw==" title="https://github.com/theme-next/hexo-theme-next/pull/1197">#1197<i class="fa fa-external-link"></i></span>, <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIwNQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1205">#1205<i class="fa fa-external-link"></i></span>)</li>
-<li>Replace id with class name (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTIwOQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1209">#1209<i class="fa fa-external-link"></i></span>)</li>
-<li>Add lang attribute to article tag when specified in front matter (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE5OQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1199">#1199<i class="fa fa-external-link"></i></span>)</li>
-<li>Fix compatibility issues with hexo-util@1.3.0 (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE3NQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1175">#1175<i class="fa fa-external-link"></i></span>)</li>
-<li>Optimize the loading of three.js (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE0MA==" title="https://github.com/theme-next/hexo-theme-next/pull/1140">#1140<i class="fa fa-external-link"></i></span>)</li>
-</ul>
-<h2 id="📖-Documentation"><a href="#📖-Documentation" class="headerlink" title="📖 Documentation"></a>📖 Documentation</h2><ul>
-<li>New README for NexT (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE1NQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1155">#1155<i class="fa fa-external-link"></i></span>)</li>
-</ul>
-<hr>
-<p>For full changes, see the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L2NvbXBhcmUvdjcuNC4xLi4udjcuNC4y" title="https://github.com/theme-next/hexo-theme-next/compare/v7.4.1...v7.4.2">comparison between v7.4.1 and v7.4.2<i class="fa fa-external-link"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3JlbGVhc2VzL3RhZy92Ny40LjI=" title="https://github.com/theme-next/hexo-theme-next/releases/tag/v7.4.2">Detailed changes for NexT v7.4.2<i class="fa fa-external-link"></i></span></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://lsj210001.github.io/2019/10/01/next-7-4-1-released/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/apple-touch-icon-next.png">
-      <meta itemprop="name" content="Morgan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Morgan’s Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/10/01/next-7-4-1-released/" class="post-title-link" itemprop="url">NexT 7.4.1 Released</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-01 05:18:04" itemprop="dateCreated datePublished" datetime="2019-10-01T05:18:04Z">2019-10-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-20 03:37:58" itemprop="dateModified" datetime="2020-01-20T03:37:58Z">2020-01-20</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus：</span>
-    
-    <a title="disqus" href="/2019/10/01/next-7-4-1-released/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/10/01/next-7-4-1-released/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="⭐-Features"><a href="#⭐-Features" class="headerlink" title="⭐ Features"></a>⭐ Features</h2><ul>
-<li>New highlight themes (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE3Nw==" title="https://github.com/theme-next/hexo-theme-next/pull/1177">#1177<i class="fa fa-external-link"></i></span>)</li>
-</ul>
-<h2 id="🛠-Improvements"><a href="#🛠-Improvements" class="headerlink" title="🛠 Improvements"></a>🛠 Improvements</h2><ul>
-<li>Add container for busuanzi counter widget (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE1NA==" title="https://github.com/theme-next/hexo-theme-next/pull/1154">#1154<i class="fa fa-external-link"></i></span>)</li>
-<li>Use nunjucks-compatible syntax &amp; operator (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTA2OA==" title="https://github.com/theme-next/hexo-theme-next/pull/1068">#1068<i class="fa fa-external-link"></i></span>)</li>
-<li>Revert #42, #87 (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvOTc2" title="https://github.com/theme-next/hexo-theme-next/pull/976">#976<i class="fa fa-external-link"></i></span>)</li>
-</ul>
-<h2 id="🐞-Bug-Fixes"><a href="#🐞-Bug-Fixes" class="headerlink" title="🐞 Bug Fixes"></a>🐞 Bug Fixes</h2><ul>
-<li>Fix several style issues (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE5MA==" title="https://github.com/theme-next/hexo-theme-next/pull/1190">#1190<i class="fa fa-external-link"></i></span>)</li>
-<li>Fix Velocity motion issues (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE4NQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1185">#1185<i class="fa fa-external-link"></i></span>)</li>
-<li>Fix fancybox &amp; medium-zoom for hexo asset_img tag (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE2Ng==" title="https://github.com/theme-next/hexo-theme-next/pull/1166">#1166<i class="fa fa-external-link"></i></span>)</li>
-<li>Fix katex uri (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3B1bGwvMTE0OQ==" title="https://github.com/theme-next/hexo-theme-next/pull/1149">#1149<i class="fa fa-external-link"></i></span>)</li>
-</ul>
-<hr>
-<p>For full changes, see the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L2NvbXBhcmUvdjcuNC4wLi4udjcuNC4x" title="https://github.com/theme-next/hexo-theme-next/compare/v7.4.0...v7.4.1">comparison between v7.4.0 and v7.4.1<i class="fa fa-external-link"></i></span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3JlbGVhc2VzL3RhZy92Ny40LjE=" title="https://github.com/theme-next/hexo-theme-next/releases/tag/v7.4.1">Detailed changes for NexT v7.4.1<i class="fa fa-external-link"></i></span></p>
+          <p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/201508281002.jpg" alt=""></p>
+<h1 id="1970：我们没有-SQL"><a href="#1970：我们没有-SQL" class="headerlink" title="1970：我们没有 SQL"></a>1970：我们没有 SQL</h1><p>最初程序员使用结构体或Class表示一辆车子，但是随着需求的增加，需要转换成用动态的&quot;映射&quot;来表示。</p>
+<p>对 Java 程序员来说，映射就是一个 Map<Object, Object>。具体实现可以是 Hash 或者有序树，对应 HashMap 和 TreeMap。</p>
+<h2 id="B-tree：Map-的持久化方式"><a href="#B-tree：Map-的持久化方式" class="headerlink" title="B-tree：Map 的持久化方式"></a>B-tree：Map 的持久化方式</h2><p>为了防止数据丢失，我们需要想办法把这个 Map 对象以非常高效的方式持久化下来，放到磁盘上。而 map.put/get 操作会有一次寻找的过程，这个寻找过程对于磁盘来说会转变为一次随机寻道过程。</p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20181201000011593.png" alt="B-tree"></p>
+<p>上图是一个最简单的 B-tree，原理很简单：既然磁盘寻道时间很多，那就减少它，一次寻道能够从磁盘取更多数据就行了。所以它是以数组为单位存储数据的，数组满了以后 B-tree 会进行分裂，HBase 其实就是棵巨大的、分布式的 B-tree。</p>
+<h2 id="层次数据库"><a href="#层次数据库" class="headerlink" title="层次数据库"></a>层次数据库</h2><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/201508281004.jpg" alt="层次模型"></p>
+<p>层次模型如上图所示，可以用小汽车来表述：一个小车由四扇玻璃，四个轮子，两个反光镜组成。车有自己的属性，轮子有自己的属性，反光镜有自己的属性。</p>
+<p>如果用 Java 代码来写的话，就是 Map 套 Map，每个 Map 有一些固定的属性，比如这个 Map 的名字是什么，这个 Map 的属性是什么, 而这就是我们最开始在使用的数据库了。</p>
+<h1 id="1980：知道-SQL"><a href="#1980：知道-SQL" class="headerlink" title="1980：知道 SQL"></a>1980：知道 SQL</h1><p>虽然关系数据库是上世纪 70 年代发明的，但是直到 80 年代，IBM 发布了第一代全功能的关系数据库系统 System R 后，我们才正式进入到关系数据库模型。</p>
+<p>自从爱因斯坦把牛顿那由完美数学保证的自洽理论踢出了神坛，数学自洽就再也不是真理的标准了，哪个的用户最多哪个就是真理。</p>
+<h2 id="关系模型易用在哪里"><a href="#关系模型易用在哪里" class="headerlink" title="关系模型易用在哪里"></a>关系模型易用在哪里</h2><p>如果我要做这样的一个查询：把厂里生产的所有汽车里面，左轮子供应商是 DRDS 的轮胎都找出来。</p>
+<p>采用层次模型的代码是：</p>
+<p><code>遍历每一辆车，从车对象中找到左面的轮子，查看轮子的属性，如果是 DRDS，留下，不是则丢弃。</code></p>
+<p>采用关系模型的代码是：</p>
+<p><code>select * from 轮子表 where 轮子位置=&#39;左&#39; and 轮子供应商=&#39;DRDS&#39;</code></p>
+<h1 id="2000：No-SQL"><a href="#2000：No-SQL" class="headerlink" title="2000：No SQL!"></a>2000：No SQL!</h1><p>分布式事务性能太差，导致有一群人想要绕开这个问题。他们发现确实有一些场景是不需要强一致事务的，甚至连 SQL 都可以不要。最典型的就是日志流水的记录与分析这类场景。去掉了事务和 SQL，接口简单了，性能就更容易得到提升，扩展性也更容易实现，这就是NoSQL系统的起源。</p>
+<h1 id="2005：-不仅仅是-SQL"><a href="#2005：-不仅仅是-SQL" class="headerlink" title="2005： 不仅仅是 SQL"></a>2005： 不仅仅是 SQL</h1><p>NoSQL 无法颠覆 SQL，双方共存。</p>
+<h1 id="2013：No-SQL"><a href="#2013：No-SQL" class="headerlink" title="2013：No, SQL!"></a>2013：No, SQL!</h1><p>经过了 10 年的折腾，人们还是发现关系模型目前来说是最方便表达数据存取的语言，比其他都要方便的多，所以还是妥协吧。于是所有的 NoSQL 都在想办法尝试支持关系数据库。</p>
+<p>最终大家殊途同归，还是回到了如何能够让关系数据库更具有扩展性，性能更好这条路上来，这就是 NewSQL 的来源。</p>
 
       
     </div>
@@ -600,9 +658,6 @@
   </div>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -669,9 +724,17 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -787,6 +850,54 @@ Website source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodW
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
