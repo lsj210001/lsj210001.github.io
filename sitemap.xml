@@ -30,14 +30,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/math-equations.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/search-services.html</loc>
     
     <lastmod>2020-01-20T03:37:58.239Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/search-services.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/math-equations.html</loc>
     
     <lastmod>2020-01-20T03:37:58.239Z</lastmod>
     
@@ -51,13 +51,6 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/external-libraries.html</loc>
-    
-    <lastmod>2020-01-20T03:37:58.238Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lsj210001.github.io/docs/third-party-services/index.html</loc>
     
     <lastmod>2020-01-20T03:37:58.238Z</lastmod>
@@ -65,7 +58,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/comments.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/external-libraries.html</loc>
+    
+    <lastmod>2020-01-20T03:37:58.238Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lsj210001.github.io/docs/theme-settings/sidebar.html</loc>
     
     <lastmod>2020-01-20T03:37:58.237Z</lastmod>
     
@@ -79,7 +79,7 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/sidebar.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/comments.html</loc>
     
     <lastmod>2020-01-20T03:37:58.237Z</lastmod>
     
@@ -93,14 +93,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/index.html</loc>
+    <loc>https://lsj210001.github.io/docs/theme-settings/seo.html</loc>
     
     <lastmod>2020-01-20T03:37:58.236Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/seo.html</loc>
+    <loc>https://lsj210001.github.io/docs/theme-settings/index.html</loc>
     
     <lastmod>2020-01-20T03:37:58.236Z</lastmod>
     
@@ -128,13 +128,6 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/video.html</loc>
-    
-    <lastmod>2020-01-20T03:37:58.234Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lsj210001.github.io/docs/tag-plugins/tabs.html</loc>
     
     <lastmod>2020-01-20T03:37:58.234Z</lastmod>
@@ -142,7 +135,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/pdf.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/video.html</loc>
+    
+    <lastmod>2020-01-20T03:37:58.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/note.html</loc>
     
     <lastmod>2020-01-20T03:37:58.233Z</lastmod>
     
@@ -163,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/note.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/mermaid.html</loc>
     
     <lastmod>2020-01-20T03:37:58.233Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/mermaid.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/pdf.html</loc>
     
     <lastmod>2020-01-20T03:37:58.233Z</lastmod>
     
@@ -205,20 +205,6 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/getting-started/index.html</loc>
-    
-    <lastmod>2020-01-20T03:37:58.231Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lsj210001.github.io/docs/getting-started/update-from-v5.html</loc>
-    
-    <lastmod>2020-01-20T03:37:58.231Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lsj210001.github.io/docs/getting-started/installation.html</loc>
     
     <lastmod>2020-01-20T03:37:58.231Z</lastmod>
@@ -233,14 +219,28 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/advanced-settings.html</loc>
+    <loc>https://lsj210001.github.io/docs/getting-started/index.html</loc>
+    
+    <lastmod>2020-01-20T03:37:58.231Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lsj210001.github.io/docs/getting-started/update-from-v5.html</loc>
+    
+    <lastmod>2020-01-20T03:37:58.231Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lsj210001.github.io/docs/getting-started/data-files.html</loc>
     
     <lastmod>2020-01-20T03:37:58.230Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/getting-started/data-files.html</loc>
+    <loc>https://lsj210001.github.io/docs/advanced-settings.html</loc>
     
     <lastmod>2020-01-20T03:37:58.230Z</lastmod>
     
