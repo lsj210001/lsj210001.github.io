@@ -47,12 +47,12 @@
   };
 </script>
 
-  <meta name="description" content="TensorFlow 卷积层让我们看下如何在 TensorFlow 里面实现 CNN。 TensorFlow 提供了 tf.nn.conv2d() 和 tf.nn.bias_add() 函数来创建你自己的卷积层。 # Output depthk_output &#x3D; 64# Image Propertiesimage_width &#x3D; 10image_height &#x3D; 10color_channels">
+  <meta name="description" content="TensorFlow 卷积层 让我们看下如何在 TensorFlow 里面实现 CNN。 TensorFlow 提供了 tf.nn.conv2d() 和 tf.nn.bias_add() 函数来创建你自己的卷积层。 # Output depthk_output &#x3D; 64# Image Propertiesimage_width &#x3D; 10image_height &#x3D; 10color_channels">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN in Tensorflow">
 <meta property="og:url" content="https://lsj210001.github.io/2019/05/14/CNN-in-Tensorflow/index.html">
 <meta property="og:site_name" content="Morgan’s Blog">
-<meta property="og:description" content="TensorFlow 卷积层让我们看下如何在 TensorFlow 里面实现 CNN。 TensorFlow 提供了 tf.nn.conv2d() 和 tf.nn.bias_add() 函数来创建你自己的卷积层。 # Output depthk_output &#x3D; 64# Image Propertiesimage_width &#x3D; 10image_height &#x3D; 10color_channels">
+<meta property="og:description" content="TensorFlow 卷积层 让我们看下如何在 TensorFlow 里面实现 CNN。 TensorFlow 提供了 tf.nn.conv2d() 和 tf.nn.bias_add() 函数来创建你自己的卷积层。 # Output depthk_output &#x3D; 64# Image Propertiesimage_width &#x3D; 10image_height &#x3D; 10color_channels">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514143813.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514151303.png">
@@ -279,26 +279,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="TensorFlow-卷积层"><a href="#TensorFlow-卷积层" class="headerlink" title="TensorFlow 卷积层"></a>TensorFlow 卷积层</h1><p>让我们看下如何在 TensorFlow 里面实现 CNN。</p>
+        <h1 id="TensorFlow-卷积层"><a class="header-anchor" href="#TensorFlow-卷积层"></a>TensorFlow 卷积层</h1>
+<p>让我们看下如何在 TensorFlow 里面实现 CNN。</p>
 <p>TensorFlow 提供了 <a href="https://tensorflow.google.cn/api_docs/python/tf/nn/conv2d" target="_blank" rel="noopener"><code>tf.nn.conv2d()</code></a> 和 <a href="https://tensorflow.google.cn/api_docs/python/tf/nn/bias_add" target="_blank" rel="noopener"><code>tf.nn.bias_add()</code></a> 函数来创建你自己的卷积层。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Output depth</span></span><br><span class="line">k_output = <span class="number">64</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Image Properties</span></span><br><span class="line">image_width = <span class="number">10</span></span><br><span class="line">image_height = <span class="number">10</span></span><br><span class="line">color_channels = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Convolution filter</span></span><br><span class="line">filter_size_width = <span class="number">5</span></span><br><span class="line">filter_size_height = <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Input/Image</span></span><br><span class="line">input = tf.placeholder(</span><br><span class="line">    tf.float32,</span><br><span class="line">    shape=[<span class="literal">None</span>, image_height, image_width, color_channels])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Weight and bias</span></span><br><span class="line"><span class="comment"># 由于卷积层的参数个数只和过滤器的尺寸、深度以及当前层节点矩阵的深度有关，所以这里声明的参数变量是一个四维矩阵</span></span><br><span class="line"><span class="comment"># 前面两个维度代表了过滤器的尺寸，第三个维度表示当前层的深度，第四个维度表示过滤器的深度</span></span><br><span class="line">weight = tf.Variable(tf.truncated_normal(</span><br><span class="line">    [filter_size_height, filter_size_width, color_channels, k_output]))</span><br><span class="line">bias = tf.Variable(tf.zeros(k_output))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply Convolution</span></span><br><span class="line"><span class="comment"># 最后一个参数是填充（padding）的方法，TensorFlow 中提供 SAME 或是 VALID 两种选择</span></span><br><span class="line"><span class="comment"># 其中 SAME 表示添加全0填充，VALID 表示不填充</span></span><br><span class="line">conv_layer = tf.nn.conv2d(input, weight, strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line"><span class="comment"># Add bias</span></span><br><span class="line">conv_layer = tf.nn.bias_add(conv_layer, bias)</span><br><span class="line"><span class="comment"># Apply activation function</span></span><br><span class="line">conv_layer = tf.nn.relu(conv_layer)</span><br></pre></td></tr></table></figure>
 <p>上述代码用了  <a href="https://tensorflow.google.cn/api_docs/python/tf/nn/conv2d" target="_blank" rel="noopener"><code>tf.nn.conv2d()</code></a> 函数来计算卷积，<code>weights</code> 作为滤波器，<code>[1, 2, 2, 1]</code> 作为 strides（不同维度的步长）。TensorFlow 对每一个 <code>input</code> 维度使用一个单独的 stride 参数，<code>[batch, input_height, input_width, input_channels]</code>。我们通常把 <code>batch</code> 和 <code>input_channels</code> （<code>strides</code> 序列中的第一个第四个）的 stride 设为 <code>1</code>。</p>
 <p><a href="https://tensorflow.google.cn/api_docs/python/tf/nn/bias_add" target="_blank" rel="noopener"><code>tf.nn.bias_add()</code></a> 函数对矩阵的最后一维加了偏置项。</p>
-<h2 id="卷积机制"><a href="#卷积机制" class="headerlink" title="卷积机制"></a>卷积机制</h2><p>根据输入大小、滤波器大小，来决定输出维度（如下所示）：</p>
+<h2 id="卷积机制"><a class="header-anchor" href="#卷积机制"></a>卷积机制</h2>
+<p>根据输入大小、滤波器大小，来决定输出维度（如下所示）：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new_height &#x3D; (input_height - filter_height + 2 * P)&#x2F;S + 1</span><br><span class="line">new_width &#x3D; (input_width - filter_width + 2 * P)&#x2F;S + 1</span><br></pre></td></tr></table></figure>
-<h1 id="TensorFlow-最大池化"><a href="#TensorFlow-最大池化" class="headerlink" title="TensorFlow 最大池化"></a>TensorFlow 最大池化</h1><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514143813.png" alt=""></p>
+<h1 id="TensorFlow-最大池化"><a class="header-anchor" href="#TensorFlow-最大池化"></a>TensorFlow 最大池化</h1>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514143813.png" alt=""></p>
 <p>这是一个最大池化的例子，<span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQ29udm9sdXRpb25hbF9uZXVyYWxfbmV0d29yayNQb29saW5nX2xheWVy" title="https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer">max pooling<i class="fa fa-external-link"></i></span> 用了 2x2 的滤波器，stride 为 2。</p>
-<p>例如 <code>[[1, 0], [4, 6]]</code> 生成 <code>6</code>，因为 <code>6</code> 是这4个数字中最大的。同理 <code>[[2, 3], [6, 8]]</code> 生成 <code>8</code>。<br> 理论上，最大池化操作的好处是减小输入大小，使得神经网络能够专注于最重要的元素。最大池化只取覆盖区域中的最大值，其它的值都丢弃。</p>
+<p>例如 <code>[[1, 0], [4, 6]]</code> 生成 <code>6</code>，因为 <code>6</code> 是这4个数字中最大的。同理 <code>[[2, 3], [6, 8]]</code> 生成 <code>8</code>。<br>
+理论上，最大池化操作的好处是减小输入大小，使得神经网络能够专注于最重要的元素。最大池化只取覆盖区域中的最大值，其它的值都丢弃。</p>
 <p>TensorFlow 提供了 <a href="https://www.tensorflow.org/api_docs/python/tf/nn/max_pool" target="_blank" rel="noopener"><code>tf.nn.max_pool()</code></a> 函数，用于对卷积层实现 <span class="exturl" data-url="aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQ29udm9sdXRpb25hbF9uZXVyYWxfbmV0d29yayNQb29saW5nX2xheWVy" title="https://en.wikipedia.org/wiki/Convolutional_neural_network#Pooling_layer">最大池化<i class="fa fa-external-link"></i></span> 。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">conv_layer = tf.nn.conv2d(input, weight, strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line">conv_layer = tf.nn.bias_add(conv_layer, bias)</span><br><span class="line">conv_layer = tf.nn.relu(conv_layer)</span><br><span class="line"><span class="comment"># Apply Max Pooling</span></span><br><span class="line">conv_layer = tf.nn.max_pool(</span><br><span class="line">    conv_layer,</span><br><span class="line">    ksize=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">    strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>],</span><br><span class="line">    padding=<span class="string">'SAME'</span>)</span><br></pre></td></tr></table></figure>
 <p><a href="https://www.tensorflow.org/api_docs/python/tf/nn/max_pool" target="_blank" rel="noopener"><code>tf.nn.max_pool()</code></a> 函数实现最大池化时， <code>ksize</code> 参数是滤波器大小，<code>strides</code> 参数是步长。2x2 的滤波器配合 2x2 的步长是常用设定。</p>
 <p><code>ksize</code> 和 <code>strides</code> 参数也被构建为四个元素的列表，每个元素对应 input tensor 的一个维度 (<code>[batch, height, width, channels]</code>)，对 <code>ksize</code> 和 <code>strides</code> 来说，batch 和 channel 通常都设置成 <code>1</code>。</p>
-<h2 id="直观理解池化"><a href="#直观理解池化" class="headerlink" title="直观理解池化"></a>直观理解池化</h2><p>池化层总的来说是用来：</p>
-<ul>
-<li>[ ] 增大输入大小</li>
-<li>[x] 减小输出大小</li>
-<li>[x] 避免过拟合</li>
-<li>[ ] 获取更多信息</li>
+<h2 id="直观理解池化"><a class="header-anchor" href="#直观理解池化"></a>直观理解池化</h2>
+<p>池化层总的来说是用来：</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_0" disabled="true"><label for="cbx_0"> 增大输入大小</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_1" checked="true" disabled="true"><label for="cbx_1"> 减小输出大小</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_2" checked="true" disabled="true"><label for="cbx_2"> 避免过拟合</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_3" disabled="true"><label for="cbx_3"> 获取更多信息</label></li>
 </ul>
 <p>降低过拟合是减小输出大小的结果，它同样也减少了后续层中的参数的数量。</p>
 <p>近期，池化层并不是很受青睐。部分原因是：</p>
@@ -307,7 +312,8 @@
 <li>Dropout 是一个更好的正则化方法。</li>
 <li>池化导致信息损失。想想最大池化的例子，<em>n</em> 个数字中我们只保留最大的，把余下的 <em>n-1</em> 完全舍弃了。</li>
 </ul>
-<h2 id="池化机制"><a href="#池化机制" class="headerlink" title="池化机制"></a>池化机制</h2><p><strong>设置</strong> H = height, W = width, D = depth</p>
+<h2 id="池化机制"><a class="header-anchor" href="#池化机制"></a>池化机制</h2>
+<p><strong>设置</strong> H = height, W = width, D = depth</p>
 <ul>
 <li>输入维度是 4x4x5 (HxWxD)</li>
 <li>滤波器大小 2x2 (HxW)</li>
@@ -316,9 +322,11 @@
 <p>新的高和宽的公式是：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">new_height &#x3D; (input_height - filter_height)&#x2F;S + 1</span><br><span class="line">new_width &#x3D; (input_width - filter_width)&#x2F;S + 1</span><br></pre></td></tr></table></figure>
 <p>注意：池化层的输出深度与输入的深度相同。另外池化操作是分别应用到每一个深度切片层。</p>
-<h1 id="1x1-卷积"><a href="#1x1-卷积" class="headerlink" title="1x1 卷积"></a>1x1 卷积</h1><p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514151303.png" alt=""></p>
+<h1 id="1x1-卷积"><a class="header-anchor" href="#1x1-卷积"></a>1x1 卷积</h1>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514151303.png" alt=""></p>
 <p>1x1 卷积关注的不是一块图像，而仅仅是一个像素。传统的卷积基本上是运行在一小块图像上的小分类器，但仅仅是个线性分类器，但如果你在中间加一个 1x1 卷积，你就用运行在一块图像上的神经网络代替了线性分类器。在卷积操作中散布一些 1x1 卷积是一种使模型变得更深的低耗高效的方法，并且会有更多的参数，但未完全改变神经网络结构。</p>
-<h1 id="Inception-模块"><a href="#Inception-模块" class="headerlink" title="Inception 模块"></a>Inception 模块</h1><p>我们在卷积网络的每一层都可以选择进行池化运算、卷积运算，同时需要决定使用 1x1、3x3 还是 5x5 大小的卷积。其实这些对网络的建模能力都是有益的，所以我们可以将它们全部用上。</p>
+<h1 id="Inception-模块"><a class="header-anchor" href="#Inception-模块"></a>Inception 模块</h1>
+<p>我们在卷积网络的每一层都可以选择进行池化运算、卷积运算，同时需要决定使用 1x1、3x3 还是 5x5 大小的卷积。其实这些对网络的建模能力都是有益的，所以我们可以将它们全部用上。</p>
 <p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20190514152954.png" alt=""></p>
 <p>Inception 模块不局限于单个卷积运算，而是将多个模块组合，例如平均池化后接 1x1 卷积、单独的 1x1 卷积、1x1 卷积接 3x3 卷积、1x1 卷积接 5x5 卷积，最后把这些运算的输出连成一串。根据选择参数的方式，模型中的参数总数可能非常少，但模型的性能比你使用简单卷积时要好。</p>
 
