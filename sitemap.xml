@@ -65,13 +65,6 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/post-widgets.html</loc>
-    
-    <lastmod>2020-01-20T03:37:58.239Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lsj210001.github.io/docs/third-party-services/math-equations.html</loc>
     
     <lastmod>2020-01-20T03:37:58.239Z</lastmod>
@@ -86,9 +79,9 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/index.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/post-widgets.html</loc>
     
-    <lastmod>2020-01-20T03:37:58.238Z</lastmod>
+    <lastmod>2020-01-20T03:37:58.239Z</lastmod>
     
   </url>
   
@@ -100,14 +93,21 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/comments.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/index.html</loc>
+    
+    <lastmod>2020-01-20T03:37:58.238Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lsj210001.github.io/docs/theme-settings/sidebar.html</loc>
     
     <lastmod>2020-01-20T03:37:58.237Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/sidebar.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/comments.html</loc>
     
     <lastmod>2020-01-20T03:37:58.237Z</lastmod>
     
@@ -149,14 +149,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/custom-pages.html</loc>
+    <loc>https://lsj210001.github.io/docs/theme-settings/front-matter.html</loc>
     
     <lastmod>2020-01-20T03:37:58.235Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/front-matter.html</loc>
+    <loc>https://lsj210001.github.io/docs/theme-settings/custom-pages.html</loc>
     
     <lastmod>2020-01-20T03:37:58.235Z</lastmod>
     
@@ -191,14 +191,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/index.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/mermaid.html</loc>
     
     <lastmod>2020-01-20T03:37:58.233Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/mermaid.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/index.html</loc>
     
     <lastmod>2020-01-20T03:37:58.233Z</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/caniuse.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/button.html</loc>
     
     <lastmod>2020-01-20T03:37:58.232Z</lastmod>
     
@@ -226,7 +226,7 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/button.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/caniuse.html</loc>
     
     <lastmod>2020-01-20T03:37:58.232Z</lastmod>
     
@@ -236,6 +236,13 @@
     <loc>https://lsj210001.github.io/docs/index.html</loc>
     
     <lastmod>2020-01-20T03:37:58.232Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lsj210001.github.io/docs/getting-started/deployment.html</loc>
+    
+    <lastmod>2020-01-20T03:37:58.231Z</lastmod>
     
   </url>
   
@@ -255,13 +262,6 @@
   
   <url>
     <loc>https://lsj210001.github.io/docs/getting-started/index.html</loc>
-    
-    <lastmod>2020-01-20T03:37:58.231Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lsj210001.github.io/docs/getting-started/deployment.html</loc>
     
     <lastmod>2020-01-20T03:37:58.231Z</lastmod>
     
