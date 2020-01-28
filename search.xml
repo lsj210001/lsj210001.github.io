@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>图的概述（笔记）</title>
-    <url>/2020/01/29/%E5%9B%BE%E7%9A%84%E6%A6%82%E8%BF%B0%EF%BC%88%E7%AC%94%E8%AE%B0%EF%BC%89/</url>
+    <url>/lsj210001/2020/01/29/%E5%9B%BE%E7%9A%84%E6%A6%82%E8%BF%B0%EF%BC%88%E7%AC%94%E8%AE%B0%EF%BC%89/</url>
     <content><![CDATA[<blockquote>
 <p>本文为<span class="exturl" data-url="aHR0cHM6Ly9pdGVtLmpkLmNvbS8xMjYxNTA2NS5odG1s" title="https://item.jd.com/12615065.html">《深入浅出图神经网络：GNN原理解析》<i class="fa fa-external-link"></i></span>第一章的笔记</p>
 </blockquote>
@@ -189,7 +189,7 @@ B _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } v _ { i } \text { 与
   </entry>
   <entry>
     <title>学习数据挖掘的最佳路径是什么（笔记）</title>
-    <url>/2020/01/23/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9A%84%E6%9C%80%E4%BD%B3%E8%B7%AF%E5%BE%84%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%88%E7%AC%94%E8%AE%B0%EF%BC%89/</url>
+    <url>/lsj210001/2020/01/23/%E5%AD%A6%E4%B9%A0%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9A%84%E6%9C%80%E4%BD%B3%E8%B7%AF%E5%BE%84%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%88%E7%AC%94%E8%AE%B0%EF%BC%89/</url>
     <content><![CDATA[<h1 id="数据挖掘知识清单">数据挖掘知识清单</h1>
 <p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200122202555.jpg" /></p>
 <h2 id="数据挖掘的基本流程">数据挖掘的基本流程</h2>
@@ -350,7 +350,7 @@ B _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } v _ { i } \text { 与
   </entry>
   <entry>
     <title>数据分析全景图及修炼指南（笔记）</title>
-    <url>/2020/01/21/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%85%A8%E6%99%AF%E5%9B%BE%E5%8F%8A%E4%BF%AE%E7%82%BC%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%94%E8%AE%B0%EF%BC%89/</url>
+    <url>/lsj210001/2020/01/21/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E5%85%A8%E6%99%AF%E5%9B%BE%E5%8F%8A%E4%BF%AE%E7%82%BC%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%94%E8%AE%B0%EF%BC%89/</url>
     <content><![CDATA[<h1 id="高效学习方法-mas">高效学习方法 MAS</h1>
 <ul>
 <li>Multi-Dimension：从多个角度去认识一个事物</li>
@@ -522,7 +522,7 @@ B _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } v _ { i } \text { 与
   </entry>
   <entry>
     <title>CNN in Tensorflow</title>
-    <url>/2019/05/14/CNN-in-Tensorflow/</url>
+    <url>/lsj210001/2019/05/14/CNN-in-Tensorflow/</url>
     <content><![CDATA[<h1 id="tensorflow-卷积层">TensorFlow 卷积层</h1>
 <p>让我们看下如何在 TensorFlow 里面实现 CNN。</p>
 <p>TensorFlow 提供了 <a href="https://tensorflow.google.cn/api_docs/python/tf/nn/conv2d" target="_blank" rel="noopener"><code>tf.nn.conv2d()</code></a> 和 <a href="https://tensorflow.google.cn/api_docs/python/tf/nn/bias_add" target="_blank" rel="noopener"><code>tf.nn.bias_add()</code></a> 函数来创建你自己的卷积层。</p>
@@ -586,7 +586,7 @@ B _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } v _ { i } \text { 与
   </entry>
   <entry>
     <title>神经网络简介</title>
-    <url>/2019/05/05/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E4%BB%8B/</url>
+    <url>/lsj210001/2019/05/05/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%AE%80%E4%BB%8B/</url>
     <content><![CDATA[<h1 id="神经网络">神经网络</h1>
 <p>神经网络是机器学习中的一个模型，可以用于两类问题的解答：</p>
 <ul>
@@ -768,7 +768,7 @@ E = - \frac { 1 } { m } \sum _ { i = 1 } ^ { m } \left( y ^ { ( i ) } \ln \left(
   </entry>
   <entry>
     <title>NoSQL 和 SQL 的历史</title>
-    <url>/2019/05/05/NoSQL-%E5%92%8C-SQL-%E7%9A%84%E5%8E%86%E5%8F%B2/</url>
+    <url>/lsj210001/2019/05/05/NoSQL-%E5%92%8C-SQL-%E7%9A%84%E5%8E%86%E5%8F%B2/</url>
     <content><![CDATA[<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/201508281002.jpg" /></p>
 <h1 id="我们没有-sql">1970：我们没有 SQL</h1>
 <p>最初程序员使用结构体或Class表示一辆车子，但是随着需求的增加，需要转换成用动态的&quot;映射&quot;来表示。</p>
