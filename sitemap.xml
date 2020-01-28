@@ -4,7 +4,7 @@
   <url>
     <loc>https://lsj210001.github.io/2020/01/29/%E5%9B%BE%E7%9A%84%E6%A6%82%E8%BF%B0%EF%BC%88%E7%AC%94%E8%AE%B0%EF%BC%89/</loc>
     
-    <lastmod>2020-01-28T18:29:11.006Z</lastmod>
+    <lastmod>2020-01-28T18:31:15.471Z</lastmod>
     
   </url>
   
@@ -58,7 +58,7 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/post-widgets.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/search-services.html</loc>
     
     <lastmod>2020-01-20T03:37:58.239Z</lastmod>
     
@@ -72,7 +72,7 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/third-party-services/search-services.html</loc>
+    <loc>https://lsj210001.github.io/docs/third-party-services/post-widgets.html</loc>
     
     <lastmod>2020-01-20T03:37:58.239Z</lastmod>
     
@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/index.html</loc>
+    <loc>https://lsj210001.github.io/docs/theme-settings/posts.html</loc>
     
     <lastmod>2020-01-20T03:37:58.236Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/posts.html</loc>
+    <loc>https://lsj210001.github.io/docs/theme-settings/index.html</loc>
     
     <lastmod>2020-01-20T03:37:58.236Z</lastmod>
     
@@ -135,14 +135,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/front-matter.html</loc>
+    <loc>https://lsj210001.github.io/docs/theme-settings/custom-pages.html</loc>
     
     <lastmod>2020-01-20T03:37:58.235Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/theme-settings/custom-pages.html</loc>
+    <loc>https://lsj210001.github.io/docs/theme-settings/front-matter.html</loc>
     
     <lastmod>2020-01-20T03:37:58.235Z</lastmod>
     
@@ -170,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/note.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/index.html</loc>
     
     <lastmod>2020-01-20T03:37:58.233Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/index.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/note.html</loc>
     
     <lastmod>2020-01-20T03:37:58.233Z</lastmod>
     
@@ -205,14 +205,14 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/group-pictures.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/button.html</loc>
     
     <lastmod>2020-01-20T03:37:58.232Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/tag-plugins/button.html</loc>
+    <loc>https://lsj210001.github.io/docs/tag-plugins/group-pictures.html</loc>
     
     <lastmod>2020-01-20T03:37:58.232Z</lastmod>
     
@@ -233,14 +233,7 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/getting-started/deployment.html</loc>
-    
-    <lastmod>2020-01-20T03:37:58.231Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lsj210001.github.io/docs/getting-started/update-from-v5.html</loc>
+    <loc>https://lsj210001.github.io/docs/getting-started/index.html</loc>
     
     <lastmod>2020-01-20T03:37:58.231Z</lastmod>
     
@@ -254,21 +247,28 @@
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/getting-started/index.html</loc>
+    <loc>https://lsj210001.github.io/docs/getting-started/update-from-v5.html</loc>
     
     <lastmod>2020-01-20T03:37:58.231Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/advanced-settings.html</loc>
+    <loc>https://lsj210001.github.io/docs/getting-started/deployment.html</loc>
+    
+    <lastmod>2020-01-20T03:37:58.231Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lsj210001.github.io/docs/getting-started/data-files.html</loc>
     
     <lastmod>2020-01-20T03:37:58.230Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lsj210001.github.io/docs/getting-started/data-files.html</loc>
+    <loc>https://lsj210001.github.io/docs/advanced-settings.html</loc>
     
     <lastmod>2020-01-20T03:37:58.230Z</lastmod>
     
