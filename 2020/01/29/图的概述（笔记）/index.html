@@ -47,12 +47,12 @@
   };
 </script>
 
-  <meta name="description" content="本文为《深入浅出图神经网络：GNN原理解析》第一章的笔记  图的概述 图（Graph）是一个具有广泛含义的对象：  在数学中，图是图论的主要研究对象； 在计算机工程领域，图是一种常见的数据结构； 在数据科学中，图被用来广泛描述各类关系型数据。  通常，图被用来表示物体与物体之间的关系，例如：  化学分子 通信网络 社交网络  事实上，任何一个包含二元关系的系统都可以用图来描述。 图的基本定义 图">
+  <meta name="description" content="本文为《深入浅出图神经网络：GNN原理解析》第一章的笔记  图的概述图（Graph）是一个具有广泛含义的对象：  在数学中，图是图论的主要研究对象； 在计算机工程领域，图是一种常见的数据结构； 在数据科学中，图被用来广泛描述各类关系型数据。  通常，图被用来表示物体与物体之间的关系，例如：  化学分子 通信网络 社交网络  事实上，任何一个包含二元关系的系统都可以用图来描述。 图的基本定义图可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图的概述（笔记）">
 <meta property="og:url" content="http://dtbllsj.coding.me/lsj210001/2020/01/29/%E5%9B%BE%E7%9A%84%E6%A6%82%E8%BF%B0%EF%BC%88%E7%AC%94%E8%AE%B0%EF%BC%89/index.html">
 <meta property="og:site_name" content="Morgan’s Blog">
-<meta property="og:description" content="本文为《深入浅出图神经网络：GNN原理解析》第一章的笔记  图的概述 图（Graph）是一个具有广泛含义的对象：  在数学中，图是图论的主要研究对象； 在计算机工程领域，图是一种常见的数据结构； 在数据科学中，图被用来广泛描述各类关系型数据。  通常，图被用来表示物体与物体之间的关系，例如：  化学分子 通信网络 社交网络  事实上，任何一个包含二元关系的系统都可以用图来描述。 图的基本定义 图">
+<meta property="og:description" content="本文为《深入浅出图神经网络：GNN原理解析》第一章的笔记  图的概述图（Graph）是一个具有广泛含义的对象：  在数学中，图是图论的主要研究对象； 在计算机工程领域，图是一种常见的数据结构； 在数据科学中，图被用来广泛描述各类关系型数据。  通常，图被用来表示物体与物体之间的关系，例如：  化学分子 通信网络 社交网络  事实上，任何一个包含二元关系的系统都可以用图来描述。 图的基本定义图可以">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200126234551.png">
 <meta property="og:image" content="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127000108.png">
@@ -67,7 +67,7 @@
 <meta property="og:image" content="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128172817.png">
 <meta property="og:image" content="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128220741.png">
 <meta property="article:published_time" content="2020-01-29T02:02:20.000Z">
-<meta property="article:modified_time" content="2020-01-28T19:35:26.810Z">
+<meta property="article:modified_time" content="2020-01-28T19:55:09.938Z">
 <meta property="article:author" content="Morgan">
 <meta property="article:tag" content="图论">
 <meta property="article:tag" content="Algorithm">
@@ -271,7 +271,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-28 19:35:26" itemprop="dateModified" datetime="2020-01-28T19:35:26Z">2020-01-28</time>
+                <time title="修改时间：2020-01-28 19:55:09" itemprop="dateModified" datetime="2020-01-28T19:55:09Z">2020-01-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -305,7 +305,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8k</span>
+              <span>7.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -327,8 +327,7 @@
         <blockquote>
 <p>本文为<span class="exturl" data-url="aHR0cHM6Ly9pdGVtLmpkLmNvbS8xMjYxNTA2NS5odG1s" title="https://item.jd.com/12615065.html">《深入浅出图神经网络：GNN原理解析》<i class="fa fa-external-link"></i></span>第一章的笔记</p>
 </blockquote>
-<h1 id="图的概述">图的概述</h1>
-<p><strong>图</strong>（Graph）是一个具有广泛含义的对象：</p>
+<h1 id="图的概述"><a href="#图的概述" class="headerlink" title="图的概述"></a>图的概述</h1><p><strong>图</strong>（Graph）是一个具有广泛含义的对象：</p>
 <ul>
 <li>在数学中，图是图论的主要研究对象；</li>
 <li>在计算机工程领域，图是一种常见的数据结构；</li>
@@ -341,164 +340,108 @@
 <li>社交网络</li>
 </ul>
 <p>事实上，任何一个包含<strong>二元关系</strong>的系统都可以用图来描述。</p>
-<h1 id="图的基本定义">图的基本定义</h1>
-<p>图可以表示为<strong>顶点</strong>（Vertex）和连接顶点的<strong>边</strong>（Edge）的集合，记为 <span class="math inline">\(G = ( V ,\space E )\)</span>，其中 <span class="math inline">\(V\)</span> 是顶点集合，<span class="math inline">\(E\)</span> 是边集合。</p>
-<p>我们可设图 <span class="math inline">\(G\)</span> 的顶点数为 <span class="math inline">\(N\)</span>，边数为 <span class="math inline">\(M\)</span>，一条连接顶点 <span class="math inline">\(v _ { i } , \space v _ { j } \in V\)</span> 的边记为 <span class="math inline">\(\left( v _ { i } , \space v _ { j } \right)\)</span> 或者 <span class="math inline">\(e _ { i j }\)</span>。</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200126234551.png" /></p>
-<h2 id="图的基本类型">图的基本类型</h2>
-<h3 id="有向图和无向图">有向图和无向图</h3>
-<p>如果图中的边存在方向性，则称这样的边为有向边 <span class="math inline">\(e _ { ij } = &lt; v _ { i } , \space v _ { j } &gt;\)</span>，其中 <span class="math inline">\(v _ { i }\)</span> 是这条有向边的起点，<span class="math inline">\(v _ { j }\)</span> 是这条有向边的终点，包含有向边的图称为有向图。</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127000108.png" /></p>
-<p>与有向图相对应的是无向图，无向图中的边都是无向边，我们可以认为无向边是对称的，同时包含两个方向：<span class="math inline">\(e _ { ij } = &lt; v _ { i } , \space v _ { j } &gt; = &lt; v _ { j } , \space v _ { i } &gt; = e _ { ji }\)</span>。</p>
-<h3 id="非加权图与加权图">非加权图与加权图</h3>
-<p>如果图里的每条边都有一个实数与之对应，我们称这样的图为加权图，该实数称为对应边上的权重。</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127110459.png" /></p>
+<h1 id="图的基本定义"><a href="#图的基本定义" class="headerlink" title="图的基本定义"></a>图的基本定义</h1><p>图可以表示为<strong>顶点</strong>（Vertex）和连接顶点的<strong>边</strong>（Edge）的集合，记为 $G = ( V ,\space E )$，其中 $V$ 是顶点集合，$E$ 是边集合。</p>
+<p>我们可设图 $G$ 的顶点数为 $N$，边数为 $M$，一条连接顶点 $v <em> { i } , \space  v </em> { j } \in V$ 的边记为 $\left( v  <em> { i } , \space v </em> { j } \right)$ 或者 $e _ { i j }$。</p>
+<p> <img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200126234551.png" alt=""></p>
+<h2 id="图的基本类型"><a href="#图的基本类型" class="headerlink" title="图的基本类型"></a>图的基本类型</h2><h3 id="有向图和无向图"><a href="#有向图和无向图" class="headerlink" title="有向图和无向图"></a>有向图和无向图</h3><p>如果图中的边存在方向性，则称这样的边为有向边 $e <em> { ij } = &lt;  v  </em> { i } , \space v <em> { j } &gt;$，其中 $v </em> { i }$ 是这条有向边的起点，$v _ { j }$ 是这条有向边的终点，包含有向边的图称为有向图。</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127000108.png" alt=""></p>
+<p>与有向图相对应的是无向图，无向图中的边都是无向边，我们可以认为无向边是对称的，同时包含两个方向：$e <em> { ij } = &lt; v </em> { i } , \space v <em> { j } &gt; = &lt; v </em> { j } , \space v <em> { i } &gt; = e </em> { ji }$。</p>
+<h3 id="非加权图与加权图"><a href="#非加权图与加权图" class="headerlink" title="非加权图与加权图"></a>非加权图与加权图</h3><p>如果图里的每条边都有一个实数与之对应，我们称这样的图为加权图，该实数称为对应边上的权重。</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127110459.png" alt=""></p>
 <p>在实际场景中，权重可以代表两地之间的路程或运输成本。一般情况下，我们习惯把权重抽象成两个顶点之间的<strong>连接强度</strong>。与之相反的是非加权图，我们可以认为非加权图各边上的权重是一样的。</p>
-<h3 id="连通图与非连通图">连通图与非连通图</h3>
-<p>如果图中存在<strong>孤立的顶点</strong>，没有任何边与之相连，这样的图被称为非连通图。（下图中应该有一个孤立顶点 <span class="math inline">\(v _ { 5 }\)</span> 没有绘制出来）</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127111035.png" /></p>
+<h3 id="连通图与非连通图"><a href="#连通图与非连通图" class="headerlink" title="连通图与非连通图"></a>连通图与非连通图</h3><p>如果图中存在<strong>孤立的顶点</strong>，没有任何边与之相连，这样的图被称为非连通图。（下图中应该有一个孤立顶点 $v _ { 5 }$ 没有绘制出来）</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127111035.png" alt=""></p>
 <p>图中不存在孤立顶点的图称为连通图。</p>
-<h3 id="二部图">二部图</h3>
-<p>二部图是一类特殊的图。我们将 <span class="math inline">\(G\)</span> 中的顶点集合 <span class="math inline">\(V\)</span> 拆分成两个子集 <span class="math inline">\(A\)</span> 和 <span class="math inline">\(B\)</span>，如果对于图中的任意一条边 <span class="math inline">\(e _ { i j }\)</span> 均有 <span class="math inline">\(v _ { i } \in A , \space v _ { j } \in B\)</span> 或者 <span class="math inline">\(v _ { i } \in B , \space v _ { j } \in A\)</span>，则称图 <span class="math inline">\(G\)</span> 为二部图。</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127115718.png" /></p>
+<h3 id="二部图"><a href="#二部图" class="headerlink" title="二部图"></a>二部图</h3><p>二部图是一类特殊的图。我们将 $G$ 中的顶点集合 $V$ 拆分成两个子集 $A$ 和 $B$，如果对于图中的任意一条边 $e <em> { i j }$ 均有 $v </em> { i } \in A , \space v <em> { j } \in B$ 或者 $v </em> { i } \in B , \space v _ { j } \in A$，则称图 $G$ 为二部图。</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200127115718.png" alt=""></p>
 <p>二部图是一种十分常见的图数据对象，描述了两类对象之间的交互关系，比如：用户与商品、作者与论文。</p>
-<h3 id="稀疏图和稠密图"><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXB1Yml0LmNvbS9ib29rRGV0YWlscz9pZD1VQjZjYjQ1MDI0ZjhmMTE=" title="https://www.epubit.com/bookDetails?id=UB6cb45024f8f11">稀疏图和稠密图<i class="fa fa-external-link"></i></span></h3>
-<p>通俗地说，如果边的数量接近于与顶点的数量呈线性关系，那么这个图就是稀疏图；如果边的数量接近于与顶点的数量呈平方关系，那么这个图就是稠密图。</p>
-<h2 id="邻居和度">邻居和度</h2>
-<h3 id="邻居">邻居</h3>
-<p>如果存在一条边连接顶点 <span class="math inline">\(v _ { i }\)</span> 和 <span class="math inline">\(v _ { j }\)</span>，则称 <span class="math inline">\(v _ { \mathrm { j } }\)</span> 是 <span class="math inline">\(v _ { \mathrm { i } }\)</span> 的<strong>邻居</strong>，反之亦然。我们记 <span class="math inline">\(v _ { \mathrm { i } }\)</span> 的所有邻居为集合 <span class="math inline">\(N \left( v _ { i } \right)\)</span>，即</p>
-<p><span class="math display">\[
-N \left( v _ { i } \right) = \left\{ v _ { j } | \exists e _ { i j } \in E \text { or } e _ { j i } \in E \right\}
-\]</span></p>
-<h3 id="度">度</h3>
-<p>以 <span class="math inline">\(v _ { \mathrm { i } }\)</span> 为端点的边的数目成为 <span class="math inline">\(v _ { \mathrm { i } }\)</span> 的<strong>度</strong>（Degree），记为<span class="math inline">\(\operatorname { deg } \left( v _ { \mathrm {i}} \right)\)</span> ： <span class="math display">\[
-\operatorname { deg } \left( v _ { i } \right) = \left| N \left( v _ { i } \right) \right|
-\]</span> 在图中，所有节点的度之和与边数存在如下关系： <span class="math display">\[
-\sum _ { v _ { i } } \operatorname { deg } \left( v _ { i } \right) = 2 | E |
-\]</span></p>
-<h3 id="出度和入度">出度和入度</h3>
-<p>在有向图中还需要区分出度（Outdegree）和入度（Indegree），顶点的度数等于该顶点的出度与入度之和。</p>
-<p>其中顶点 <span class="math inline">\(v _ { i }\)</span> 的出度是以 <span class="math inline">\(v _ { i }\)</span> 为起点的有向边的数目，顶点 <span class="math inline">\(v _ { i }\)</span> 的入度是以 <span class="math inline">\(v _ { i }\)</span> 为终点的有向边的数目。</p>
-<h2 id="子图与路径">子图与路径</h2>
-<h3 id="子图">子图</h3>
-<p>若图 <span class="math inline">\(G&#39; = ( V&#39;,\space E&#39; )\)</span> 的顶点集和边集分别是另一个图 <span class="math inline">\(G = ( V ,\space E )\)</span> 的顶点集的子集和边集的子集，即 <span class="math inline">\(V&#39; \subseteq V\)</span>，且 <span class="math inline">\(E&#39; \subseteq E\)</span>，则称图 <span class="math inline">\(G&#39;\)</span> 是图 <span class="math inline">\(G\)</span> 的<strong>子图</strong>（Subgraph）。</p>
-<h3 id="路径">路径</h3>
-<p>在图 <span class="math inline">\(G = ( V,\space E )\)</span> 中，若从顶点 <span class="math inline">\(v _ { i }\)</span> 出发，沿着一些边经过一些顶点 <span class="math inline">\(v _ { p 1 } , v _ { p 2 } , \cdots , v _ { p m }\)</span>，到达顶点 <span class="math inline">\(v _ { j }\)</span>，则称边序列 <span class="math inline">\(P _ { i j } = \left( e _ { i p _ { 1 } } , e _ { p _ { 2 } p _ { 3 } } , \cdots , e _ { p _ { m } j } \right)\)</span> 为从顶点 <span class="math inline">\(v _ { i }\)</span> 到顶点 <span class="math inline">\(v _ { j }\)</span> 的一条路径（Path，也可称为通路），其中 <span class="math inline">\(e _ { i p _ { 1 } } , e _ { p _ { 2 } p _ { 3 } } , \cdots , e _ { p _ { m } j }\)</span> 为图 <span class="math inline">\(G\)</span> 中的边。</p>
-<h4 id="路径的长度">路径的长度</h4>
-<p>路径中边的数目通常称为路径的长度 $ L ( P _ { ij } ) = | P _ { ij } |$。</p>
-<h4 id="顶点的距离">顶点的距离</h4>
-<p>若存在至少一条路径由顶点 <span class="math inline">\(v _ { i }\)</span> 到达顶点 <span class="math inline">\(v _ { j }\)</span>，则定义 <span class="math inline">\(v _ { i }\)</span> 到 <span class="math inline">\(v _ { j }\)</span> 的距离为： <span class="math display">\[
-d \left( v _ { i } , v _ { j } \right) = \min \left( \left| P _ { i j } \right| \right)
-\]</span> 即两个顶点之间的距离由它们的最短路径的长度决定。</p>
-<p>我们设 <span class="math inline">\(d \left( v _ { i } , v _ { i } \right) = 0\)</span>，即<strong>节点到自身的距离为 0</strong>。</p>
-<h4 id="k-阶邻居">k 阶邻居</h4>
-<p>若 <span class="math inline">\(d\left( v _ { \text {i } } , v _ { j } \right) = k\)</span>，我们称 <span class="math inline">\(v _ { j }\)</span> 为 <span class="math inline">\(v _ { i }\)</span> 的 <strong>k 阶邻居</strong>。</p>
-<h4 id="k-阶子图">k 阶子图</h4>
-<p>我们称一个顶点 <span class="math inline">\(v _ { i }\)</span> 的 k 阶子图（k-subgraph）为： <span class="math display">\[
-G _ { v _ { i } } ^ { ( k ) } = \left( V ^ { \prime } , E ^ { \prime } \right) , V ^ { \prime } = \left\{ v _ { j } | \forall v _ { j } , d \left( v _ { i } , v _ { j } \right) \leqslant k \right\} , E ^ { \prime } = \left\{ e _ { i j } | \forall v _ { j } , d \left( v _ { i } , v _ { j } \right) \leqslant k \right\}
-\]</span> 有时我们也称 k 阶子图为 k-hop，下图中的阴影部分就是顶点 <span class="math inline">\(v _ { 1 }\)</span> 的 2 阶子图：</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128103152.png" /></p>
-<h1 id="图的存储与遍历">图的存储与遍历</h1>
-<h2 id="邻接矩阵与关联矩阵">邻接矩阵与关联矩阵</h2>
-<h3 id="邻接矩阵">邻接矩阵</h3>
-<p>设图 <span class="math inline">\(G = ( V,\space E )\)</span> ，在这里我们对边重新进行了编号 <span class="math inline">\(e _ { 1 } , e _ { 2 } , \ldots , e _ { M }\)</span>，如下图所示：</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128105325.png" /></p>
-<p>我们用邻接矩阵 A 描述图中顶点之间的关联，<span class="math inline">\(A \in R ^ { N \times N }\)</span>，其定义为： <span class="math display">\[
-A _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } \left( v _ { i } , v _ { j } \right) \subseteq E } \\ { 0 \text { else } } \end{array} \right.
-\]</span> 用邻接矩阵（Adjacency matrix）存储图的时候，我们需要一个一维数组表示顶点集合，需要一个二维数组表示邻接矩阵。</p>
-<p>需要特别说明的是，由于在实际的图数据中，邻接矩阵往往会出现大量的 0 值，因此可以用<strong>稀疏矩阵</strong>的格式来存储邻接矩阵，这样可以将邻接矩阵的空间复杂度控制在 <span class="math inline">\(\mathrm { O } ( \mathrm { M } )\)</span> 的范围内。</p>
-<p>图 <span class="math inline">\(G\)</span> 的邻接矩阵存储表示：</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128110458.png" /></p>
-<p>通过该图可以看出，无向图的邻接矩阵是沿主对角线对称的，即 <span class="math inline">\(A _ { i j } = A _ { j i }\)</span>。</p>
-<h3 id="关联矩阵">关联矩阵</h3>
-<p>除了邻接矩阵外，我们有时也用关联矩阵 <span class="math inline">\(\mathrm { B } \in \mathrm { R } ^ { \mathrm { N } \times \mathrm { M } }\)</span> 来描述节点与边之间的关联，定义如下： <span class="math display">\[
-B _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } v _ { i } \text { 与 } e _ { j } \text { 相连 } } \\ { 0 \text { else } } \end{array} \right.
-\]</span> 同样，关联矩阵（Incidence matrix）也可以用稀疏矩阵来存储，这是因为B的任意一列仅有两个非 0 值。</p>
-<p>图 <span class="math inline">\(G\)</span> 的关联矩阵存储表示：</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128111838.png" /></p>
-<h2 id="图的遍历">图的遍历</h2>
-<p>图的遍历是指从图中的某一顶点出发，按照某种搜索算法沿着图中的边对图中的所有顶点访问一次且仅访问一次。</p>
+<h3 id="稀疏图和稠密图"><a href="#稀疏图和稠密图" class="headerlink" title="稀疏图和稠密图"></a><span class="exturl" data-url="aHR0cHM6Ly93d3cuZXB1Yml0LmNvbS9ib29rRGV0YWlscz9pZD1VQjZjYjQ1MDI0ZjhmMTE=" title="https://www.epubit.com/bookDetails?id=UB6cb45024f8f11">稀疏图和稠密图<i class="fa fa-external-link"></i></span></h3><p>通俗地说，如果边的数量接近于与顶点的数量呈线性关系，那么这个图就是稀疏图；如果边的数量接近于与顶点的数量呈平方关系，那么这个图就是稠密图。</p>
+<h2 id="邻居和度"><a href="#邻居和度" class="headerlink" title="邻居和度"></a>邻居和度</h2><h3 id="邻居"><a href="#邻居" class="headerlink" title="邻居"></a>邻居</h3><p>如果存在一条边连接顶点 $v <em> { i  }$ 和 $v </em> { j }$，则称 $v <em> { \mathrm { j } }$ 是 $v </em> { \mathrm { i } }$ 的<strong>邻居</strong>，反之亦然。我们记 $v <em> { \mathrm { i } }$ 的所有邻居为集合 $N \left( v </em> { i } \right)$，即</p>
+<script type="math/tex; mode=display">
+N \left( v _ { i } \right) = \left\{ v _ { j } | \exists e _ { i j } \in E \text { or } e _ { j i } \in E \right\}</script><h3 id="度"><a href="#度" class="headerlink" title="度"></a>度</h3><p>以 $v <em> { \mathrm { i } }$ 为端点的边的数目成为 $v </em> { \mathrm { i } }$ 的<strong>度</strong>（Degree），记为$\operatorname { deg } \left( v _ { \mathrm {i}} \right)$ ：</p>
+<script type="math/tex; mode=display">
+\operatorname { deg } \left( v _ { i } \right) = \left| N \left( v _ { i } \right) \right|</script><p>在图中，所有节点的度之和与边数存在如下关系：</p>
+<script type="math/tex; mode=display">
+\sum _ { v _ { i } } \operatorname { deg } \left( v _ { i } \right) = 2 | E |</script><h3 id="出度和入度"><a href="#出度和入度" class="headerlink" title="出度和入度"></a>出度和入度</h3><p>在有向图中还需要区分出度（Outdegree）和入度（Indegree），顶点的度数等于该顶点的出度与入度之和。</p>
+<p>其中顶点 $v <em> { i }$ 的出度是以 $v </em> { i }$ 为起点的有向边的数目，顶点  $v <em> { i }$ 的入度是以 $v </em> { i  }$ 为终点的有向边的数目。</p>
+<h2 id="子图与路径"><a href="#子图与路径" class="headerlink" title="子图与路径"></a>子图与路径</h2><h3 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h3><p>若图 $G&#39; = ( V&#39;,\space E&#39; )$ 的顶点集和边集分别是另一个图 $G = ( V ,\space E )$ 的顶点集的子集和边集的子集，即 $V&#39; \subseteq V$，且 $E&#39; \subseteq E$，则称图 $G&#39;$ 是图 $G$ 的<strong>子图</strong>（Subgraph）。</p>
+<h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><p>在图 $G = ( V,\space E )$ 中，若从顶点 $v <em> { i }$ 出发，沿着一些边经过一些顶点 $v </em> { p 1 } , v <em> { p 2 } , \cdots , v </em> { p m }$，到达顶点 $v <em> { j }$，则称边序列 $P </em> { i j } = \left( e <em> { i p </em> { 1 } } , e <em> { p </em> { 2 } p <em> { 3 } } , \cdots , e </em> { p <em> { m } j } \right)$ 为从顶点 $v </em> { i }$ 到顶点 $v <em> { j }$ 的一条路径（Path，也可称为通路），其中 $e </em> { i p <em> { 1 } } , e </em> { p <em> { 2 } p </em> { 3 } } , \cdots , e <em> { p </em> { m } j }$ 为图 $G$ 中的边。</p>
+<h4 id="路径的长度"><a href="#路径的长度" class="headerlink" title="路径的长度"></a>路径的长度</h4><p>路径中边的数目通常称为路径的长度 $ L  \left( P <em> { ij } \right) = \left| P </em> { ij } \right|$。</p>
+<h4 id="顶点的距离"><a href="#顶点的距离" class="headerlink" title="顶点的距离"></a>顶点的距离</h4><p>若存在至少一条路径由顶点 $v <em> { i }$ 到达顶点  $v </em> { j }$，则定义  $v <em> { i }$ 到  $v </em> { j }$ 的距离为：</p>
+<script type="math/tex; mode=display">
+d \left( v _ { i } , v _ { j } \right) = \min \left( \left| P _ { i j } \right| \right)</script><p>即两个顶点之间的距离由它们的最短路径的长度决定。</p>
+<p>我们设 $d \left( v <em> { i } , v </em> { i } \right) = 0$，即<strong>节点到自身的距离为 0</strong>。</p>
+<h4 id="k-阶邻居"><a href="#k-阶邻居" class="headerlink" title="k 阶邻居"></a>k 阶邻居</h4><p>若 $d\left( v <em> { \text {i } } , v </em> { j } \right) = k$，我们称 $v <em> { j }$ 为  $v </em> { i }$ 的 <strong>k 阶邻居</strong>。</p>
+<h4 id="k-阶子图"><a href="#k-阶子图" class="headerlink" title="k 阶子图"></a>k 阶子图</h4><p>我们称一个顶点 $v _ { i }$ 的 k 阶子图（k-subgraph）为：</p>
+<script type="math/tex; mode=display">
+G _ { v _ { i } } ^ { ( k ) } = \left( V ^ { \prime } , E ^ { \prime } \right) , V ^ { \prime } = \left\{ v _ { j } | \forall v _ { j } , d \left( v _ { i } , v _ { j } \right) \leqslant k \right\} , E ^ { \prime } = \left\{ e _ { i j } | \forall v _ { j } , d \left( v _ { i } , v _ { j } \right) \leqslant k \right\}</script><p>有时我们也称 k 阶子图为 k-hop，下图中的阴影部分就是顶点 $v _ { 1 }$ 的 2 阶子图：</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128103152.png" alt=""></p>
+<h1 id="图的存储与遍历"><a href="#图的存储与遍历" class="headerlink" title="图的存储与遍历"></a>图的存储与遍历</h1><h2 id="邻接矩阵与关联矩阵"><a href="#邻接矩阵与关联矩阵" class="headerlink" title="邻接矩阵与关联矩阵"></a>邻接矩阵与关联矩阵</h2><h3 id="邻接矩阵"><a href="#邻接矩阵" class="headerlink" title="邻接矩阵"></a>邻接矩阵</h3><p>设图 $G = ( V,\space E )$ ，在这里我们对边重新进行了编号 $e <em> { 1 } , e </em> { 2 } , \ldots , e _ { M }$，如下图所示：</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128105325.png" alt=""></p>
+<p>我们用邻接矩阵 A 描述图中顶点之间的关联，$A \in R ^ { N \times N }$，其定义为：</p>
+<script type="math/tex; mode=display">
+A _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } \left( v _ { i } , v _ { j } \right) \subseteq E } \\ { 0 \text { else } } \end{array} \right.</script><p>用邻接矩阵（Adjacency matrix）存储图的时候，我们需要一个一维数组表示顶点集合，需要一个二维数组表示邻接矩阵。</p>
+<p>需要特别说明的是，由于在实际的图数据中，邻接矩阵往往会出现大量的 0 值，因此可以用<strong>稀疏矩阵</strong>的格式来存储邻接矩阵，这样可以将邻接矩阵的空间复杂度控制在 $\mathrm { O } ( \mathrm { M } )$ 的范围内。</p>
+<p> 图 $G$ 的邻接矩阵存储表示：</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128110458.png" alt=""></p>
+<p>通过该图可以看出，无向图的邻接矩阵是沿主对角线对称的，即 $A <em> { i j } = A </em> { j i }$。</p>
+<h3 id="关联矩阵"><a href="#关联矩阵" class="headerlink" title="关联矩阵"></a>关联矩阵</h3><p>除了邻接矩阵外，我们有时也用关联矩阵 $\mathrm { B } \in \mathrm { R } ^ { \mathrm { N } \times \mathrm { M } }$ 来描述节点与边之间的关联，定义如下：</p>
+<script type="math/tex; mode=display">
+B _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } v _ { i } \text { 与 } e _ { j } \text { 相连 } } \\ { 0 \text { else } } \end{array} \right.</script><p>同样，关联矩阵（Incidence matrix）也可以用稀疏矩阵来存储，这是因为B的任意一列仅有两个非 0 值。</p>
+<p> 图 $G$ 的关联矩阵存储表示：</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128111838.png" alt=""></p>
+<h2 id="图的遍历"><a href="#图的遍历" class="headerlink" title="图的遍历"></a>图的遍历</h2><p>图的遍历是指从图中的某一顶点出发，按照某种搜索算法沿着图中的边对图中的所有顶点访问一次且仅访问一次。</p>
 <p>图的遍历主要有两种算法：深度优先搜索（DFS，Depth-First-Search）和广度优先搜索（BFS，Breadth-First-Search）。</p>
-<h3 id="深度优先搜索">深度优先搜索</h3>
-<p>深度优先搜索是一个递归算法，有回退过程。</p>
-<p>其算法思想是：由图中某一顶点 <span class="math inline">\(v _ { i }\)</span> 出发，访问它的任意一个邻居 <span class="math inline">\(w _ { 1 }\)</span>；再从 <span class="math inline">\(w _ { 1 }\)</span> 出发，访问 <span class="math inline">\(w _ { 1 }\)</span> 的所有邻居中未被访问过的顶点 <span class="math inline">\(w _ { 2 }\)</span>；然后再从 <span class="math inline">\(w _ { 2 }\)</span> 出发，依次访问，直到出现某顶点不再有邻居未被访问过。接着，回退一步，回退到前一次刚访问过的顶点，看是否还有其他未被访问过的邻居，如果有，则访问该邻居，之后再从该邻居出发，进行与前面类似的访问；如果没有，就再回退一步进行类似访问。重复上述过程，直到该图中所有顶点都被访问过为止。</p>
-<h3 id="广度优先搜索">广度优先搜索</h3>
-<p>广度优先搜索是一个分层的搜索过程，没有回退过程。</p>
-<p>其算法思想是：从图中某一顶点 <span class="math inline">\(v _ { i }\)</span> 开始，由 <span class="math inline">\(v _ { i }\)</span> 出发，依次访问 <span class="math inline">\(v _ { i }\)</span> 的所有未被访问过的邻居 <span class="math inline">\(w _ { 1 } , w _ { 2 } , \ldots , w _ { n }\)</span>；然后再顺序访问 <span class="math inline">\(w _ { 1 } , w _ { 2 } , \ldots , w _ { n }\)</span> 的所有还未被访问过的邻居，如此一层层执行下去，直到图中所有顶点都被访问到为止。</p>
-<h1 id="图数据的应用场景">图数据的应用场景</h1>
-<p>在实际的数据场景中，我们通常将图称为网络（Network），与之对应的，图的两个要素（顶点和边）也被称为节点（Node）和关系（Link），比如我们熟知的社交网络、物流网络等概念名词。</p>
-<h2 id="图数据的类型">图数据的类型</h2>
-<h3 id="同构图">同构图</h3>
-<p>同构图（Homogeneous Graph）是指图中的节点类型和关系类型都仅有一种。</p>
+<h3 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h3><p>深度优先搜索是一个递归算法，有回退过程。</p>
+<p>其算法思想是：由图中某一顶点 $v <em> { i }$ 出发，访问它的任意一个邻居 $w </em> { 1 }$；再从 $w <em> { 1 }$ 出发，访问 $w </em> { 1 }$ 的所有邻居中未被访问过的顶点 $w <em> { 2 }$；然后再从 $w </em> { 2 }$ 出发，依次访问，直到出现某顶点不再有邻居未被访问过。接着，回退一步，回退到前一次刚访问过的顶点，看是否还有其他未被访问过的邻居，如果有，则访问该邻居，之后再从该邻居出发，进行与前面类似的访问；如果没有，就再回退一步进行类似访问。重复上述过程，直到该图中所有顶点都被访问过为止。</p>
+<h3 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h3><p>广度优先搜索是一个分层的搜索过程，没有回退过程。</p>
+<p>其算法思想是：从图中某一顶点 $v <em> { i }$ 开始，由 $v </em> { i }$ 出发，依次访问 $v <em> { i }$ 的所有未被访问过的邻居 $w </em> { 1 } , w <em> { 2 } , \ldots , w </em> { n }$；然后再顺序访问 $w <em> { 1 } , w </em> { 2 } , \ldots , w _ { n }$ 的所有还未被访问过的邻居，如此一层层执行下去，直到图中所有顶点都被访问到为止。</p>
+<h1 id="图数据的应用场景"><a href="#图数据的应用场景" class="headerlink" title="图数据的应用场景"></a>图数据的应用场景</h1><p>在实际的数据场景中，我们通常将图称为网络（Network），与之对应的，图的两个要素（顶点和边）也被称为节点（Node）和关系（Link），比如我们熟知的社交网络、物流网络等概念名词。</p>
+<h2 id="图数据的类型"><a href="#图数据的类型" class="headerlink" title="图数据的类型"></a>图数据的类型</h2><h3 id="同构图"><a href="#同构图" class="headerlink" title="同构图"></a>同构图</h3><p>同构图（Homogeneous Graph）是指图中的节点类型和关系类型都仅有一种。</p>
 <p>同构图是实际图数据的一种最简化的情况，如由超链接关系所构成的万维网，这类图数据的信息全部包含在邻接矩阵里。</p>
-<h3 id="异构图">异构图</h3>
-<p>与同构图相反，异构图（Heterogeneous Graph）是指图中的节点类型或关系类型多于一种。</p>
+<h3 id="异构图"><a href="#异构图" class="headerlink" title="异构图"></a>异构图</h3><p>与同构图相反，异构图（Heterogeneous Graph）是指图中的节点类型或关系类型多于一种。</p>
 <p>在现实场景中，我们通常研究的图数据对象是多类型的，对象之间的交互关系也是多样化的。因此，异构图能够更好地贴近现实。</p>
-<h3 id="属性图">属性图</h3>
-<p>相较于异构图，属性图（Property Graph）给图数据增加了额外的属性信息，如图所示：</p>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128171828.png" /></p>
+<h3 id="属性图"><a href="#属性图" class="headerlink" title="属性图"></a>属性图</h3><p>相较于异构图，属性图（Property Graph）给图数据增加了额外的属性信息，如图所示：</p>
+<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128171828.png" alt=""></p>
 <p>对于一个属性图而言，节点和关系都有标签（Label）和属性（Property），这里的标签是指节点或关系的类型，如某节点的类型为“用户”，属性是节点或关系的附加描述信息，如“用户”节点可以有“姓名”“注册时间”“注册地址”等属性。</p>
 <p>属性图是一种最常见的工业级图数据的表示方式，能够广泛适用于多种业务场景下的数据表达。</p>
-<h3 id="非显式图">非显式图</h3>
-<p>非显式图（Graph Constructed from Non-relational Data）是指数据之间没有显式地定义出关系，需要依据某种规则或计算方式将数据的关系表达出来，进而将数据当成一种图数据进行研究。</p>
+<h3 id="非显式图"><a href="#非显式图" class="headerlink" title="非显式图"></a>非显式图</h3><p>非显式图（Graph Constructed from Non-relational Data）是指数据之间没有显式地定义出关系，需要依据某种规则或计算方式将数据的关系表达出来，进而将数据当成一种图数据进行研究。</p>
 <p>比如计算机3D视觉中的点云数据，如果我们将节点之间的空间距离转化成关系的话，点云数据就成了图数据。</p>
-<h2 id="图数据应用示例">图数据应用示例</h2>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128172817.png" /></p>
-<h3 id="社交网络">社交网络</h3>
-<p>社交网络是十分常见的一类图数据，代表着各种个人或组织之间的社会关系。</p>
+<h2 id="图数据应用示例"><a href="#图数据应用示例" class="headerlink" title="图数据应用示例"></a>图数据应用示例</h2><p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128172817.png" alt=""></p>
+<h3 id="社交网络"><a href="#社交网络" class="headerlink" title="社交网络"></a>社交网络</h3><p>社交网络是十分常见的一类图数据，代表着各种个人或组织之间的社会关系。</p>
 <p>上图中的 a 图展示了在线社交网络中的用户关注网络：以用户为节点，用户之间的关注关系作为边。</p>
 <p>这是一个典型的同构图，一般用来研究用户的重要性排名以及相关的用户推荐等问题。随着移动互联网技术的不断深入，更多元化的媒体对象被补充进社交网络中，比如短文本、视频等，如此构成的异构图可以完成更加多样化的任务。</p>
-<h3 id="电子购物">电子购物</h3>
-<p>电子购物是互联网中的一类核心业务，在这类场景中，业务数据通常可以用一个用户–商品的二部图来描述。</p>
+<h3 id="电子购物"><a href="#电子购物" class="headerlink" title="电子购物"></a>电子购物</h3><p>电子购物是互联网中的一类核心业务，在这类场景中，业务数据通常可以用一个用户–商品的二部图来描述。</p>
 <p>在上图中的 b 图所展示的例子中，节点分为两类：用户和商品，存在的关系有浏览、收藏、购买等。用户与商品之间可以存在多重关系，如既存在收藏关系也存在购买关系。这类复杂的数据场景可以用属性图轻松描述。</p>
 <p>电子购物催生了一项大家熟知的技术应用—推荐系统。用户与商品之间的交互关系，反映了用户的购物偏好。例如，经典的啤酒与尿布的故事：爱买啤酒的人通常也更爱买尿布。</p>
-<h3 id="化学分子">化学分子</h3>
-<p>以原子为节点，原子之间的化学键作为边，我们可以将分子视为一种图数据进行研究，分子的基本构成以及内在联系决定了分子的各项理化性质，通常我们用其指导新材料、新药物的研究任务，如上图中的 c 图所示。</p>
-<h3 id="交通网络">交通网络</h3>
-<p>交通网络具有多种形式，比如地铁网络中将各个站点作为节点，站点之间的连通性作为边构成一张图，如上图中的 d 图所示。</p>
+<h3 id="化学分子"><a href="#化学分子" class="headerlink" title="化学分子"></a>化学分子</h3><p>以原子为节点，原子之间的化学键作为边，我们可以将分子视为一种图数据进行研究，分子的基本构成以及内在联系决定了分子的各项理化性质，通常我们用其指导新材料、新药物的研究任务，如上图中的 c 图所示。</p>
+<h3 id="交通网络"><a href="#交通网络" class="headerlink" title="交通网络"></a>交通网络</h3><p>交通网络具有多种形式，比如地铁网络中将各个站点作为节点，站点之间的连通性作为边构成一张图，如上图中的 d 图所示。</p>
 <p>通常在交通网络中我们比较关注的是路径规划相关的问题：比如最短路径问题，再如我们将车流量作为网络中节点的属性，去预测未来交通流量的变化情况。</p>
-<h3 id="场景图">场景图</h3>
-<p>场景图是图像语义的一种描述方式，它将图像中的物体当作节点，物体之间的相互关系当作边构成一张图。场景图可以将关系复杂的图像简化成一个关系明确的语义图。</p>
+<h3 id="场景图"><a href="#场景图" class="headerlink" title="场景图"></a>场景图</h3><p>场景图是图像语义的一种描述方式，它将图像中的物体当作节点，物体之间的相互关系当作边构成一张图。场景图可以将关系复杂的图像简化成一个关系明确的语义图。</p>
 <p>场景图具有十分强大的应用场景，如图像合成、图像语义检索、视觉推理等。上图中的 e 图为由场景图合成相关语义图像的示例，在该场景图中，描述了 5 个对象：两个男人、一个小孩、飞盘、庭院以及他们之间的关系，可以看到场景图具有很强的语义表示能力。</p>
-<h3 id="电路设计图">电路设计图</h3>
-<p>我们可以将电子器件如谐振器作为节点，器件之间的布线作为边将电路设计抽象成一种图数据。</p>
-<p>在参考文献<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9Q2lyY3VpdC1HTk4lRUYlQkMlOUFHcmFwaCtOZXVyYWwrTmV0d29ya3MrZm9yK0Rpc3RyaWJ1dGVkK0NpcmN1aXQrRGVzaWduJTI2YnRuRz0=" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Circuit-GNN%EF%BC%9AGraph+Neural+Networks+for+Distributed+Circuit+Design%26btnG=">[1]<i class="fa fa-external-link"></i></span>中，对电路设计进行了这样的抽象，如上图中的 f 图所示，然后基于图神经网络技术对电路的电磁特性进行仿真拟合，相较于严格的电磁学公式仿真，可以在可接受的误差范围内极大地加速高频电路的设计工作。</p>
-<h1 id="图数据深度学习">图数据深度学习</h1>
-<h2 id="基于图数据相关的任务学习理论">基于图数据相关的任务学习理论</h2>
-<h3 id="谱图理论">谱图理论</h3>
-<p>谱图理论（Spectral Graph Theory）<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTI1MkM1JTI2cT1TcGVjdHJhbCtHcmFwaCtUaGVvcnkrQW1lcmljYW4rTWF0aGVtYXRpY2FsK1NvY2lldHklMjZidG5HPQ==" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%252C5%26q=Spectral+Graph+Theory+American+Mathematical+Society%26btnG=">[2]<i class="fa fa-external-link"></i></span>是将图论与线性代数相结合的理论，基于此理论发展而来的谱聚类相关算法<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9QSt0dXRvcmlhbCtvbitzcGVjdHJhbCtjbHVzdGVyaW5nJTI2YnRuRz0=" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=A+tutorial+on+spectral+clustering%26btnG=">[3]<i class="fa fa-external-link"></i></span>，可以用来解决图的分割或者节点的聚类问题。</p>
-<h3 id="统计关系学习">统计关系学习</h3>
-<p>统计关系学习（Statistical Relational Learning）<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9SW50cm9kdWN0aW9uK3RvK3N0YXRpc3RpY2FsK3JlbGF0aW9uYWwrbGVhcm5pbmclMjZidG5HPQ==" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Introduction+to+statistical+relational+learning%26btnG=">[4]<i class="fa fa-external-link"></i></span>是将关系表示与似然表示相结合的机器学习理论。</p>
+<h3 id="电路设计图"><a href="#电路设计图" class="headerlink" title="电路设计图"></a>电路设计图</h3><p>我们可以将电子器件如谐振器作为节点，器件之间的布线作为边将电路设计抽象成一种图数据。</p>
+<p>在参考文献<span class="exturl" data-url="aHR0cDovL3Byb2NlZWRpbmdzLm1sci5wcmVzcy92OTcvemhhbmcxOWUuaHRtbA==" title="http://proceedings.mlr.press/v97/zhang19e.html">[1]<i class="fa fa-external-link"></i></span>中，对电路设计进行了这样的抽象，如上图中的 f 图所示，然后基于图神经网络技术对电路的电磁特性进行仿真拟合，相较于严格的电磁学公式仿真，可以在可接受的误差范围内极大地加速高频电路的设计工作。</p>
+<h1 id="图数据深度学习"><a href="#图数据深度学习" class="headerlink" title="图数据深度学习"></a>图数据深度学习</h1><h2 id="基于图数据相关的任务学习理论"><a href="#基于图数据相关的任务学习理论" class="headerlink" title="基于图数据相关的任务学习理论"></a>基于图数据相关的任务学习理论</h2><h3 id="谱图理论"><a href="#谱图理论" class="headerlink" title="谱图理论"></a>谱图理论</h3><p>谱图理论（Spectral Graph Theory）<span class="exturl" data-url="aHR0cHM6Ly9ib29rc3RvcmUuYW1zLm9yZy9jYm1zLTky" title="https://bookstore.ams.org/cbms-92">[2]<i class="fa fa-external-link"></i></span>是将图论与线性代数相结合的理论，基于此理论发展而来的谱聚类相关算法<span class="exturl" data-url="aHR0cHM6Ly9saW5rLnNwcmluZ2VyLmNvbS9hcnRpY2xlLzEwLjEwMDcvczExMjIyLTAwNy05MDMzLXo=" title="https://link.springer.com/article/10.1007/s11222-007-9033-z">[3]<i class="fa fa-external-link"></i></span>，可以用来解决图的分割或者节点的聚类问题。</p>
+<h3 id="统计关系学习"><a href="#统计关系学习" class="headerlink" title="统计关系学习"></a>统计关系学习</h3><p>统计关系学习（Statistical Relational Learning）<span class="exturl" data-url="aHR0cHM6Ly93d3cuY3MudW1kLmVkdS9zcmwtYm9vay8=" title="https://www.cs.umd.edu/srl-book/">[4]<i class="fa fa-external-link"></i></span>是将关系表示与似然表示相结合的机器学习理论。</p>
 <p>区别于传统的机器学习算法对数据独立同分布（independent and Identically Distributed，数据对象是同类且独立不相关的）的假设，统计关系学习打破了对数据的上述两种假设，对图数据的学习具有更好的契合度。</p>
-<h3 id="异构信息网络">异构信息网络</h3>
-<p>为了更加贴合实际场景中的异构图数据，异构信息网络（Heterogeneous Information Network）<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9QStzdXJ2ZXkrb2YraGV0ZXJvZ2VuZW91cytpbmZvcm1hdGlvbituZXR3b3JrK2FuYWx5c2lzJTI2YnRuRz0=" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=A+survey+of+heterogeneous+information+network+analysis%26btnG=">[5]<i class="fa fa-external-link"></i></span>分析被提出，用以挖掘异构图中更加全面的结构信息和丰富的语义信息。</p>
-<h3 id="网络表示学习">网络表示学习</h3>
-<p>由于这些年深度学习在实际应用领域取得的巨大成就，表示学习和端对端学习的概念日益得到重视，为了从复杂的图数据中学习到包含充分信息的向量化表示，出现了大量网络表示学习（Network Embedding）<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9QStzdXJ2ZXkrb24rbmV0d29yaytlbWJlZGRpbmclMjZidG5HPQ==" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=A+survey+on+network+embedding%26btnG=">[6]<i class="fa fa-external-link"></i></span>的方法。</p>
+<h3 id="异构信息网络"><a href="#异构信息网络" class="headerlink" title="异构信息网络"></a>异构信息网络</h3><p>为了更加贴合实际场景中的异构图数据，异构信息网络（Heterogeneous Information Network）<span class="exturl" data-url="aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50Lzc1MzYxNDUv" title="https://ieeexplore.ieee.org/abstract/document/7536145/">[5]<i class="fa fa-external-link"></i></span>分析被提出，用以挖掘异构图中更加全面的结构信息和丰富的语义信息。</p>
+<h3 id="网络表示学习"><a href="#网络表示学习" class="headerlink" title="网络表示学习"></a>网络表示学习</h3><p>由于这些年深度学习在实际应用领域取得的巨大成就，表示学习和端对端学习的概念日益得到重视，为了从复杂的图数据中学习到包含充分信息的向量化表示，出现了大量网络表示学习（Network Embedding）<span class="exturl" data-url="aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50LzgzOTI3NDUv" title="https://ieeexplore.ieee.org/abstract/document/8392745/">[6]<i class="fa fa-external-link"></i></span>的方法。</p>
 <p>然而网络表示学习很难提供表示学习加任务学习的端对端系统，基于此，图数据的端对端学习系统仍然是一个重要的研究课题。</p>
-<h2 id="与图数据相对应的数据">与图数据相对应的数据</h2>
-<p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128220741.png" /></p>
+<h2 id="与图数据相对应的数据"><a href="#与图数据相对应的数据" class="headerlink" title="与图数据相对应的数据"></a>与图数据相对应的数据</h2><p><img data-src="https://blogpic-1253674047.cos.ap-chengdu.myqcloud.com/20200128220741.png" alt=""></p>
 <p>与图数据相对应的数据有图像、语音与文本，这些数据是定义在欧式空间中的规则化结构数据，基于这些数据的张量计算体系是比较自然且高效的。</p>
-<h3 id="图像数据">图像数据</h3>
-<p>图像数据呈现出规则的 2D 栅格结构，这种栅格结构与卷积神经网络的作用机制具有良好的对应。</p>
-<h3 id="语音数据"><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNDcwMzI2OA==" title="https://zhuanlan.zhihu.com/p/24703268">语音数据<i class="fa fa-external-link"></i></span></h3>
-<p>声波是二维的，它在每个时刻都有一个基于其高度的值。为了将这个声波转换成数字，我们只记录声波在等距点的高度，这就是采样（sampling）。可以使用循环神经网络处理语音数据，因为它预测的每个字母都应该能够影响它对下一个字母的预测。</p>
-<h3 id="文本数据">文本数据</h3>
-<p>文本数据是一种规则的序列数据，这种序列结构与循环神经网络的作用机制相对应。</p>
-<h2 id="基于图卷积操作的神经网络理论">基于图卷积操作的神经网络理论</h2>
-<p>受图信号处理（Graph Signal Processing）<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9VGhlK2VtZXJnaW5nK2ZpZWxkK29mK3NpZ25hbCtwcm9jZXNzaW5nK29uK2dyYXBocyVFRiVCQyU5QUV4dGVuZGluZytoaWdoLWRpbWVuc2lvbmFsK2RhdGErYW5hbHlzaXMrdG8rbmV0d29ya3MrYW5kK290aGVyK2lycmVndWxhcitkb21haW5zJTI2YnRuRz0=" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=The+emerging+field+of+signal+processing+on+graphs%EF%BC%9AExtending+high-dimensional+data+analysis+to+networks+and+other+irregular+domains%26btnG=">[7]<i class="fa fa-external-link"></i></span>中对图信号卷积滤波的定义的启发，近几年发展出了一套基于图卷积操作并不断衍生的神经网络理论。<span class="exturl" data-url="aHR0cHM6Ly9pdGVtLmpkLmNvbS8xMjYxNTA2NS5odG1s" title="https://item.jd.com/12615065.html">本书<i class="fa fa-external-link"></i></span>将这类方法统称为图神经网络（Graph Neural Network，GNN<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9R3JhcGgrbmV1cmFsK25ldHdvcmtzJUVGJUJDJTlBQStyZXZpZXcrb2YrbWV0aG9kcythbmQrYXBwbGljYXRpb25zJTI2YnRuRz0=" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Graph+neural+networks%EF%BC%9AA+review+of+methods+and+applications%26btnG=">[8]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9RGVlcCtsZWFybmluZytvbitncmFwaHMlRUYlQkMlOUFBK3N1cnZleSUyNmJ0bkc9" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Deep+learning+on+graphs%EF%BC%9AA+survey%26btnG=">[9]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9QStjb21wcmVoZW5zaXZlK3N1cnZleStvbitncmFwaCtuZXVyYWwrbmV0d29ya3MlMjZidG5HPQ==" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=A+comprehensive+survey+on+graph+neural+networks%26btnG=">[10]<i class="fa fa-external-link"></i></span>）。</p>
-<p>2005 年，Marco Gori 等人发表论文<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9QStuZXcrbW9kZWwrZm9yK2xlYXJuaW5nK2luK2dyYXBoK2RvbWFpbnMlMjZidG5HPQ==" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=A+new+model+for+learning+in+graph+domains%26btnG=">[11]<i class="fa fa-external-link"></i></span>，首次提出了图神经网络的概念。在此之前，处理图数据的方法是在数据的预处理阶段将图转换为用一组向量表示。这种处理方法最大的问题就是图中的结构信息可能会丢失，并且得到的结果会严重依赖于对图的预处理。GNN 的提出，便是为了能够将学习过程直接架构于图数据之上。</p>
-<p>随后，其在 2009 年的两篇论文<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9TmV1cmFsK25ldHdvcmsrZm9yK2dyYXBocyVFRiVCQyU5QUErY29udGV4dHVhbCtjb25zdHJ1Y3RpdmUrYXBwcm9hY2glMjZidG5HPQ==" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Neural+network+for+graphs%EF%BC%9AA+contextual+constructive+approach%26btnG=">[12]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9VGhlK2dyYXBoK25ldXJhbCtuZXR3b3JrK21vZGVsJTI2YnRuRz0=" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=The+graph+neural+network+model%26btnG=">[13]<i class="fa fa-external-link"></i></span>中又进一步阐述了图神经网络，并提出了一种监督学习的方法来训练 GNN。但是，早期的这些研究都是以迭代的方式，通过循环神经网络传播邻居信息，直到达到稳定的固定状态来学习节点的表示。这种计算方式消耗非常大，相关研究开始关注如何改进这种方法以减小计算量。</p>
-<p>2012年前后，卷积神经网络开始在视觉领域取得令人瞩目的成绩，于是人们开始考虑如何将卷积应用到图神经网络中。2013 年 Bruna 等人首次将卷积引入图神经网络中，在引文<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9U3BlY3RyYWwrbmV0d29ya3MrYW5kK2xvY2FsbHkrY29ubmVjdGVkK25ldHdvcmtzK29uK2dyYXBocyUyNmJ0bkc9" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Spectral+networks+and+locally+connected+networks+on+graphs%26btnG=">[14]<i class="fa fa-external-link"></i></span>中基于频域卷积操作的概念开发了一种图卷积网络模型，首次将可学习的卷积操作用于图数据之上。自此以后，不断有人提出改进、拓展这种基于频域图卷积的神经网络模型。但是基于频域卷积的方法在计算时需要同时处理整个图，并且需要承担矩阵分解时的很高的时间复杂度，这很难使学习系统扩展到大规模图数据的学习任务上去，所以基于空域的图卷积被提出并逐渐流行。</p>
-<p>2016年，Kipf 等人<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9U2VtaS1zdXBlcnZpc2VkK2NsYXNzaWZpY2F0aW9uK3dpdGgrZ3JhcGgrY29udm9sdXRpb25hbCtuZXR3b3JrcyUyNmJ0bkc9" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Semi-supervised+classification+with+graph+convolutional+networks%26btnG=">[15]<i class="fa fa-external-link"></i></span>将频域图卷积的定义进行简化，使得图卷积的操作能够在空域进行，这极大地提升了图卷积模型的计算效率，同时，得益于卷积滤波的高效性，图卷积模型在多项图数据相关的任务上取得了令人瞩目的成绩。</p>
-<p>近几年，更多的基于空域图卷积的神经网络模型的变体<span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9SW5kdWN0aXZlK3JlcHJlc2VudGF0aW9uK2xlYXJuaW5nK29uK2xhcmdlK2dyYXBocyUyNmJ0bkc9" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Inductive+representation+learning+on+large+graphs%26btnG=">[16]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9R3JhcGgrYXR0ZW50aW9uK25ldHdvcmtzJTI2YnRuRz0=" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Graph+attention+networks%26btnG=">[17]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9zY2hvbGFyLmdvb2dsZS5jb20uaGsvc2Nob2xhcj9obD16aC1DTiUyNmFzX3NkdD0wJTJDNSUyNnE9TmV1cmFsK21lc3NhZ2UrcGFzc2luZytmb3IrcXVhbnR1bStjaGVtaXN0cnklMjZidG5HPQ==" title="https://scholar.google.com.hk/scholar?hl=zh-CN%26as_sdt=0%2C5%26q=Neural+message+passing+for+quantum+chemistry%26btnG=">[18]<i class="fa fa-external-link"></i></span>被开发出来，我们将这类方法统称为 GNN。各种 GNN 模型的出现，大大加强了学习系统对各类图数据的适应性，这也为各种图数据的任务学习奠定了坚实的基础。</p>
+<h3 id="图像数据"><a href="#图像数据" class="headerlink" title="图像数据"></a>图像数据</h3><p>图像数据呈现出规则的 2D 栅格结构，这种栅格结构与卷积神经网络的作用机制具有良好的对应。</p>
+<h3 id="语音数据"><a href="#语音数据" class="headerlink" title="语音数据"></a><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8yNDcwMzI2OA==" title="https://zhuanlan.zhihu.com/p/24703268">语音数据<i class="fa fa-external-link"></i></span></h3><p>声波是二维的，它在每个时刻都有一个基于其高度的值。为了将这个声波转换成数字，我们只记录声波在等距点的高度，这就是采样（sampling）。可以使用循环神经网络处理语音数据，因为它预测的每个字母都应该能够影响它对下一个字母的预测。</p>
+<h3 id="文本数据"><a href="#文本数据" class="headerlink" title="文本数据"></a>文本数据</h3><p>文本数据是一种规则的序列数据，这种序列结构与循环神经网络的作用机制相对应。</p>
+<h2 id="基于图卷积操作的神经网络理论"><a href="#基于图卷积操作的神经网络理论" class="headerlink" title="基于图卷积操作的神经网络理论"></a>基于图卷积操作的神经网络理论</h2><p>受图信号处理（Graph Signal Processing）<span class="exturl" data-url="aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50LzY0OTQ2NzUv" title="https://ieeexplore.ieee.org/abstract/document/6494675/">[7]<i class="fa fa-external-link"></i></span>中对图信号卷积滤波的定义的启发，近几年发展出了一套基于图卷积操作并不断衍生的神经网络理论。<span class="exturl" data-url="aHR0cHM6Ly9pdGVtLmpkLmNvbS8xMjYxNTA2NS5odG1s" title="https://item.jd.com/12615065.html">本书<i class="fa fa-external-link"></i></span>将这类方法统称为图神经网络（Graph Neural Network，GNN<span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzE4MTIuMDg0MzQ=" title="https://arxiv.org/abs/1812.08434">[8]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzE4MTIuMDQyMDI=" title="https://arxiv.org/abs/1812.04202">[9]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzE5MDEuMDA1OTY=" title="https://arxiv.org/abs/1901.00596">[10]<i class="fa fa-external-link"></i></span>）。</p>
+<p>2005 年，Marco Gori 等人发表论文<span class="exturl" data-url="aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50LzE1NTU5NDIv" title="https://ieeexplore.ieee.org/abstract/document/1555942/">[11]<i class="fa fa-external-link"></i></span>，首次提出了图神经网络的概念。在此之前，处理图数据的方法是在数据的预处理阶段将图转换为用一组向量表示。这种处理方法最大的问题就是图中的结构信息可能会丢失，并且得到的结果会严重依赖于对图的预处理。GNN 的提出，便是为了能够将学习过程直接架构于图数据之上。</p>
+<p>随后，其在 2009 年的两篇论文<span class="exturl" data-url="aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50LzQ3NzMyNzkv" title="https://ieeexplore.ieee.org/abstract/document/4773279/">[12]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50LzQ3MDAyODcv" title="https://ieeexplore.ieee.org/abstract/document/4700287/">[13]<i class="fa fa-external-link"></i></span>中又进一步阐述了图神经网络，并提出了一种监督学习的方法来训练 GNN。但是，早期的这些研究都是以迭代的方式，通过循环神经网络传播邻居信息，直到达到稳定的固定状态来学习节点的表示。这种计算方式消耗非常大，相关研究开始关注如何改进这种方法以减小计算量。</p>
+<p>2012年前后，卷积神经网络开始在视觉领域取得令人瞩目的成绩，于是人们开始考虑如何将卷积应用到图神经网络中。2013 年 Bruna 等人首次将卷积引入图神经网络中，在引文<span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzEzMTIuNjIwMw==" title="https://arxiv.org/abs/1312.6203">[14]<i class="fa fa-external-link"></i></span>中基于频域卷积操作的概念开发了一种图卷积网络模型，首次将可学习的卷积操作用于图数据之上。自此以后，不断有人提出改进、拓展这种基于频域图卷积的神经网络模型。但是基于频域卷积的方法在计算时需要同时处理整个图，并且需要承担矩阵分解时的很高的时间复杂度，这很难使学习系统扩展到大规模图数据的学习任务上去，所以基于空域的图卷积被提出并逐渐流行。</p>
+<p>2016年，Kipf 等人<span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzE2MDkuMDI5MDc=" title="https://arxiv.org/abs/1609.02907">[15]<i class="fa fa-external-link"></i></span>将频域图卷积的定义进行简化，使得图卷积的操作能够在空域进行，这极大地提升了图卷积模型的计算效率，同时，得益于卷积滤波的高效性，图卷积模型在多项图数据相关的任务上取得了令人瞩目的成绩。</p>
+<p>近几年，更多的基于空域图卷积的神经网络模型的变体<span class="exturl" data-url="aHR0cDovL3BhcGVycy5uaXBzLmNjL3BhcGVyLzY3MDMtaW5kdWN0aXZlLXJlcHJlc2VudGF0aW9uLWxlYXJuaW5nLW9uLWxhcmdlLWdyYXBocw==" title="http://papers.nips.cc/paper/6703-inductive-representation-learning-on-large-graphs">[16]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzE3MTAuMTA5MDM=" title="https://arxiv.org/abs/1710.10903">[17]<i class="fa fa-external-link"></i></span><span class="exturl" data-url="aHR0cHM6Ly9kbC5hY20ub3JnL2RvaS8xMC41NTU1LzMzMDUzODEuMzMwNTUxMg==" title="https://dl.acm.org/doi/10.5555/3305381.3305512">[18]<i class="fa fa-external-link"></i></span>被开发出来，我们将这类方法统称为 GNN。各种 GNN 模型的出现，大大加强了学习系统对各类图数据的适应性，这也为各种图数据的任务学习奠定了坚实的基础。</p>
 <p>自此，图数据与深度学习有了第一次真正意义上的结合。GNN 的出现，实现了图数据的端对端学习方式，为图数据的诸多应用场景下的任务，提供了一个极具竞争力的学习方案。</p>
-<h2 id="图数据相关任务的分类">图数据相关任务的分类</h2>
-<h3 id="节点层面的任务">节点层面的任务</h3>
-<p>节点层面（Node Level）的任务主要包括分类任务和回归任务。这类任务虽然是对节点层面的性质进行预测，但是显然不应该将模型建立在一个个单独的节点上，节点的关系也需要考虑。节点层面的任务有很多，包括学术上使用较多的对论文引用网络中的论文节点进行分类，工业界在线社交网络中用户标签的分类、恶意账户检测等。</p>
-<h3 id="边层面的任务">边层面的任务</h3>
-<p>边层面（Link Level）的任务主要包括边的分类和预测任务。边的分类是指对边的某种性质进行预测；边预测是指给定的两个节点之间是否会构成边。常见的应用场景比如在社交网络中，将用户作为节点，用户之间的关注关系建模为边，通过边预测实现社交用户的推荐。目前，边层面的任务主要集中在推荐业务中。</p>
-<h3 id="图层面的任务">图层面的任务</h3>
-<p>图层面（Graph Level）的任务不依赖于某个节点或者某条边的属性，而是从图的整体结构出发，实现分类、表示和生成等任务。目前，图层面的任务主要应用在自然科学研究领域，比如对药物分子的分类、酶的分类等。</p>
+<h2 id="图数据相关任务的分类"><a href="#图数据相关任务的分类" class="headerlink" title="图数据相关任务的分类"></a>图数据相关任务的分类</h2><h3 id="节点层面的任务"><a href="#节点层面的任务" class="headerlink" title="节点层面的任务"></a>节点层面的任务</h3><p>节点层面（Node Level）的任务主要包括分类任务和回归任务。这类任务虽然是对节点层面的性质进行预测，但是显然不应该将模型建立在一个个单独的节点上，节点的关系也需要考虑。节点层面的任务有很多，包括学术上使用较多的对论文引用网络中的论文节点进行分类，工业界在线社交网络中用户标签的分类、恶意账户检测等。</p>
+<h3 id="边层面的任务"><a href="#边层面的任务" class="headerlink" title="边层面的任务"></a>边层面的任务</h3><p>边层面（Link Level）的任务主要包括边的分类和预测任务。边的分类是指对边的某种性质进行预测；边预测是指给定的两个节点之间是否会构成边。常见的应用场景比如在社交网络中，将用户作为节点，用户之间的关注关系建模为边，通过边预测实现社交用户的推荐。目前，边层面的任务主要集中在推荐业务中。</p>
+<h3 id="图层面的任务"><a href="#图层面的任务" class="headerlink" title="图层面的任务"></a>图层面的任务</h3><p>图层面（Graph Level）的任务不依赖于某个节点或者某条边的属性，而是从图的整体结构出发，实现分类、表示和生成等任务。目前，图层面的任务主要应用在自然科学研究领域，比如对药物分子的分类、酶的分类等。</p>
 
     </div>
 
@@ -687,7 +630,7 @@ B _ { i j } = \left\{ \begin{array} { l } { 1 \text { if } v _ { i } \text { 与
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">18 分钟</span>
+    <span title="站点阅读时长">17 分钟</span>
 </div><div class="footer-custom">
 Theme source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0">here</span><br>
 Website source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvdGhlbWUtbmV4dC5vcmc=">here</span>
