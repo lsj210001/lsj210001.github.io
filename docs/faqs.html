@@ -344,20 +344,20 @@
       
       
       <div class="post-body">
-          <p>Here is a collection of frequently asked questions in NexT Issues. If you can’t find your problem here, please go to <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L2lzc3Vlcw==" title="https://github.com/theme-next/hexo-theme-next/issues">NexT Issues<i class="fa fa-external-link"></i></span> to submit your question.</p>
-<h3 id="How-to-Set-«Read-More»"><a class="header-anchor" href="#How-to-Set-«Read-More»"></a>How to Set «Read More»</h3>
-<p>It’s a common need to show some part of article in home page and then give a link to full article. NexT gives 3 ways to control how article is shown in home page. In other words, you can use following ways to show summary of articles and a <strong>Read More</strong> button:</p>
-<ol>
+          <p>Here is a collection of frequently asked questions in NexT Issues. If you can't find your problem here, please go to <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L2lzc3Vlcw==" title="https://github.com/theme-next/hexo-theme-next/issues">NexT Issues<i class="fa fa-external-link"></i></span> to submit your question.</p>
+<h3 id="how-to-set-read-more">How to Set «Read More»</h3>
+<p>It's a common need to show some part of article in home page and then give a link to full article. NexT gives 3 ways to control how article is shown in home page. In other words, you can use following ways to show summary of articles and a <strong>Read More</strong> button:</p>
+<ol type="1">
 <li>Use <code>&lt;!-- more --&gt;</code> in your article to break your article manually, which is recommended by Hexo. <span class="label success">Recommended</span></li>
 <li>Add <code>description</code> and set its value to your article summary in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZnJvbnQtbWF0dGVy" title="https://hexo.io/docs/front-matter">Front-matter<i class="fa fa-external-link"></i></span>.</li>
 </ol>
 <div class="note info">
-            <p>It is recommended to use <code>&lt;!-- more --&gt;</code> (the first way) which can not only control what you want to show better, but also let Hexo’s plugins use it easily.</p>
+            <p>It is recommended to use <code>&lt;!-- more --&gt;</code> (the first way) which can not only control what you want to show better, but also let Hexo's plugins use it easily.</p>
           </div>
-<h3 id="How-to-Change-Fonts"><a class="header-anchor" href="#How-to-Change-Fonts"></a>How to Change Fonts</h3>
+<h3 id="how-to-change-fonts">How to Change Fonts</h3>
 <p>NexT provided a <a href="/docs/theme-settings#Fonts-Customization">Fonts Customization</a> function. If you still need more customization, following change will cover Fonts Customization function. Edit <code>source/css/_variables/custom.styl</code> in NexT theme dir and add two varibles:</p>
 <figure class="highlight styl"><figcaption><span>source/css/_custom/custom.styl</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">// Title Font, set it to font family you want.</span></span><br><span class="line"><span class="variable">$font</span>-family-headings = Georgia, sans</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set it to font family you want.</span></span><br><span class="line"><span class="variable">$font</span>-family-base = <span class="string">"Microsoft YaHei"</span>, Verdana, sans-serif</span><br><span class="line"></span><br><span class="line"><span class="comment">// Code Font.</span></span><br><span class="line"><span class="variable">$code</span>-<span class="attribute">font-family</span> = <span class="string">"Input Mono"</span>, <span class="string">"PT Mono"</span>, Consolas, Monaco, Menlo, monospace</span><br><span class="line"></span><br><span class="line"><span class="comment">// Font size of articles.</span></span><br><span class="line"><span class="variable">$font</span>-size-base = <span class="number">16px</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Font size of code.</span></span><br><span class="line"><span class="variable">$code</span>-<span class="attribute">font-size</span> = <span class="number">13px</span></span><br></pre></td></tr></table></figure>
-<h3 id="How-to-Change-Content-Width"><a class="header-anchor" href="#How-to-Change-Content-Width"></a>How to Change Content Width</h3>
+<h3 id="how-to-change-content-width">How to Change Content Width</h3>
 <p>By default NexT has following setting of content width:</p>
 <ul>
 <li>700px → when screen width &lt; 1200px.</li>
@@ -367,43 +367,87 @@
 </ul>
 <p>You can change content width by editing CSS style file. Edit <code>source/css/_variables/custom.styl</code> in <span class="label primary">theme root directory</span> and add varibles:</p>
 <div class="tabs" id="change-content-width"><ul class="nav-tabs"><li class="tab active"><a href="#change-content-width-1">Muse / Mist schemes</a></li><li class="tab"><a href="#change-content-width-2">Pisces / Gemini schemes</a></li></ul><div class="tab-content"><div class="tab-pane active" id="change-content-width-1"><p>Default variables for both Muse and Mist schemes are located in <code>source/css/_variables/base.styl</code> and defined as:</p>
-<figure class="highlight styl"><figcaption><span>next/source/css/_variables/base.styl</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="variable">$content</span>-desktop         = <span class="number">700px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">800px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">900px</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight styl">
+<figcaption>
+<span>next/source/css/_variables/base.styl</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="variable">$content</span>-desktop         = <span class="number">700px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">800px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">900px</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure>
 <p>For example, you want wider content width. You may redefine this variables with percentage width:</p>
-<figure class="highlight styl"><figcaption><span>next/source/css/_variables/custom.styl</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="variable">$content</span>-desktop         = <span class="number">90%</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">90%</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">90%</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight styl">
+<figcaption>
+<span>next/source/css/_variables/custom.styl</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="variable">$content</span>-desktop         = <span class="number">90%</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">90%</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">90%</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure>
 <div class="note warning">
-            <p>If values will in percents, during opening sidebar will dynamically decrease content width to defined by you percent.<br>But in standard behaviour, sidebar must displace content from yourself.<br>To around it, you can to specify content width in <code>em</code>:</p><figure class="highlight styl"><figcaption><span>next/source/css/_variables/custom.styl</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="variable">$content</span>-desktop         = <span class="number">50em</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">55em</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">60em</span></span><br></pre></td></tr></table></figure>
-          </div></div><div class="tab-pane" id="change-content-width-2"><p>Default variables for Pisces (and Gemini) scheme are located in <code>source/css/_variables/Pisces.styl</code> and defined as:</p>
-<figure class="highlight styl"><figcaption><span>next/source/css/_variables/Pisces.styl</span></figcaption><table><tr><td class="code"><pre><span class="line">$content-desktop         = 'calc(100% - %s)' % unit($content-desktop-padding / 2, 'px')</span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">1160px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">73%</span></span><br></pre></td></tr></table></figure>
+<pre><code>        &lt;p&gt;If values will in percents, during opening sidebar will dynamically decrease content width to defined by you percent. But in standard behaviour, sidebar must displace content from yourself. To around it, you can to specify content width in &lt;code&gt;em&lt;/code&gt;:&lt;/p&gt;&lt;figure class=&quot;highlight styl&quot;&gt;&lt;figcaption&gt;&lt;span&gt;next/source/css/_variables/custom.styl&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$content&lt;/span&gt;-desktop         = &lt;span class=&quot;number&quot;&gt;50em&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$content&lt;/span&gt;-desktop-large   = &lt;span class=&quot;number&quot;&gt;55em&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$content&lt;/span&gt;-desktop-largest = &lt;span class=&quot;number&quot;&gt;60em&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+      &lt;/div&gt;</code></pre></div><div class="tab-pane" id="change-content-width-2"><p>Default variables for Pisces (and Gemini) scheme are located in <code>source/css/_variables/Pisces.styl</code> and defined as:</p>
+<figure class="highlight styl">
+<figcaption>
+<span>next/source/css/_variables/Pisces.styl</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line">$content-desktop         = 'calc(100% - %s)' % unit($content-desktop-padding / 2, 'px')</span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">1160px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">73%</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure>
 <div class="note warning">
-            <p><code>$content-desktop</code> value in this schemes is auto-responsive by default. It can be changed to any value too, but for better content visibility recommended to stay it as is.</p>
-          </div>
+<pre><code>        &lt;p&gt;&lt;code&gt;$content-desktop&lt;/code&gt; value in this schemes is auto-responsive by default. It can be changed to any value too, but for better content visibility recommended to stay it as is.&lt;/p&gt;
+      &lt;/div&gt;</code></pre>
 <p>In this schemes content width was defined on maximum and already balanced: if desktop width will be wider – content width will more narrowed for easier reading. But if you want to make more narrow content width in wider desktops, here is example:</p>
-<figure class="highlight styl"><figcaption><span>next/source/css/_variables/custom.styl</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">65em</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">65%</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight styl">
+<figcaption>
+<span>next/source/css/_variables/custom.styl</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">65em</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">65%</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure>
 <div class="note info">
-            <p>In fact, Gemini scheme is just fork of Pisces scheme with some style improvements.<br>Therefore, almost all part of variables from Pisces scheme are imported to Gemini scheme too.<br>So, if you want to add any variables or styles to both Pisces and Gemini schemes, need to edit values just in Pisces scheme.</p>
-          </div></div></div></div>
-<h3 id="Wrong-Number-of-Tags-Categories"><a class="header-anchor" href="#Wrong-Number-of-Tags-Categories"></a>Wrong Number of Tags/Categories</h3>
-<p>Because Hexo has cache, sometimes the nubmer in Tags or Categories page is wrong. If you find this question you can re-generate site’s content as following:</p>
-<ol>
+<pre><code>        &lt;p&gt;In fact, Gemini scheme is just fork of Pisces scheme with some style improvements. Therefore, almost all part of variables from Pisces scheme are imported to Gemini scheme too. So, if you want to add any variables or styles to both Pisces and Gemini schemes, need to edit values just in Pisces scheme.&lt;/p&gt;
+      &lt;/div&gt;</code></pre></div></div></div>
+<h3 id="wrong-number-of-tagscategories">Wrong Number of Tags/Categories</h3>
+<p>Because Hexo has cache, sometimes the nubmer in Tags or Categories page is wrong. If you find this question you can re-generate site's content as following:</p>
+<ol type="1">
 <li>Delete <code>db.json</code> in site dir.</li>
 <li>Run command <code>hexo clean</code> in site dir to clean cache.</li>
 <li>Run command <code>hexo generate</code> in site dir to re-generte.</li>
 </ol>
 <p>After doing those you can run local server to see if the problem was solved.</p>
-<h3 id="How-to-Disable-Comments-on-Page"><a class="header-anchor" href="#How-to-Disable-Comments-on-Page"></a>How to Disable Comments on Page</h3>
-<p>When you enabled comment service like Disqus, all new page will have comment service automatically. If you want to disable it in one page, just add <code>comments</code> key to Front-matter and set it’s value to <code>false</code>. Like following:</p>
+<h3 id="how-to-disable-comments-on-page">How to Disable Comments on Page</h3>
+<p>When you enabled comment service like Disqus, all new page will have comment service automatically. If you want to disable it in one page, just add <code>comments</code> key to Front-matter and set it's value to <code>false</code>. Like following:</p>
 <figure class="highlight md"><figcaption><span>your-post.md</span></figcaption><table><tr><td class="code"><pre><span class="line">title: All tags</span><br><span class="line">type: "tags"</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="How-to-Set-Number-of-Articles-in-Each-Page"><a class="header-anchor" href="#How-to-Set-Number-of-Articles-in-Each-Page"></a>How to Set Number of Articles in Each Page</h3>
+<h3 id="how-to-set-number-of-articles-in-each-page">How to Set Number of Articles in Each Page</h3>
 <p>Set following in <span class="label info">site config file</span>:</p>
 <figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">index_generator:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">20</span></span><br><span class="line">  <span class="attr">yearly:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">monthly:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tag_generator:</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
 <div class="note info">
             <p><code>per_page</code> is the number of articles per page.</p>
           </div>
 <div class="note warning">
-            <p>Please note that Hexo 3.2 doesn’t allow to have duplicated same options. You’d better check weither <span class="label info">site config file</span> already has same config. If has, make them together.</p>
+            <p>Please note that Hexo 3.2 doesn't allow to have duplicated same options. You'd better check weither <span class="label info">site config file</span> already has same config. If has, make them together.</p>
           </div>
-<h3 id="How-to-Optimize-NexT-Theme"><a class="header-anchor" href="#How-to-Optimize-NexT-Theme"></a>How to Optimize NexT Theme</h3>
-<p>NexT doesn’t compress HTML, JavaScript and CSS. If you need this, you can try to search 3rd-party libraries in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3BsdWdpbnMv" title="https://hexo.io/plugins/">Hexo plugins section<i class="fa fa-external-link"></i></span> or plugins/modules under the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQ=" title="https://github.com/theme-next">NexT organization<i class="fa fa-external-link"></i></span> link. For example, you can use <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by1maWx0ZXItb3B0aW1pemU=" title="https://github.com/theme-next/hexo-filter-optimize">hexo-filter-optimize<i class="fa fa-external-link"></i></span> plugin.</p>
+<h3 id="how-to-optimize-next-theme">How to Optimize NexT Theme</h3>
+<p>NexT doesn't compress HTML, JavaScript and CSS. If you need this, you can try to search 3rd-party libraries in <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3BsdWdpbnMv" title="https://hexo.io/plugins/">Hexo plugins section<i class="fa fa-external-link"></i></span> or plugins/modules under the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQ=" title="https://github.com/theme-next">NexT organization<i class="fa fa-external-link"></i></span> link. For example, you can use <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by1maWx0ZXItb3B0aW1pemU=" title="https://github.com/theme-next/hexo-filter-optimize">hexo-filter-optimize<i class="fa fa-external-link"></i></span> plugin.</p>
 
       </div>
       
@@ -473,7 +517,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-Set-«Read-More»"><span class="nav-number">1.</span> <span class="nav-text">How to Set «Read More»</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-Change-Fonts"><span class="nav-number">2.</span> <span class="nav-text">How to Change Fonts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-Change-Content-Width"><span class="nav-number">3.</span> <span class="nav-text">How to Change Content Width</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wrong-Number-of-Tags-Categories"><span class="nav-number">4.</span> <span class="nav-text">Wrong Number of Tags&#x2F;Categories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-Disable-Comments-on-Page"><span class="nav-number">5.</span> <span class="nav-text">How to Disable Comments on Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-Set-Number-of-Articles-in-Each-Page"><span class="nav-number">6.</span> <span class="nav-text">How to Set Number of Articles in Each Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-Optimize-NexT-Theme"><span class="nav-number">7.</span> <span class="nav-text">How to Optimize NexT Theme</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-set-read-more"><span class="nav-number">1.</span> <span class="nav-text">How to Set «Read More»</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-change-fonts"><span class="nav-number">2.</span> <span class="nav-text">How to Change Fonts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-change-content-width"><span class="nav-number">3.</span> <span class="nav-text">How to Change Content Width</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wrong-number-of-tagscategories"><span class="nav-number">4.</span> <span class="nav-text">Wrong Number of Tags&#x2F;Categories</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-disable-comments-on-page"><span class="nav-number">5.</span> <span class="nav-text">How to Disable Comments on Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-set-number-of-articles-in-each-page"><span class="nav-number">6.</span> <span class="nav-text">How to Set Number of Articles in Each Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-to-optimize-next-theme"><span class="nav-number">7.</span> <span class="nav-text">How to Optimize NexT Theme</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -572,7 +616,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div><div class="footer-custom">
 Theme source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0">here</span><br>
 Website source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvdGhlbWUtbmV4dC5vcmc=">here</span>

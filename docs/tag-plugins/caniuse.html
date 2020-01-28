@@ -429,19 +429,19 @@
       
       
       <div class="post-body">
-          <h3 id="Usage"><a class="header-anchor" href="#Usage"></a>Usage</h3>
+          <h3 id="usage">Usage</h3>
 <figure class="highlight md"><figcaption><span>caniuse.js</span></figcaption><table><tr><td class="code"><pre><span class="line">&#123;% caniuse feature @ periods %&#125;</span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- Tag Alias --&gt;</span></span></span><br><span class="line">&#123;% can feature @ periods %&#125;</span><br><span class="line"></span><br><span class="line">feature : Search for the feature you want on https://caniuse.com, then click on the hash sign to the left of the search result heading and you will get the unique name of this feature.</span><br><span class="line">periods : Select the browser versions to display. Supported values: past<span class="emphasis">_1, past_</span>2, past<span class="emphasis">_3, past_</span>4, past<span class="emphasis">_5, current, future_</span>3, future<span class="emphasis">_2, future_</span>1. If this value is empty, the default value 'current' will be used.</span><br></pre></td></tr></table></figure>
-<h3 id="Examples"><a class="header-anchor" href="#Examples"></a>Examples</h3>
-<h4 id="Caniuse-without-periods"><a class="header-anchor" href="#Caniuse-without-periods"></a>Caniuse without periods</h4>
+<h3 id="examples">Examples</h3>
+<h4 id="caniuse-without-periods">Caniuse without periods</h4>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% caniuse fetch %&#125;</span><br></pre></td></tr></table></figure>
 <iframe data-feature="fetch" src="https://caniuse.bitsofco.de/embed/index.html?feat=fetch&periods=current&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>
-<h4 id="Caniuse-with-current-period"><a class="header-anchor" href="#Caniuse-with-current-period"></a>Caniuse with current period</h4>
+<h4 id="caniuse-with-current-period">Caniuse with current period</h4>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% caniuse sharedarraybuffer @ current %&#125;</span><br></pre></td></tr></table></figure>
 <iframe data-feature="sharedarraybuffer" src="https://caniuse.bitsofco.de/embed/index.html?feat=sharedarraybuffer&periods=current&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>
-<h4 id="Caniuse-with-future-periods"><a class="header-anchor" href="#Caniuse-with-future-periods"></a>Caniuse with future periods</h4>
+<h4 id="caniuse-with-future-periods">Caniuse with future periods</h4>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% caniuse loading-lazy-attr @ future<span class="emphasis">_3,future_</span>2,future_1 %&#125;</span><br></pre></td></tr></table></figure>
 <iframe data-feature="loading-lazy-attr" src="https://caniuse.bitsofco.de/embed/index.html?feat=loading-lazy-attr&periods=future_3,future_2,future_1&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>
-<h4 id="Caniuse-with-past-periods"><a class="header-anchor" href="#Caniuse-with-past-periods"></a>Caniuse with past periods</h4>
+<h4 id="caniuse-with-past-periods">Caniuse with past periods</h4>
 <figure class="highlight md"><table><tr><td class="code"><pre><span class="line">&#123;% caniuse link-rel-modulepreload @ past<span class="emphasis">_1,past_</span>2,past<span class="emphasis">_3,past_</span>4,past_5 %&#125;</span><br></pre></td></tr></table></figure>
 <iframe data-feature="link-rel-modulepreload" src="https://caniuse.bitsofco.de/embed/index.html?feat=link-rel-modulepreload&periods=past_1,past_2,past_3,past_4,past_5&accessible-colours=false" frameborder="0" width="100%" height="400px"></iframe>
 
@@ -520,7 +520,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Usage"><span class="nav-number">1.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Examples"><span class="nav-number">2.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Caniuse-without-periods"><span class="nav-number">2.1.</span> <span class="nav-text">Caniuse without periods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Caniuse-with-current-period"><span class="nav-number">2.2.</span> <span class="nav-text">Caniuse with current period</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Caniuse-with-future-periods"><span class="nav-number">2.3.</span> <span class="nav-text">Caniuse with future periods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Caniuse-with-past-periods"><span class="nav-number">2.4.</span> <span class="nav-text">Caniuse with past periods</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#usage"><span class="nav-number">1.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#examples"><span class="nav-number">2.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#caniuse-without-periods"><span class="nav-number">2.1.</span> <span class="nav-text">Caniuse without periods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#caniuse-with-current-period"><span class="nav-number">2.2.</span> <span class="nav-text">Caniuse with current period</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#caniuse-with-future-periods"><span class="nav-number">2.3.</span> <span class="nav-text">Caniuse with future periods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#caniuse-with-past-periods"><span class="nav-number">2.4.</span> <span class="nav-text">Caniuse with past periods</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -619,7 +619,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div><div class="footer-custom">
 Theme source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0">here</span><br>
 Website source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvdGhlbWUtbmV4dC5vcmc=">here</span>

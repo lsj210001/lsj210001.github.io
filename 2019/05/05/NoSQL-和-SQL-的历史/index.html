@@ -316,32 +316,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/201508281002.jpg" alt=""></p>
-<h1 id="1970：我们没有-SQL"><a class="header-anchor" href="#1970：我们没有-SQL"></a>1970：我们没有 SQL</h1>
+        <p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/201508281002.jpg" /></p>
+<h1 id="我们没有-sql">1970：我们没有 SQL</h1>
 <p>最初程序员使用结构体或Class表示一辆车子，但是随着需求的增加，需要转换成用动态的&quot;映射&quot;来表示。</p>
 <p>对 Java 程序员来说，映射就是一个 Map&lt;Object, Object&gt;。具体实现可以是 Hash 或者有序树，对应 HashMap 和 TreeMap。</p>
-<h2 id="B-tree：Map-的持久化方式"><a class="header-anchor" href="#B-tree：Map-的持久化方式"></a>B-tree：Map 的持久化方式</h2>
+<h2 id="b-treemap-的持久化方式">B-tree：Map 的持久化方式</h2>
 <p>为了防止数据丢失，我们需要想办法把这个 Map 对象以非常高效的方式持久化下来，放到磁盘上。而 map.put/get 操作会有一次寻找的过程，这个寻找过程对于磁盘来说会转变为一次随机寻道过程。</p>
-<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20181201000011593.png" alt=""></p>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/20181201000011593.png" /></p>
 <p>上图是一个最简单的 B-tree，原理很简单：既然磁盘寻道时间很多，那就减少它，一次寻道能够从磁盘取更多数据就行了。所以它是以数组为单位存储数据的，数组满了以后 B-tree 会进行分裂，HBase 其实就是棵巨大的、分布式的 B-tree。</p>
-<h2 id="层次数据库"><a class="header-anchor" href="#层次数据库"></a>层次数据库</h2>
-<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/201508281004.jpg" alt=""></p>
+<h2 id="层次数据库">层次数据库</h2>
+<p><img data-src="https://raw.githubusercontent.com/lsj210001/FigureBed/master/img/201508281004.jpg" /></p>
 <p>层次模型如上图所示，可以用小汽车来表述：一个小车由四扇玻璃，四个轮子，两个反光镜组成。车有自己的属性，轮子有自己的属性，反光镜有自己的属性。</p>
 <p>如果用 Java 代码来写的话，就是 Map 套 Map，每个 Map 有一些固定的属性，比如这个 Map 的名字是什么，这个 Map 的属性是什么, 而这就是我们最开始在使用的数据库了。</p>
-<h1 id="1980：知道-SQL"><a class="header-anchor" href="#1980：知道-SQL"></a>1980：知道 SQL</h1>
+<h1 id="知道-sql">1980：知道 SQL</h1>
 <p>虽然关系数据库是上世纪 70 年代发明的，但是直到 80 年代，IBM 发布了第一代全功能的关系数据库系统 System R 后，我们才正式进入到关系数据库模型。</p>
 <p>自从爱因斯坦把牛顿那由完美数学保证的自洽理论踢出了神坛，数学自洽就再也不是真理的标准了，哪个的用户最多哪个就是真理。</p>
-<h2 id="关系模型易用在哪里"><a class="header-anchor" href="#关系模型易用在哪里"></a>关系模型易用在哪里</h2>
+<h2 id="关系模型易用在哪里">关系模型易用在哪里</h2>
 <p>如果我要做这样的一个查询：把厂里生产的所有汽车里面，左轮子供应商是 DRDS 的轮胎都找出来。</p>
 <p>采用层次模型的代码是：</p>
 <p><code>遍历每一辆车，从车对象中找到左面的轮子，查看轮子的属性，如果是 DRDS，留下，不是则丢弃。</code></p>
 <p>采用关系模型的代码是：</p>
 <p><code>select * from 轮子表 where 轮子位置='左' and 轮子供应商='DRDS'</code></p>
-<h1 id="2000：No-SQL"><a class="header-anchor" href="#2000：No-SQL"></a>2000：No SQL!</h1>
+<h1 id="no-sql">2000：No SQL!</h1>
 <p>分布式事务性能太差，导致有一群人想要绕开这个问题。他们发现确实有一些场景是不需要强一致事务的，甚至连 SQL 都可以不要。最典型的就是日志流水的记录与分析这类场景。去掉了事务和 SQL，接口简单了，性能就更容易得到提升，扩展性也更容易实现，这就是NoSQL系统的起源。</p>
-<h1 id="2005：-不仅仅是-SQL"><a class="header-anchor" href="#2005：-不仅仅是-SQL"></a>2005： 不仅仅是 SQL</h1>
+<h1 id="不仅仅是-sql">2005： 不仅仅是 SQL</h1>
 <p>NoSQL 无法颠覆 SQL，双方共存。</p>
-<h1 id="2013：No-SQL"><a class="header-anchor" href="#2013：No-SQL"></a>2013：No, SQL!</h1>
+<h1 id="no-sql-1">2013：No, SQL!</h1>
 <p>经过了 10 年的折腾，人们还是发现关系模型目前来说是最方便表达数据存取的语言，比其他都要方便的多，所以还是妥协吧。于是所有的 NoSQL 都在想办法尝试支持关系数据库。</p>
 <p>最终大家殊途同归，还是回到了如何能够让关系数据库更具有扩展性，性能更好这条路上来，这就是 NewSQL 的来源。</p>
 
@@ -434,7 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1970：我们没有-SQL"><span class="nav-number">1.</span> <span class="nav-text">1970：我们没有 SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#B-tree：Map-的持久化方式"><span class="nav-number">1.1.</span> <span class="nav-text">B-tree：Map 的持久化方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层次数据库"><span class="nav-number">1.2.</span> <span class="nav-text">层次数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1980：知道-SQL"><span class="nav-number">2.</span> <span class="nav-text">1980：知道 SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关系模型易用在哪里"><span class="nav-number">2.1.</span> <span class="nav-text">关系模型易用在哪里</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2000：No-SQL"><span class="nav-number">3.</span> <span class="nav-text">2000：No SQL!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2005：-不仅仅是-SQL"><span class="nav-number">4.</span> <span class="nav-text">2005： 不仅仅是 SQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2013：No-SQL"><span class="nav-number">5.</span> <span class="nav-text">2013：No, SQL!</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#我们没有-sql"><span class="nav-number">1.</span> <span class="nav-text">1970：我们没有 SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#b-treemap-的持久化方式"><span class="nav-number">1.1.</span> <span class="nav-text">B-tree：Map 的持久化方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#层次数据库"><span class="nav-number">1.2.</span> <span class="nav-text">层次数据库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#知道-sql"><span class="nav-number">2.</span> <span class="nav-text">1980：知道 SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关系模型易用在哪里"><span class="nav-number">2.1.</span> <span class="nav-text">关系模型易用在哪里</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#no-sql"><span class="nav-number">3.</span> <span class="nav-text">2000：No SQL!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不仅仅是-sql"><span class="nav-number">4.</span> <span class="nav-text">2005： 不仅仅是 SQL</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#no-sql-1"><span class="nav-number">5.</span> <span class="nav-text">2013：No, SQL!</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -533,7 +533,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div><div class="footer-custom">
 Theme source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0">here</span><br>
 Website source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvdGhlbWUtbmV4dC5vcmc=">here</span>

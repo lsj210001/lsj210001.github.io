@@ -390,66 +390,67 @@
       
       <div class="post-body">
           <p>Currently, it is not smooth to update NexT theme from pulling or downloading new releases. It is quite often running into conflict status when updating NexT theme via <code>git pull</code>, or need to merge configurations manually when upgrading to new releases.</p>
-<p>At present, NexT encourages users to store some options in <span class="label info">site config file</span> (<code>hexo/_config.yml</code>) and other options in <span class="label primary">theme config file</span> (<code>next/_config.yml</code>). This approach is applicable, but has some drawbacks:</p>
-<ol>
-<li>Configurations are splitted into two pieces</li>
-<li>Users may be confused which place should be for options</li>
-</ol>
+<p>At present, NexT encourages users to store some options in <span class="label info">site config file</span> (<code>hexo/_config.yml</code>) and other options in <span class="label primary">theme config file</span> (<code>next/_config.yml</code>). This approach is applicable, but has some drawbacks: 1. Configurations are splitted into two pieces 2. Users may be confused which place should be for options</p>
 <p>In order to resolve this issue, NexT provides the following two solutions.</p>
-<div class="tabs" id="option"><ul class="nav-tabs"><li class="tab active"><a href="#option-1"><span class="label success">Hexo-Way</span></a></li><li class="tab"><a href="#option-2">NexT-Way</a></li></ul><div class="tab-content"><div class="tab-pane active" id="option-1"><p>With this way, all your configurations locate in main <span class="label info">site config file</span>.<br>
-You don’t need to edit <span class="label primary">theme config file</span> or create any new files.<br>
-But you need to <strong><a href="/docs/troubleshooting/#Keep-up-indentation">keep up indentation</a></strong> within <code>theme_config</code> option.</p>
+<div class="tabs" id="option"><ul class="nav-tabs"><li class="tab active"><a href="#option-1"><span class="label success">Hexo-Way</span></a></li><li class="tab"><a href="#option-2">NexT-Way</a></li></ul><div class="tab-content"><div class="tab-pane active" id="option-1"><p>With this way, all your configurations locate in main <span class="label info">site config file</span>. You don't need to edit <span class="label primary">theme config file</span> or create any new files. But you need to <strong><a href="/docs/troubleshooting/#Keep-up-indentation">keep up indentation</a></strong> within <code>theme_config</code> option.</p>
 <div class="note info">
-            <p>If there are any new options in new releases, you just need to copy those options from <span class="label primary">theme config file</span>, paste into <span class="label info">site config file</span> and set their values to whatever you want.</p>
-          </div>
+<pre><code>        &lt;p&gt;If there are any new options in new releases, you just need to copy those options from &lt;span class=&quot;label primary&quot;&gt;theme config file&lt;/span&gt;, paste into &lt;span class=&quot;label info&quot;&gt;site config file&lt;/span&gt; and set their values to whatever you want.&lt;/p&gt;
+      &lt;/div&gt;</code></pre>
 <p><strong>Usage</strong></p>
-<ol>
+<ol type="1">
 <li>Please confirm that the <code>/source/_data/next.yml</code> file does not exist (delete it if exists).</li>
-<li>Copy needed NexT theme options from <span class="label primary">theme config file</span> into <span class="label info">site config file</span>, then<br>
-2.1. Move all this settings to the right with two spaces (in Visual Studio Code: select all strings, <kbd>CTRL</kbd> + <kbd>]</kbd>).<br>
-2.2. Add <code>theme_config:</code> parameter above all this settings.</li>
+<li>Copy needed NexT theme options from <span class="label primary">theme config file</span> into <span class="label info">site config file</span>, then 2.1. Move all this settings to the right with two spaces (in Visual Studio Code: select all strings, <kbd>CTRL</kbd> + <kbd>]</kbd>). 2.2. Add <code>theme_config:</code> parameter above all this settings.</li>
 </ol>
 <p><strong>Useful links</strong></p>
 <ul>
 <li><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvY29uZmlndXJhdGlvbiNPdmVycmlkaW5nLVRoZW1lLUNvbmZpZw==" title="https://hexo.io/docs/configuration#Overriding-Theme-Config">Hexo Configuration<i class="fa fa-external-link"></i></span></li>
 <li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL3B1bGwvNzU3" title="https://github.com/hexojs/hexo/pull/757">Hexo Pull #757<i class="fa fa-external-link"></i></span></li>
-</ul></div><div class="tab-pane" id="option-2"><p>With this way, you can put all your configurations into one place (<code>hexo/source/_data/next.yml</code>).<br>
-You don’t need to edit <span class="label primary">theme config file</span> (<code>next/_config.yml</code>).<br>
-But option may not accurately procces all hexo external libraries with their additional options (for example, <code>hexo-server</code> module options may be readed only in default hexo config).</p>
+</ul></div><div class="tab-pane" id="option-2"><p>With this way, you can put all your configurations into one place (<code>hexo/source/_data/next.yml</code>). You don't need to edit <span class="label primary">theme config file</span> (<code>next/_config.yml</code>). But option may not accurately procces all hexo external libraries with their additional options (for example, <code>hexo-server</code> module options may be readed only in default hexo config).</p>
 <div class="note info">
-            <p>If there are any new options in new releases, you just need to copy those options from <span class="label primary">theme config file</span>, paste into <code>hexo/source/_data/next.yml</code> and set their values to whatever you want.</p>
-          </div>
+<pre><code>        &lt;p&gt;If there are any new options in new releases, you just need to copy those options from &lt;span class=&quot;label primary&quot;&gt;theme config file&lt;/span&gt;, paste into &lt;code&gt;hexo/source/_data/next.yml&lt;/code&gt; and set their values to whatever you want.&lt;/p&gt;
+      &lt;/div&gt;</code></pre>
 <div class="note warning">
-            <p>This method relies on Hexo <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZGF0YS1maWxlcy5odG1s" title="https://hexo.io/docs/data-files.html">Data files<i class="fa fa-external-link"></i></span>. Because Data files is introduced in Hexo 3, so you need upgrade Hexo to 3.0 (or above) to use this feature.</p>
-          </div>
+<pre><code>        &lt;p&gt;This method relies on Hexo &lt;a href=&quot;https://hexo.io/docs/data-files.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Data files&lt;/a&gt;. Because Data files is introduced in Hexo 3, so you need upgrade Hexo to 3.0 (or above) to use this feature.&lt;/p&gt;
+      &lt;/div&gt;</code></pre>
 <p><strong>Usage</strong></p>
-<ol>
-<li>
-<p>Please ensure you are using Hexo 3 (or above).</p>
-</li>
-<li>
-<p>Create an file named <code>next.yml</code> in <code>hexo/source/_data</code> directory (create <code>_data</code> directory if it did not exists).</p>
+<ol type="1">
+<li>Please ensure you are using Hexo 3 (or above).</li>
+<li><p>Create an file named <code>next.yml</code> in <code>hexo/source/_data</code> directory (create <code>_data</code> directory if it did not exists).</p>
 <div class="note warning">
-         <p>After that steps there are <strong>2 variants</strong>, need to <strong>choose only one</strong> of them and <strong>resume next steps</strong>.</p>
-       </div>
-<div class="tabs" id="variant"><ul class="nav-tabs"><li class="tab active"><a href="#variant-1"><strong><code>override: false</code></strong></a></li><li class="tab"><a href="#variant-2"><code>override: true</code></a></li></ul><div class="tab-content"><div class="tab-pane active" id="variant-1"><p>1. In <code>next.yml</code> <code>override</code> option must not be defined or set on <code>false</code>.<br>
+<pre><code>     &lt;p&gt;After that steps there are &lt;strong&gt;2 variants&lt;/strong&gt;, need to &lt;strong&gt;choose only one&lt;/strong&gt; of them and &lt;strong&gt;resume next steps&lt;/strong&gt;.&lt;/p&gt;
+   &lt;/div&gt;</code></pre>
+<div class="tabs" id="variant">
+<ul class="nav-tabs">
+<li class="tab active">
+<a href="#variant-1"><strong><code>override: false</code></strong></a>
 </li>
-<li>
-<p>Copy <strong>needed options</strong> from both <span class="label info">site config file</span> and <span class="label primary">theme config file</span> into <code>hexo/source/_data/next.yml</code>.</p></div><div class="tab-pane" id="variant-2"><p>1. In <code>next.yml</code> set <code>override</code> option on <code>true</code>.<br></p>
+<li class="tab">
+<a href="#variant-2"><code>override: true</code></a>
 </li>
-<li>
-<p>Copy <strong>all NexT theme options</strong> from <span class="label primary">theme config file</span> into <code>hexo/source/_data/next.yml</code>.</p></div></div></div></p>
-</li>
-<li>
-<p>Then, in main <span class="label info">site config file</span> need to define <code>theme: next</code> option (and if needed, <code>source_dir: source</code>).</p>
-</li>
-<li>
-<p>Use standart parameters to start server, generate or deploy (<code>hexo clean &amp;&amp; hexo g -d &amp;&amp; hexo s</code>).</p>
-</li>
+</ul>
+<div class="tab-content">
+<div class="tab-pane active" id="variant-1">
+<p>
+<ol type="1">
+<li>In <code>next.yml</code> <code>override</code> option must not be defined or set on <code>false</code>. 2. Copy <strong>needed options</strong> from both <span class="label info">site config file</span> and <span class="label primary">theme config file</span> into <code>hexo/source/_data/next.yml</code>.
+</p>
+</div>
+<div class="tab-pane" id="variant-2">
+<p>
+<ol type="1">
+<li>In <code>next.yml</code> set <code>override</code> option on <code>true</code>. 2. Copy <strong>all NexT theme options</strong> from <span class="label primary">theme config file</span> into <code>hexo/source/_data/next.yml</code>.
+</p>
+</div>
+</div>
+</div></li>
+</ol></li>
+</ol></li>
+<li>Then, in main <span class="label info">site config file</span> need to define <code>theme: next</code> option (and if needed, <code>source_dir: source</code>).</li>
+<li><p>Use standart parameters to start server, generate or deploy (<code>hexo clean &amp;&amp; hexo g -d &amp;&amp; hexo s</code>).</p></li>
 </ol>
 <div class="note danger">
-            <p><strong>Known Issues</strong><br>NexT before version 7.5.0 uses <code>lodash/merge</code> to merge configs from <code>next.yml</code>, which might lead to the incorrect order of menu item. Since <code>lodash/merge</code> is using deep copy, even if you set the order of the menu items, they will follow the default order in <code>_config.yml</code>.</p>
-          </div></div></div></div>
+<pre><code>        &lt;p&gt;&lt;strong&gt;Known Issues&lt;/strong&gt; NexT before version 7.5.0 uses &lt;code&gt;lodash/merge&lt;/code&gt; to merge configs from &lt;code&gt;next.yml&lt;/code&gt;, which might lead to the incorrect order of menu item. Since &lt;code&gt;lodash/merge&lt;/code&gt; is using deep copy, even if you set the order of the menu items, they will follow the default order in &lt;code&gt;_config.yml&lt;/code&gt;.&lt;/p&gt;
+      &lt;/div&gt;</code></pre></div></div></div>
 
       </div>
       
@@ -624,7 +625,7 @@ But option may not accurately procces all hexo external libraries with their add
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div><div class="footer-custom">
 Theme source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0">here</span><br>
 Website source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvdGhlbWUtbmV4dC5vcmc=">here</span>

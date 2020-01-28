@@ -415,15 +415,44 @@
       
       
       <div class="post-body">
-          <h3 id="Widgetpack-Rating"><a class="header-anchor" href="#Widgetpack-Rating"></a>Widgetpack Rating</h3>
+          <h3 id="widgetpack-rating">Widgetpack Rating</h3>
 <p>Rating service with login through any social networks like Facebook, Twitter, Google+, LinkedIn, Instagram and others.</p>
-<div class="tabs" id="rating"><ul class="nav-tabs"><li class="tab active"><a href="#rating-1">Get ID →</a></li><li class="tab"><a href="#rating-2">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rating-1"><p>Login to <span class="exturl" data-url="aHR0cHM6Ly93aWRnZXRwYWNrLmNvbS9hZG1pbiNzaWduaW4=" title="https://widgetpack.com/admin#signin">widgetpack<i class="fa fa-external-link"></i></span> and add new site, you will get your site ID:</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">wpac_init.push(&#123;widget: 'Rating', id: ID&#125;);</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="rating-2"><p>You can enable it by setting value <code>rating.enable</code> to <code>true</code>, and copy <code>ID</code> value of <code>id</code> in <span class="label primary">theme config file</span>. You can also configure the rating color by editing values in <code>rating.color</code> section.</p>
-<figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">rating:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">id:</span>     <span class="string">ID</span> <span class="comment">#&lt;app_id&gt;</span></span><br><span class="line">  <span class="attr">color:</span>  <span class="string">fc6423</span></span><br></pre></td></tr></table></figure></div></div></div>
-<h3 id="AddThis"><a class="header-anchor" href="#AddThis"></a>AddThis</h3>
-<div class="tabs" id="addthis"><ul class="nav-tabs"><li class="tab active"><a href="#addthis-1">Sign Up →</a></li><li class="tab"><a href="#addthis-2">AddThis ID →</a></li><li class="tab"><a href="#addthis-3">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="addthis-1"><p>Sign up in <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWRkdGhpcy5jb20=" title="https://www.addthis.com">AddThis<i class="fa fa-external-link"></i></span>. You can use Google/Facebook/Twitter to login.</p></div><div class="tab-pane" id="addthis-2"><p>Get AddThis ID in this menu: <code>More..</code> → <code>General</code> → <code>ID</code>. See example on the picture below:<br>
-<img data-src="/images/docs/add-this-id.png" alt="AddThis ID"></p></div><div class="tab-pane" id="addthis-3"><p>Edit the configurations in <code>add_this_id</code> section in the <span class="label primary">theme config file</span> as following:</p>
-<figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">add_this_id:</span> <span class="string">your_add_this_id</span></span><br></pre></td></tr></table></figure></div></div></div>
+<div class="tabs" id="rating"><ul class="nav-tabs"><li class="tab active"><a href="#rating-1">Get ID →</a></li><li class="tab"><a href="#rating-2">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rating-1">Login to <span class="exturl" data-url="aHR0cHM6Ly93aWRnZXRwYWNrLmNvbS9hZG1pbiNzaWduaW4=" title="https://widgetpack.com/admin#signin">widgetpack<i class="fa fa-external-link"></i></span> and add new site, you will get your site ID:
+<figure class="highlight html">
+<table>
+<tr>
+<td class="code">
+<pre><span class="line">wpac_init.push(&#123;widget: 'Rating', id: ID&#125;);</span><br></pre>
+</td>
+</tr>
+</table>
+</figure></div><div class="tab-pane" id="rating-2"><p>You can enable it by setting value <code>rating.enable</code> to <code>true</code>, and copy <code>ID</code> value of <code>id</code> in <span class="label primary">theme config file</span>. You can also configure the rating color by editing values in <code>rating.color</code> section.</p>
+<figure class="highlight yml">
+<figcaption>
+<span>next/_config.yml</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="attr">rating:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">id:</span>     <span class="string">ID</span> <span class="comment">#&lt;app_id&gt;</span></span><br><span class="line">  <span class="attr">color:</span>  <span class="string">fc6423</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure></div></div></div>
+<h3 id="addthis">AddThis</h3>
+<div class="tabs" id="addthis"><ul class="nav-tabs"><li class="tab active"><a href="#addthis-1">Sign Up →</a></li><li class="tab"><a href="#addthis-2">AddThis ID →</a></li><li class="tab"><a href="#addthis-3">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="addthis-1"><p>Sign up in <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWRkdGhpcy5jb20=" title="https://www.addthis.com">AddThis<i class="fa fa-external-link"></i></span>. You can use Google/Facebook/Twitter to login.</p></div><div class="tab-pane" id="addthis-2"><p>Get AddThis ID in this menu: <code>More..</code> → <code>General</code> → <code>ID</code>. See example on the picture below: <img data-src="/images/docs/add-this-id.png" alt="AddThis ID" /></p></div><div class="tab-pane" id="addthis-3">Edit the configurations in <code>add_this_id</code> section in the <span class="label primary">theme config file</span> as following:
+<figure class="highlight yml">
+<figcaption>
+<span>next/_config.yml</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="attr">add_this_id:</span> <span class="string">your_add_this_id</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure></div></div></div>
 
       </div>
       
@@ -500,7 +529,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Widgetpack-Rating"><span class="nav-number">1.</span> <span class="nav-text">Widgetpack Rating</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AddThis"><span class="nav-number">2.</span> <span class="nav-text">AddThis</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#widgetpack-rating"><span class="nav-number">1.</span> <span class="nav-text">Widgetpack Rating</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#addthis"><span class="nav-number">2.</span> <span class="nav-text">AddThis</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -599,7 +628,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div><div class="footer-custom">
 Theme source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0">here</span><br>
 Website source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvdGhlbWUtbmV4dC5vcmc=">here</span>

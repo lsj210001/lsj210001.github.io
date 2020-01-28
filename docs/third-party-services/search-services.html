@@ -424,57 +424,120 @@
       
       
       <div class="post-body">
-          <h3 id="Algolia-Search"><a class="header-anchor" href="#Algolia-Search"></a>Algolia Search</h3>
+          <h3 id="algolia-search">Algolia Search</h3>
 <p>NexT provides Algolia search plugin for index your hexo website content. What you should note here is that only turn on <code>enable</code> of <code>algolia_search</code> in <span class="label primary">theme config file</span> cannot let you use the algolia search correctly, you need to install corresponding <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29uY2xldG9tL2hleG8tYWxnb2xpYQ==" title="https://github.com/oncletom/hexo-algolia">Hexo Algolia<i class="fa fa-external-link"></i></span> plugin to seach your website with Algolia. Follow the steps described below to complete the installation of Algolia search.</p>
-<div class="tabs" id="algolia-search"><ul class="nav-tabs"><li class="tab active"><a href="#algolia-search-1">Registration →</a></li><li class="tab"><a href="#algolia-search-2">Algolia Config →</a></li><li class="tab"><a href="#algolia-search-3">Hexo Config →</a></li><li class="tab"><a href="#algolia-search-4">Algolia Module →</a></li><li class="tab"><a href="#algolia-search-5">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="algolia-search-1"><p>Register at <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWxnb2xpYS5jb20=" title="https://www.algolia.com">Algolia<i class="fa fa-external-link"></i></span>, you can log in directly using GitHub or Google Account. Upon Customer’s initial sign-up for an Account, Customer will have a free, fourteen (14) day evaluation period (the «Evaluation Period») for the Algolia Services commencing on the Effective Date, subject to the limitations on Algolia’s website. After that, Algolia offers a free, branded version for up to 10k records and 100k operations per month.</p></div><div class="tab-pane" id="algolia-search-2"><ol>
-<li>
-<p>If a tutorial pops up, you can skip it. Go straight to create an <code>Index</code> which will be used later.<br>
-<img data-src="/images/docs/algolia-2.png" alt="Algolia Create Index"></p>
-</li>
-<li>
-<p>Go to the <code>API Keys</code> page and find your credentials. You will need the <code>Application ID</code> and the <code>Search-only API key</code> in the following sections. The <code>Admin API key</code> need to keep confidential. Never store your Admin API Key as <code>apiKey</code> in <span class="label primary">theme config file</span>: it would give full control of your Algolia index to others and you don’t want to face the consequences.<br>
-<img data-src="/images/docs/algolia-4.png" alt="Algolia API Keys"></p>
-</li>
-<li>
-<p>In the <code>API Keys</code> page, click the <code>ALL API KEYS</code> and the <code>edit</code> option in the created APIKEY to activate a pop-up box where you can setup authorizations and restrictions with a great level of precision. Check <code>Add records</code>, <code>Delete records</code>, <code>List indices</code>, <code>Delete index</code> features in ACL permissions that will be allowed for the given API key. And then click the <code>Update</code> button.<br>
-<img data-src="/images/docs/algolia-5.png" alt="Algolia API Keys 2"> <img data-src="/images/docs/algolia-5-2.png" alt="Algolia Configuring Records"></p>
-</li>
-</ol></div><div class="tab-pane" id="algolia-search-3"><p>In your <span class="label info">site config file</span>, add the following configuration and replace the <code>applicationID</code> &amp; <code>apiKey</code> &amp; <code>indexName</code> with corresponding fields obtained at Algolia.</p>
-<figure class="highlight yml"><figcaption><span>hexo/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">'Application ID'</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">'Search-only API key'</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">'indexName'</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="algolia-search-4"><ol>
-<li>
-<p>Algolia requires users to upload their search index data either manually or via provided APIs. Install and configure <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29uY2xldG9tL2hleG8tYWxnb2xpYQ==" title="https://github.com/oncletom/hexo-algolia">Hexo Algolia<i class="fa fa-external-link"></i></span> in your Hexo directory. This plugin will index your site and upload selected data to Algolia.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ npm install hexo-algolia</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>Run the following command to upload index data, keep a weather eye out the output of the command.</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key <span class="comment"># Use Git Bash</span></span><br><span class="line"><span class="comment"># set HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # Use Windows command line</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo algolia</span><br></pre></td></tr></table></figure>
-<p><img data-src="/images/docs/algolia-7.png" alt="Reload Index"></p>
-</li>
-<li>
-<p>If you want to use a different version from CDN, please follow the instructions below.</p>
-<p>You need to <strong>set vendors</strong> in <span class="label primary">theme config file</span>:</p>
-<figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">algolia_instant_js:</span> <span class="string">https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js</span></span><br><span class="line">  <span class="attr">algolia_instant_css:</span> <span class="string">https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css</span></span><br><span class="line">  <span class="string">...</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol></div><div class="tab-pane" id="algolia-search-5"><p>In <span class="label primary">theme config file</span>, turn on <code>enable</code> of <code>algolia_search</code>. At the same time, you need to <strong>turn off other search plugins</strong> like Local Search. You can also adjust the text in <code>labels</code> according to your needs.</p>
-<figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Algolia Search</span></span><br><span class="line"><span class="attr">algolia_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hits:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">input_placeholder:</span> <span class="string">Search</span> <span class="string">for</span> <span class="string">Posts</span></span><br><span class="line">    <span class="attr">hits_empty:</span> <span class="string">"We didn't find any results for the search: $&#123;query&#125;"</span></span><br><span class="line">    <span class="attr">hits_stats:</span> <span class="string">"$&#123;hits&#125; results found in $&#123;time&#125; ms"</span></span><br></pre></td></tr></table></figure></div></div></div>
+<div class="tabs" id="algolia-search"><ul class="nav-tabs"><li class="tab active"><a href="#algolia-search-1">Registration →</a></li><li class="tab"><a href="#algolia-search-2">Algolia Config →</a></li><li class="tab"><a href="#algolia-search-3">Hexo Config →</a></li><li class="tab"><a href="#algolia-search-4">Algolia Module →</a></li><li class="tab"><a href="#algolia-search-5">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="algolia-search-1"><p>Register at <span class="exturl" data-url="aHR0cHM6Ly93d3cuYWxnb2xpYS5jb20=" title="https://www.algolia.com">Algolia<i class="fa fa-external-link"></i></span>, you can log in directly using GitHub or Google Account. Upon Customer’s initial sign-up for an Account, Customer will have a free, fourteen (14) day evaluation period (the «Evaluation Period») for the Algolia Services commencing on the Effective Date, subject to the limitations on Algolia’s website. After that, Algolia offers a free, branded version for up to 10k records and 100k operations per month.</p></div><div class="tab-pane" id="algolia-search-2"><ol type="1">
+<li><p>If a tutorial pops up, you can skip it. Go straight to create an <code>Index</code> which will be used later. <img data-src="/images/docs/algolia-2.png" alt="Algolia Create Index" /></p></li>
+<li><p>Go to the <code>API Keys</code> page and find your credentials. You will need the <code>Application ID</code> and the <code>Search-only API key</code> in the following sections. The <code>Admin API key</code> need to keep confidential. Never store your Admin API Key as <code>apiKey</code> in <span class="label primary">theme config file</span>: it would give full control of your Algolia index to others and you don't want to face the consequences. <img data-src="/images/docs/algolia-4.png" alt="Algolia API Keys" /></p></li>
+<li><p>In the <code>API Keys</code> page, click the <code>ALL API KEYS</code> and the <code>edit</code> option in the created APIKEY to activate a pop-up box where you can setup authorizations and restrictions with a great level of precision. Check <code>Add records</code>, <code>Delete records</code>, <code>List indices</code>, <code>Delete index</code> features in ACL permissions that will be allowed for the given API key. And then click the <code>Update</code> button. <img data-src="/images/docs/algolia-5.png" alt="Algolia API Keys 2" /> <img data-src="/images/docs/algolia-5-2.png" alt="Algolia Configuring Records" /></p></li>
+</ol></div><div class="tab-pane" id="algolia-search-3">In your <span class="label info">site config file</span>, add the following configuration and replace the <code>applicationID</code> &amp; <code>apiKey</code> &amp; <code>indexName</code> with corresponding fields obtained at Algolia.
+<figure class="highlight yml">
+<figcaption>
+<span>hexo/_config.yml</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="attr">algolia:</span></span><br><span class="line">  <span class="attr">applicationID:</span> <span class="string">'Application ID'</span></span><br><span class="line">  <span class="attr">apiKey:</span> <span class="string">'Search-only API key'</span></span><br><span class="line">  <span class="attr">indexName:</span> <span class="string">'indexName'</span></span><br><span class="line">  <span class="attr">chunkSize:</span> <span class="number">5000</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure></div><div class="tab-pane" id="algolia-search-4"><ol type="1">
+<li><p>Algolia requires users to upload their search index data either manually or via provided APIs. Install and configure <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29uY2xldG9tL2hleG8tYWxnb2xpYQ==" title="https://github.com/oncletom/hexo-algolia">Hexo Algolia<i class="fa fa-external-link"></i></span> in your Hexo directory. This plugin will index your site and upload selected data to Algolia.</p>
+<figure class="highlight bash">
+<table>
+<tr>
+<td class="code">
+<pre><span class="line">$ <span class="built_in">cd</span> hexo</span><br><span class="line">$ npm install hexo-algolia</span><br></pre>
+</td>
+</tr>
+</table>
+</figure></li>
+<li><p>Run the following command to upload index data, keep a weather eye out the output of the command.</p>
+<figure class="highlight bash">
+<table>
+<tr>
+<td class="code">
+<pre><span class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key <span class="comment"># Use Git Bash</span></span><br><span class="line"><span class="comment"># set HEXO_ALGOLIA_INDEXING_KEY=Search-Only API key # Use Windows command line</span></span><br><span class="line">$ hexo clean</span><br><span class="line">$ hexo algolia</span><br></pre>
+</td>
+</tr>
+</table>
+</figure>
+<figure>
+<img data-src="/images/docs/algolia-7.png" alt="Reload Index" /><figcaption>Reload Index</figcaption>
+</figure></li>
+<li><p>If you want to use a different version from CDN, please follow the instructions below.</p>
+You need to <strong>set vendors</strong> in <span class="label primary">theme config file</span>:
+<figure class="highlight yml">
+<figcaption>
+<span>next/_config.yml</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">algolia_instant_js:</span> <span class="string">https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.js</span></span><br><span class="line">  <span class="attr">algolia_instant_css:</span> <span class="string">https://cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css</span></span><br><span class="line">  <span class="string">...</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure></li>
+</ol></div><div class="tab-pane" id="algolia-search-5">In <span class="label primary">theme config file</span>, turn on <code>enable</code> of <code>algolia_search</code>. At the same time, you need to <strong>turn off other search plugins</strong> like Local Search. You can also adjust the text in <code>labels</code> according to your needs.
+<figure class="highlight yml">
+<figcaption>
+<span>next/_config.yml</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="comment"># Algolia Search</span></span><br><span class="line"><span class="attr">algolia_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hits:</span></span><br><span class="line">    <span class="attr">per_page:</span> <span class="number">10</span></span><br><span class="line">  <span class="attr">labels:</span></span><br><span class="line">    <span class="attr">input_placeholder:</span> <span class="string">Search</span> <span class="string">for</span> <span class="string">Posts</span></span><br><span class="line">    <span class="attr">hits_empty:</span> <span class="string">"We didn't find any results for the search: $&#123;query&#125;"</span></span><br><span class="line">    <span class="attr">hits_stats:</span> <span class="string">"$&#123;hits&#125; results found in $&#123;time&#125; ms"</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure></div></div></div>
 <div class="note danger">
-            <p><strong>Known Issues</strong></p><ol><li>The latest version of the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29uY2xldG9tL2hleG8tYWxnb2xpYQ==" title="https://github.com/oncletom/hexo-algolia">Hexo-Algolia<i class="fa fa-external-link"></i></span> plugin removes the content indexing feature, given Algolia’s free account limitation.</li><li>The <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0xvdWlzQmFycmFucXVlaXJvL2hleG8tYWxnb2xpYXNlYXJjaA==" title="https://github.com/LouisBarranqueiro/hexo-algoliasearch">Hexo-Algoliasearch<i class="fa fa-external-link"></i></span> plugin provides content indexing functionality, but requires the replacement of keywords in the NexT theme. The same problem exists with <code>Record Too Big</code> for Algolia’s free account.<ul><li>Replace all <code>applicationID</code> in <code>source/js/algolia-search.js</code> with <code>appId</code></li><li>Replace all <code>applicationID</code> in <code>layout/_partials/head/head.swig</code> with <code>appId</code></li></ul></li></ol>
+            <p><strong>Known Issues</strong></p><ol type="1"><li>The latest version of the <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29uY2xldG9tL2hleG8tYWxnb2xpYQ==" title="https://github.com/oncletom/hexo-algolia">Hexo-Algolia<i class="fa fa-external-link"></i></span> plugin removes the content indexing feature, given Algolia's free account limitation.</li><li>The <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0xvdWlzQmFycmFucXVlaXJvL2hleG8tYWxnb2xpYXNlYXJjaA==" title="https://github.com/LouisBarranqueiro/hexo-algoliasearch">Hexo-Algoliasearch<i class="fa fa-external-link"></i></span> plugin provides content indexing functionality, but requires the replacement of keywords in the NexT theme. The same problem exists with <code>Record Too Big</code> for Algolia's free account.<ul><li>Replace all <code>applicationID</code> in <code>source/js/algolia-search.js</code> with <code>appId</code></li><li>Replace all <code>applicationID</code> in <code>layout/_partials/head/head.swig</code> with <code>appId</code></li></ul></li></ol>
           </div>
-<h3 id="Local-Search"><a class="header-anchor" href="#Local-Search"></a>Local Search</h3>
+<h3 id="local-search">Local Search</h3>
 <p>Local search no need any external 3rd-party services and can be extra indexed by search engines. That search method recommended for most users.</p>
 <div class="tabs" id="local-search"><ul class="nav-tabs"><li class="tab active"><a href="#local-search-1">Installation →</a></li><li class="tab"><a href="#local-search-2">Hexo Config →</a></li><li class="tab"><a href="#local-search-3">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="local-search-1"><p>Install <code>hexo-generator-searchdb</code> by run following command in <span class="label info">site root dir</span>:</p>
-<pre><code>$ npm install hexo-generator-searchdb
-</code></pre></div><div class="tab-pane" id="local-search-2"><p>Edit <span class="label info">site config file</span> and add following content:</p>
-<figure class="highlight yml"><figcaption><span>hexo/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="local-search-3"><p>Edit <span class="label primary">theme config file</span> to enable Local Search:</p>
-<figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></div></div></div>
-<h3 id="Swiftype-Search"><a class="header-anchor" href="#Swiftype-Search"></a>Swiftype Search</h3>
-<div class="tabs" id="swiftype-search"><ul class="nav-tabs"><li class="tab active"><a href="#swiftype-search-1">Sign up →</a></li><li class="tab"><a href="#swiftype-search-2">Create Search Engine →</a></li><li class="tab"><a href="#swiftype-search-3">Customize and Enable Search →</a></li><li class="tab"><a href="#swiftype-search-4">Get Key →</a></li><li class="tab"><a href="#swiftype-search-5">Search Field →</a></li><li class="tab"><a href="#swiftype-search-6">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="swiftype-search-1"><p>Go to <span class="exturl" data-url="aHR0cHM6Ly9zd2lmdHlwZS5jb20vdXNlcnMvc2lnbl91cA==" title="https://swiftype.com/users/sign_up">Swiftype Sign Page<i class="fa fa-external-link"></i></span> to sign up.<br>
-<img data-src="/images/docs/swiftype-1.png" alt="Swiftype Sign up"></p></div><div class="tab-pane" id="swiftype-search-2"><p>After signing up create a new search engine and follow instructions.<br>
-<img data-src="/images/docs/swiftype-2.png" alt="Swiftype Create Search Engine"></p></div><div class="tab-pane" id="swiftype-search-3"><p>After creating choose <code>Integrate</code> → <code>Install Search</code> in the menu to customize with instructions. Then click <code>Active</code> button finally.<br>
-<img data-src="/images/docs/swiftype-3.png" alt="Swiftype Customize And Enable Search"></p></div><div class="tab-pane" id="swiftype-search-4"><p>Back to <code>INSTALL CODE</code> and copy your <code>swiftype_key</code>.<br>
-<img data-src="/images/docs/swiftype-4.png" alt="Swiftype Get Key"></p></div><div class="tab-pane" id="swiftype-search-5"><p>Click <code>Change Configuration</code> → <code>Search Field</code>, then follow the instructions.<br>
-<img data-src="/images/docs/swiftype-5.png" alt="Swiftype Search Field"></p></div><div class="tab-pane" id="swiftype-search-6"><p>Edit <span class="label primary">theme config file</span> and fill section <code>swiftype_key</code> with value of your key gets:</p>
-<figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment"># Swiftype Search API Key</span></span><br><span class="line"><span class="attr">swiftype_key:</span> <span class="string">xxxxxxxxx</span></span><br></pre></td></tr></table></figure></div></div></div>
+<pre><code>$ npm install hexo-generator-searchdb</code></pre></div><div class="tab-pane" id="local-search-2">Edit <span class="label info">site config file</span> and add following content:
+<figure class="highlight yml">
+<figcaption>
+<span>hexo/_config.yml</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure></div><div class="tab-pane" id="local-search-3">Edit <span class="label primary">theme config file</span> to enable Local Search:
+<figure class="highlight yml">
+<figcaption>
+<span>next/_config.yml</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/theme-next/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure></div></div></div>
+<h3 id="swiftype-search">Swiftype Search</h3>
+<div class="tabs" id="swiftype-search"><ul class="nav-tabs"><li class="tab active"><a href="#swiftype-search-1">Sign up →</a></li><li class="tab"><a href="#swiftype-search-2">Create Search Engine →</a></li><li class="tab"><a href="#swiftype-search-3">Customize and Enable Search →</a></li><li class="tab"><a href="#swiftype-search-4">Get Key →</a></li><li class="tab"><a href="#swiftype-search-5">Search Field →</a></li><li class="tab"><a href="#swiftype-search-6">NexT Config</a></li></ul><div class="tab-content"><div class="tab-pane active" id="swiftype-search-1"><p>Go to <span class="exturl" data-url="aHR0cHM6Ly9zd2lmdHlwZS5jb20vdXNlcnMvc2lnbl91cA==" title="https://swiftype.com/users/sign_up">Swiftype Sign Page<i class="fa fa-external-link"></i></span> to sign up. <img data-src="/images/docs/swiftype-1.png" alt="Swiftype Sign up" /></p></div><div class="tab-pane" id="swiftype-search-2"><p>After signing up create a new search engine and follow instructions. <img data-src="/images/docs/swiftype-2.png" alt="Swiftype Create Search Engine" /></p></div><div class="tab-pane" id="swiftype-search-3"><p>After creating choose <code>Integrate</code> → <code>Install Search</code> in the menu to customize with instructions. Then click <code>Active</code> button finally. <img data-src="/images/docs/swiftype-3.png" alt="Swiftype Customize And Enable Search" /></p></div><div class="tab-pane" id="swiftype-search-4"><p>Back to <code>INSTALL CODE</code> and copy your <code>swiftype_key</code>. <img data-src="/images/docs/swiftype-4.png" alt="Swiftype Get Key" /></p></div><div class="tab-pane" id="swiftype-search-5"><p>Click <code>Change Configuration</code> → <code>Search Field</code>, then follow the instructions. <img data-src="/images/docs/swiftype-5.png" alt="Swiftype Search Field" /></p></div><div class="tab-pane" id="swiftype-search-6">Edit <span class="label primary">theme config file</span> and fill section <code>swiftype_key</code> with value of your key gets:
+<figure class="highlight yml">
+<figcaption>
+<span>next/_config.yml</span>
+</figcaption>
+<table>
+<tr>
+<td class="code">
+<pre><span class="line"><span class="comment"># Swiftype Search API Key</span></span><br><span class="line"><span class="attr">swiftype_key:</span> <span class="string">xxxxxxxxx</span></span><br></pre>
+</td>
+</tr>
+</table>
+</figure></div></div></div>
 
       </div>
       
@@ -551,7 +614,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Algolia-Search"><span class="nav-number">1.</span> <span class="nav-text">Algolia Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Local-Search"><span class="nav-number">2.</span> <span class="nav-text">Local Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swiftype-Search"><span class="nav-number">3.</span> <span class="nav-text">Swiftype Search</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#algolia-search"><span class="nav-number">1.</span> <span class="nav-text">Algolia Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#local-search"><span class="nav-number">2.</span> <span class="nav-text">Local Search</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swiftype-search"><span class="nav-number">3.</span> <span class="nav-text">Swiftype Search</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -650,7 +713,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div><div class="footer-custom">
 Theme source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0">here</span><br>
 Website source code <span class="exturl theme-link" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvdGhlbWUtbmV4dC5vcmc=">here</span>
